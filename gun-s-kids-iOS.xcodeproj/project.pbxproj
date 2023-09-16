@@ -11,14 +11,18 @@
 		2D0BDEAA2AAD835000A91728 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0BDEA92AAD835000A91728 /* ContentView.swift */; };
 		2D0BDEAC2AAD835100A91728 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D0BDEAB2AAD835100A91728 /* Assets.xcassets */; };
 		2D0BDEAF2AAD835100A91728 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D0BDEAE2AAD835100A91728 /* Preview Assets.xcassets */; };
+		2DA4A8B92AB5544D006E1342 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4A8B82AB5544D006E1342 /* LoginView.swift */; };
+		2DA4A8BB2AB565CD006E1342 /* PressableButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4A8BA2AB565CD006E1342 /* PressableButtonStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2D0BDEA42AAD835000A91728 /* gun-s-kids-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "gun-s-kids-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D0BDEA72AAD835000A91728 /* gun_s_kids_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gun_s_kids_iOSApp.swift; sourceTree = "<group>"; };
-		2D0BDEA92AAD835000A91728 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2D0BDEA92AAD835000A91728 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; usesTabs = 0; };
 		2D0BDEAB2AAD835100A91728 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D0BDEAE2AAD835100A91728 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2DA4A8B82AB5544D006E1342 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		2DA4A8BA2AB565CD006E1342 /* PressableButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressableButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,8 @@
 			children = (
 				2D0BDEA72AAD835000A91728 /* gun_s_kids_iOSApp.swift */,
 				2D0BDEA92AAD835000A91728 /* ContentView.swift */,
+				2DA4A8B82AB5544D006E1342 /* LoginView.swift */,
+				2DA4A8BA2AB565CD006E1342 /* PressableButtonStyle.swift */,
 				2D0BDEAB2AAD835100A91728 /* Assets.xcassets */,
 				2D0BDEAD2AAD835100A91728 /* Preview Content */,
 			);
@@ -137,8 +143,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DA4A8B92AB5544D006E1342 /* LoginView.swift in Sources */,
 				2D0BDEAA2AAD835000A91728 /* ContentView.swift in Sources */,
 				2D0BDEA82AAD835000A91728 /* gun_s_kids_iOSApp.swift in Sources */,
+				2DA4A8BB2AB565CD006E1342 /* PressableButtonStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
