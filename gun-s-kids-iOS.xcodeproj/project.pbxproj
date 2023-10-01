@@ -16,6 +16,7 @@
 		2DA4A8BD2AB57589006E1342 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4A8BC2AB57589006E1342 /* SignUpView.swift */; };
 		2DA4A8BF2AB57B84006E1342 /* AuthMailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4A8BE2AB57B84006E1342 /* AuthMailView.swift */; };
 		2DA4A8C12AB57E41006E1342 /* AuthCodeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4A8C02AB57E41006E1342 /* AuthCodeTextField.swift */; };
+		2DA4A8C52AC949BF006E1342 /* SetMailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4A8C42AC949BF006E1342 /* SetMailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		2DA4A8BC2AB57589006E1342 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		2DA4A8BE2AB57B84006E1342 /* AuthMailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthMailView.swift; sourceTree = "<group>"; };
 		2DA4A8C02AB57E41006E1342 /* AuthCodeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCodeTextField.swift; sourceTree = "<group>"; };
+		2DA4A8C42AC949BF006E1342 /* SetMailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetMailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				2D0BDEA72AAD835000A91728 /* gun_s_kids_iOSApp.swift */,
 				2D0BDEA92AAD835000A91728 /* ContentView.swift */,
 				2DA4A8B82AB5544D006E1342 /* LoginView.swift */,
+				2DA4A8C42AC949BF006E1342 /* SetMailView.swift */,
 				2DA4A8BE2AB57B84006E1342 /* AuthMailView.swift */,
 				2DA4A8C02AB57E41006E1342 /* AuthCodeTextField.swift */,
 				2DA4A8BC2AB57589006E1342 /* SignUpView.swift */,
@@ -158,6 +161,7 @@
 				2DA4A8BD2AB57589006E1342 /* SignUpView.swift in Sources */,
 				2D0BDEAA2AAD835000A91728 /* ContentView.swift in Sources */,
 				2D0BDEA82AAD835000A91728 /* gun_s_kids_iOSApp.swift in Sources */,
+				2DA4A8C52AC949BF006E1342 /* SetMailView.swift in Sources */,
 				2DA4A8BB2AB565CD006E1342 /* PressableButtonStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

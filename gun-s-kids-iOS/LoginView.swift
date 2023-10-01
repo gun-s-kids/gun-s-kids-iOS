@@ -73,7 +73,7 @@ struct LoginView: View {
                             .font(.system(size: 15))
                         Spacer()
                             .frame(width: 10)
-                        NavigationLink(destination: SignUpView()) {
+                        NavigationLink(destination: SetMailView()) {
                             Text("회원가입 하기")
                                  .font(.system(size: 16))
                         }
