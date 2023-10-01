@@ -15,7 +15,7 @@ struct AuthCodeTextField: View {
     }
     
     var body: some View {
-        HStack(spacing: 10) {
+        HStack(alignment: .center, spacing: 10) {
             ForEach(0..<4, id: \.self) { index in
                 let currentIndex = authCode.index(authCode.startIndex, offsetBy: index)
                 let digit = authCode[currentIndex]
