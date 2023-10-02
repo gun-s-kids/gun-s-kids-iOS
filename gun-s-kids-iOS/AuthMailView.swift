@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
+import AEOTPTextField
 
 struct AuthMailView: View {
-    @State private var authCode = "0000"
+    @State private var authCode: String = ""
     @State private var isValid = true
     @State private var isButtonPressed = false
 
@@ -23,7 +24,17 @@ struct AuthMailView: View {
                 Text("등록한 메일로 발송된 인증 코드를 입력하세요!")
                     .foregroundColor(.gray)
                     .font(.system(size: 15))
-                AuthCodeTextField(authCode: $authCode)
+                AEOTPView(text: $authCode,
+                          slotsCount: 4,
+                          width: .infinity,
+                          height: 80,
+                          otpFilledBorderColor: .clear,
+                          otpFontSize: 35,
+                          otpFont: UIFont.systemFont(ofSize: 35),
+                          isSecureTextEntry: false,
+                          onCommit: {
+                })
+                        .padding()
                 VStack(alignment: .center) {
                     Text("인증코드를 받지 못했나요?")
                         .foregroundColor(.gray)

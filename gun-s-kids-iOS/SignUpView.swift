@@ -14,55 +14,55 @@ struct SignUpView: View {
     @State private var isValid = true
 
     var body: some View {
-        VStack(alignment: .center) {
-            Text("회원가입")
-                .font(.title)
-                .fontWeight(.bold)
-                .padding(10)
-            Text("회원가입을 해보아요!")
-                .foregroundColor(.gray)
-                .font(.system(size: 15))
-            Spacer()
-                .frame(height: 80)
-            VStack(alignment: .leading) {
-                Text("Nickname")
-                    .foregroundColor(.secondary)
-                TextField("", text: $nickname)
-                    .textFieldStyle(.roundedBorder)
+        GeometryReader { geometry in
+            VStack(alignment: .center, spacing: 30) {
                 Spacer()
-                    .frame(height: 20)
-                Text("Password")
-                    .foregroundColor(.secondary)
-                TextField("", text: $password)
-                    .textFieldStyle(.roundedBorder)
-                Spacer()
-                    .frame(height: 20)
-                Text("Confirm Password")
-                    .foregroundColor(.secondary)
-                TextField("", text: $confirmPassword)
-                    .textFieldStyle(.roundedBorder)
-
+                    .frame(height: 50)
+                VStack {
+                    Text("회원가입")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .padding(10)
+                    Text("회원가입을 해보아요!")
+                        .foregroundColor(.gray)
+                        .font(.system(size: 15))
+                }
+                VStack(alignment: .leading) {
+                    Text("Nickname")
+                        .foregroundColor(.secondary)
+                    TextField("", text: $nickname)
+                        .textFieldStyle(.roundedBorder)
+                    Spacer()
+                        .frame(height: 20)
+                    Text("Password")
+                        .foregroundColor(.secondary)
+                    TextField("", text: $password)
+                        .textFieldStyle(.roundedBorder)
+                    Spacer()
+                        .frame(height: 20)
+                    Text("Confirm Password")
+                        .foregroundColor(.secondary)
+                    TextField("", text: $confirmPassword)
+                        .textFieldStyle(.roundedBorder)
+                }
+                Text("이미 사용중인 별명입니다.")
+                    .foregroundColor(isValid ? .clear : .red)
+                Button(action: {
+                    print("")
+                }, label: {
+                    Text("Sign Up")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .frame(height: 57)
+                        .frame(maxWidth: 305)
+                        .background(.blue)
+                        .cornerRadius(10)
+                })
+                .buttonStyle(PressableButtonStyle())
             }
-            Spacer()
-                .frame(height: 30)
-            Text("이미 사용중인 별명입니다.")
-                .foregroundColor(isValid ? .clear : .red)
-            Spacer()
-                .frame(height: 30)
-            Button(action: {
-                print("")
-            }, label: {
-                Text("Sign Up")
-                    .font(.headline)
-                    .foregroundColor(.white)
-                    .frame(height: 57)
-                    .frame(maxWidth: 305)
-                    .background(.blue)
-                    .cornerRadius(10)
-            })
-            .buttonStyle(PressableButtonStyle())
+            .padding()
+            .edgesIgnoringSafeArea(.all)
         }
-        .padding()
     }
 }
 

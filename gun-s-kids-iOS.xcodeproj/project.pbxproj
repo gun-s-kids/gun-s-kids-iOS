@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,9 +17,11 @@
 		2DA4A8BF2AB57B84006E1342 /* AuthMailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4A8BE2AB57B84006E1342 /* AuthMailView.swift */; };
 		2DA4A8C12AB57E41006E1342 /* AuthCodeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4A8C02AB57E41006E1342 /* AuthCodeTextField.swift */; };
 		2DA4A8C52AC949BF006E1342 /* SetMailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4A8C42AC949BF006E1342 /* SetMailView.swift */; };
+		7C93057ACC44BDBB32C71DB0 /* Pods_gun_s_kids_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A499A11E81026D74CEEC582 /* Pods_gun_s_kids_iOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A499A11E81026D74CEEC582 /* Pods_gun_s_kids_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gun_s_kids_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D0BDEA42AAD835000A91728 /* gun-s-kids-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "gun-s-kids-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D0BDEA72AAD835000A91728 /* gun_s_kids_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gun_s_kids_iOSApp.swift; sourceTree = "<group>"; };
 		2D0BDEA92AAD835000A91728 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; usesTabs = 0; };
@@ -31,6 +33,8 @@
 		2DA4A8BE2AB57B84006E1342 /* AuthMailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthMailView.swift; sourceTree = "<group>"; };
 		2DA4A8C02AB57E41006E1342 /* AuthCodeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCodeTextField.swift; sourceTree = "<group>"; };
 		2DA4A8C42AC949BF006E1342 /* SetMailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetMailView.swift; sourceTree = "<group>"; };
+		E496886060BBF58A05059625 /* Pods-gun-s-kids-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gun-s-kids-iOS.debug.xcconfig"; path = "Target Support Files/Pods-gun-s-kids-iOS/Pods-gun-s-kids-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		ECC2B3C2B3F367B5F92A5903 /* Pods-gun-s-kids-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gun-s-kids-iOS.release.xcconfig"; path = "Target Support Files/Pods-gun-s-kids-iOS/Pods-gun-s-kids-iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C93057ACC44BDBB32C71DB0 /* Pods_gun_s_kids_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -49,6 +54,8 @@
 			children = (
 				2D0BDEA62AAD835000A91728 /* gun-s-kids-iOS */,
 				2D0BDEA52AAD835000A91728 /* Products */,
+				2F6B5D0A0C8180F2E8852B2F /* Pods */,
+				45E9D9487BCEAD3D9EBBF5EF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,6 +92,24 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		2F6B5D0A0C8180F2E8852B2F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E496886060BBF58A05059625 /* Pods-gun-s-kids-iOS.debug.xcconfig */,
+				ECC2B3C2B3F367B5F92A5903 /* Pods-gun-s-kids-iOS.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		45E9D9487BCEAD3D9EBBF5EF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1A499A11E81026D74CEEC582 /* Pods_gun_s_kids_iOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -92,9 +117,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D0BDEB22AAD835100A91728 /* Build configuration list for PBXNativeTarget "gun-s-kids-iOS" */;
 			buildPhases = (
+				92E5CF10C5EBBD21EC144727 /* [CP] Check Pods Manifest.lock */,
 				2D0BDEA02AAD835000A91728 /* Sources */,
 				2D0BDEA12AAD835000A91728 /* Frameworks */,
 				2D0BDEA22AAD835000A91728 /* Resources */,
+				98D04803AA7EE5F95F628C1B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -121,7 +148,7 @@
 				};
 			};
 			buildConfigurationList = 2D0BDE9F2AAD835000A91728 /* Build configuration list for PBXProject "gun-s-kids-iOS" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -149,6 +176,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		92E5CF10C5EBBD21EC144727 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-gun-s-kids-iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		98D04803AA7EE5F95F628C1B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-gun-s-kids-iOS/Pods-gun-s-kids-iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-gun-s-kids-iOS/Pods-gun-s-kids-iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-gun-s-kids-iOS/Pods-gun-s-kids-iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2D0BDEA02AAD835000A91728 /* Sources */ = {
@@ -285,6 +354,7 @@
 		};
 		2D0BDEB32AAD835100A91728 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E496886060BBF58A05059625 /* Pods-gun-s-kids-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -315,6 +385,7 @@
 		};
 		2D0BDEB42AAD835100A91728 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ECC2B3C2B3F367B5F92A5903 /* Pods-gun-s-kids-iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
