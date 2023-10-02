@@ -29,7 +29,10 @@ struct SetMailView: View {
                     Text("Email")
                         .foregroundColor(.secondary)
                     TextField("", text: $email)
-                        .textFieldStyle(.roundedBorder)
+                                   .frame(height: 50)
+                                   .cornerRadius(10)
+                                   .overlay(RoundedRectangle(cornerRadius: 10)
+                                            .stroke(Color.dcdcdc, lineWidth: 1))
                 }
                 .padding([.horizontal], 15)
                 NavigationLink(destination: AuthMailView(), isActive: $isButtonPressed) {
