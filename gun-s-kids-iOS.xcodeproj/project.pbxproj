@@ -15,7 +15,6 @@
 		2DA4A8BB2AB565CD006E1342 /* PressableButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4A8BA2AB565CD006E1342 /* PressableButtonStyle.swift */; };
 		2DA4A8BD2AB57589006E1342 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4A8BC2AB57589006E1342 /* SignUpView.swift */; };
 		2DA4A8BF2AB57B84006E1342 /* AuthMailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4A8BE2AB57B84006E1342 /* AuthMailView.swift */; };
-		2DA4A8C12AB57E41006E1342 /* AuthCodeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4A8C02AB57E41006E1342 /* AuthCodeTextField.swift */; };
 		2DA4A8C52AC949BF006E1342 /* SetMailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4A8C42AC949BF006E1342 /* SetMailView.swift */; };
 		7C93057ACC44BDBB32C71DB0 /* Pods_gun_s_kids_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A499A11E81026D74CEEC582 /* Pods_gun_s_kids_iOS.framework */; };
 /* End PBXBuildFile section */
@@ -31,7 +30,6 @@
 		2DA4A8BA2AB565CD006E1342 /* PressableButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressableButtonStyle.swift; sourceTree = "<group>"; };
 		2DA4A8BC2AB57589006E1342 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		2DA4A8BE2AB57B84006E1342 /* AuthMailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthMailView.swift; sourceTree = "<group>"; };
-		2DA4A8C02AB57E41006E1342 /* AuthCodeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCodeTextField.swift; sourceTree = "<group>"; };
 		2DA4A8C42AC949BF006E1342 /* SetMailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetMailView.swift; sourceTree = "<group>"; };
 		E496886060BBF58A05059625 /* Pods-gun-s-kids-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gun-s-kids-iOS.debug.xcconfig"; path = "Target Support Files/Pods-gun-s-kids-iOS/Pods-gun-s-kids-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		ECC2B3C2B3F367B5F92A5903 /* Pods-gun-s-kids-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gun-s-kids-iOS.release.xcconfig"; path = "Target Support Files/Pods-gun-s-kids-iOS/Pods-gun-s-kids-iOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -70,15 +68,8 @@
 		2D0BDEA62AAD835000A91728 /* gun-s-kids-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				2D0BDEA72AAD835000A91728 /* gun_s_kids_iOSApp.swift */,
-				2D0BDEA92AAD835000A91728 /* ContentView.swift */,
-				2DA4A8B82AB5544D006E1342 /* LoginView.swift */,
-				2DA4A8C42AC949BF006E1342 /* SetMailView.swift */,
-				2DA4A8BE2AB57B84006E1342 /* AuthMailView.swift */,
-				2DA4A8C02AB57E41006E1342 /* AuthCodeTextField.swift */,
-				2DA4A8BC2AB57589006E1342 /* SignUpView.swift */,
-				2DA4A8BA2AB565CD006E1342 /* PressableButtonStyle.swift */,
-				2D0BDEAB2AAD835100A91728 /* Assets.xcassets */,
+				99CAC7522ACFC6B90070B64E /* Feature */,
+				99CAC7512ACFC6A90070B64E /* Global */,
 				2D0BDEAD2AAD835100A91728 /* Preview Content */,
 			);
 			path = "gun-s-kids-iOS";
@@ -98,7 +89,6 @@
 				E496886060BBF58A05059625 /* Pods-gun-s-kids-iOS.debug.xcconfig */,
 				ECC2B3C2B3F367B5F92A5903 /* Pods-gun-s-kids-iOS.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -108,6 +98,68 @@
 				1A499A11E81026D74CEEC582 /* Pods_gun_s_kids_iOS.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		99CAC7512ACFC6A90070B64E /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				2DA4A8BA2AB565CD006E1342 /* PressableButtonStyle.swift */,
+				2D0BDEA72AAD835000A91728 /* gun_s_kids_iOSApp.swift */,
+				2D0BDEAB2AAD835100A91728 /* Assets.xcassets */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		99CAC7522ACFC6B90070B64E /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				99CAC7532ACFC6D60070B64E /* Auth */,
+				99CAC7572ACFC8340070B64E /* ClubDetail */,
+				99CAC7562ACFC8280070B64E /* MyClub */,
+				99CAC7552ACFC7F70070B64E /* ClubList */,
+				99CAC7542ACFC79F0070B64E /* Profile */,
+				2D0BDEA92AAD835000A91728 /* ContentView.swift */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		99CAC7532ACFC6D60070B64E /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				2DA4A8B82AB5544D006E1342 /* LoginView.swift */,
+				2DA4A8C42AC949BF006E1342 /* SetMailView.swift */,
+				2DA4A8BE2AB57B84006E1342 /* AuthMailView.swift */,
+				2DA4A8BC2AB57589006E1342 /* SignUpView.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		99CAC7542ACFC79F0070B64E /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		99CAC7552ACFC7F70070B64E /* ClubList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ClubList;
+			sourceTree = "<group>";
+		};
+		99CAC7562ACFC8280070B64E /* MyClub */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MyClub;
+			sourceTree = "<group>";
+		};
+		99CAC7572ACFC8340070B64E /* ClubDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ClubDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,7 +276,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DA4A8C12AB57E41006E1342 /* AuthCodeTextField.swift in Sources */,
 				2DA4A8B92AB5544D006E1342 /* LoginView.swift in Sources */,
 				2DA4A8BF2AB57B84006E1342 /* AuthMailView.swift in Sources */,
 				2DA4A8BD2AB57589006E1342 /* SignUpView.swift in Sources */,
