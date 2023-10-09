@@ -12,6 +12,7 @@
 		2D0BDEAC2AAD835100A91728 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D0BDEAB2AAD835100A91728 /* Assets.xcassets */; };
 		2D0BDEAF2AAD835100A91728 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D0BDEAE2AAD835100A91728 /* Preview Assets.xcassets */; };
 		2D5E37DC2AD3D7BF003EA3FC /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E37DB2AD3D7BF003EA3FC /* ColorExtension.swift */; };
+		2D5E37DE2AD3DA30003EA3FC /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E37DD2AD3DA30003EA3FC /* ProfileView.swift */; };
 		2DA4A8B92AB5544D006E1342 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4A8B82AB5544D006E1342 /* LoginView.swift */; };
 		2DA4A8BB2AB565CD006E1342 /* PressableButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4A8BA2AB565CD006E1342 /* PressableButtonStyle.swift */; };
 		2DA4A8BD2AB57589006E1342 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4A8BC2AB57589006E1342 /* SignUpView.swift */; };
@@ -28,6 +29,7 @@
 		2D0BDEAB2AAD835100A91728 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D0BDEAE2AAD835100A91728 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2D5E37DB2AD3D7BF003EA3FC /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		2D5E37DD2AD3DA30003EA3FC /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileView.swift; path = "gun-s-kids-iOS/Global/ProfileView.swift"; sourceTree = SOURCE_ROOT; };
 		2DA4A8B82AB5544D006E1342 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		2DA4A8BA2AB565CD006E1342 /* PressableButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressableButtonStyle.swift; sourceTree = "<group>"; };
 		2DA4A8BC2AB57589006E1342 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 		99CAC7542ACFC79F0070B64E /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				2D5E37DD2AD3DA30003EA3FC /* ProfileView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DA4A8B92AB5544D006E1342 /* LoginView.swift in Sources */,
+				2D5E37DE2AD3DA30003EA3FC /* ProfileView.swift in Sources */,
 				2DA4A8BF2AB57B84006E1342 /* AuthMailView.swift in Sources */,
 				2DA4A8BD2AB57589006E1342 /* SignUpView.swift in Sources */,
 				2D5E37DC2AD3D7BF003EA3FC /* ColorExtension.swift in Sources */,
