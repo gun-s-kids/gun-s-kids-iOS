@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PanModal
 
 struct EditProfileView: View {
     @State var content: String = ""
@@ -13,11 +14,12 @@ struct EditProfileView: View {
     @State private var selectedCompanyIndex = 0
     @State private var selectedCompany = ""
     @State private var selectDepartmentIndex = 0
-    @State private var isConfirming = false
+    @State private var displayLocationPanModal = false
+    @State private var displayDayPanModal = false
     @State private var location = ""
     @State private var doIndex = 0
     @State private var siIndex = 0
-    @State private var birthday = Date()
+    @State private var birthday: Date = Date()
 
     var companys = ["현대 IT&E", "현대홈쇼핑", "현대백화점"]
     var departments = ["SR팀", "온라인팀", "면세점팀", "한섬1팀"]
@@ -146,7 +148,7 @@ extension EditProfileView {
             Text("활동 지역")
                 .foregroundColor(.secondary)
             Button(action: {
-                isConfirming = true
+                displayLocationPanModal = true
             }) {
                 Text(location)
                     .frame(maxWidth: .infinity, minHeight: 50)
@@ -160,7 +162,36 @@ extension EditProfileView {
                         .stroke(Color.dcdcdc, lineWidth: 1)
             )
             .onTapGesture {
-                isConfirming = true
+                displayLocationPanModal = true
+            }
+        }.presentModal(modalCase: .location, displayPanModal: $displayLocationPanModal) {
+            VStack(alignment: .trailing) {
+                Button("설정") {
+                    print("### Do:\(koreaDo[doIndex]), Si: \(koreaSi[siIndex])")
+                    location = "\(koreaDo[doIndex]) \(koreaSi[siIndex])"
+                    dismissModal()
+                }.padding([.top, .trailing], 30)
+                HStack {
+                    Picker("Select Choice", selection: $doIndex) {
+                        ForEach(0 ..< koreaDo.count) {
+                            Text(koreaDo[$0])
+                        }
+                    }
+                    .pickerStyle(.wheel)
+                    .frame(minWidth: 0)
+                    .clipped()
+                    
+                    Picker("Select Choice", selection: $siIndex) {
+                        ForEach(0 ..< koreaSi.count) {
+                            Text(koreaSi[$0])
+                        }
+                    }
+                    .pickerStyle(.wheel)
+                    .frame(minWidth: 0)
+                    .clipped()
+                }
+            }.onDisappear {
+                displayLocationPanModal = false
             }
         }
     }
@@ -169,23 +200,45 @@ extension EditProfileView {
         VStack(alignment: .leading) {
             Text("생년 월일")
                 .foregroundColor(.secondary)
-            DatePicker(
-                    stringDate(date: birthday),
-                    selection: $birthday,
-                    displayedComponents: [.date]
-            ).datePickerStyle(.wheel)
-                .frame(maxWidth: .infinity, minHeight: 50)
-                .cornerRadius(10)
-                .accentColor(.black)
-                .padding([.leading, .trailing])
-                .overlay(RoundedRectangle(cornerRadius: 10)
-                .stroke(Color.dcdcdc, lineWidth: 1))
+            Button(action: {
+                displayDayPanModal = true
+            }) {
+                Text(stringDate(date: birthday))
+                    .frame(maxWidth: .infinity, minHeight: 50)
+                    .accentColor(.black)
+                    .background(
+                        RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color.dcdcdc, lineWidth: 1)
+                    )
+            }.background(
+                RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color.dcdcdc, lineWidth: 1)
+            )
+            .onTapGesture {
+                displayDayPanModal = true
+            }
+        }.presentModal(modalCase: .day, displayPanModal: $displayDayPanModal) {
+            VStack(alignment: .trailing) {
+                Button("설정") {
+                    print("### birthDay: \(stringDate(date: birthday))")
+                    dismissModal()
+                }.padding([.top, .trailing], 30)
+                DatePicker(
+                        "",
+                        selection: $birthday,
+                        displayedComponents: [.date]
+                ).labelsHidden()
+                .datePickerStyle(.wheel)
+                .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
+            }.onDisappear {
+                displayDayPanModal = false
+            }
         }
     }
 
     func stringDate(date: Date) -> String {
       let formatter = DateFormatter()
-      formatter.dateFormat = "YYYY년 MM월 d일"
+      formatter.dateFormat = "YYYY년 MM월 dd일"
       return formatter.string(from: date)
     }
 }
