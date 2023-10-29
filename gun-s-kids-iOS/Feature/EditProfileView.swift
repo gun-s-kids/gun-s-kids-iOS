@@ -54,20 +54,8 @@ struct EditProfileView: View {
                         }
                         locationButton
                         birthDayPicker
-                    }
-
-                    VStack(alignment: .leading) {
-                        Text("자기소개로 나를 뽐내 보아요!")
-                            .foregroundColor(.gray)
-                            .font(.system(size: 15))
-                        TextEditor(text: $content)
-                                    .font(.body)
-                                    .frame(maxWidth: 328)
-                                    .frame(height: 188)
-                                    .cornerRadius(10)
-                                    .overlay(RoundedRectangle(cornerRadius: 10)
-                                             .stroke(Color.dcdcdc, lineWidth: 1))
-                    }
+                        introduceView
+                    }.padding(.horizontal, 20)
 
                     Button(action: { print("") },
                            label: {
@@ -80,6 +68,7 @@ struct EditProfileView: View {
                                     .cornerRadius(10)
                                 })
                             .buttonStyle(PressableButtonStyle())
+                            .padding(.bottom, 150)
                 }
                 .padding()
                 .edgesIgnoringSafeArea(.all)
@@ -233,6 +222,21 @@ extension EditProfileView {
             }.onDisappear {
                 displayDayPanModal = false
             }
+        }
+    }
+    
+    var introduceView: some View {
+        VStack(alignment: .leading) {
+            Text("자기소개로 나를 뽐내 보아요!")
+                .foregroundColor(.gray)
+                .font(.system(size: 15))
+            TextEditor(text: $content)
+                        .font(.body)
+                        .frame(maxWidth: 328)
+                        .frame(height: 188)
+                        .cornerRadius(10)
+                        .overlay(RoundedRectangle(cornerRadius: 10)
+                                 .stroke(Color.dcdcdc, lineWidth: 1))
         }
     }
 
