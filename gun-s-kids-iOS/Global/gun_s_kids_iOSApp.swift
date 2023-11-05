@@ -11,7 +11,7 @@ import SwiftUI
 struct gun_s_kids_iOSApp: App {
     var body: some Scene {
         WindowGroup {
-            EditProfileView()
+            MyClubView()
         }
     }
 }

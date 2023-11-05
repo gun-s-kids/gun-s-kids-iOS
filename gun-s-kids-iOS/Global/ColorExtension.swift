@@ -10,6 +10,9 @@ import SwiftUI
 extension Color {
     
     static let dcdcdc = Color(hex: "dcdcdc")
+    static let primaryShadow = Color.primary.opacity(0.2)
+    static let secondaryText = Color(hex: "#6e6e6e")
+    static let background = Color(UIColor.systemGray6)
     
     init(hex: String) {
         let scanner = Scanner(string: hex)
