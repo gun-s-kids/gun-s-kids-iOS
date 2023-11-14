@@ -24,14 +24,13 @@ struct ContentView: View {
                     Image(systemName: "magnifyingglass")
                 }
                 .tag(Tab.list)
-            Color.blue
-                .edgesIgnoringSafeArea(.all)
+            MyClubView()
                 .tabItem {
                     Image(systemName: "person.3.fill")
                 }
-                .tag(Tab.myClub)
-            Color.red
                 .edgesIgnoringSafeArea(.all)
+                .tag(Tab.myClub)
+            ProfileView()
                 .tabItem {
                     Image(systemName: "person.circle")
                 }

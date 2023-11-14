@@ -15,11 +15,10 @@ struct MyClubRow: View {
             productImage
             productDescription
         }
-        .frame(width: .infinity, height: 150)
+        .frame(width: 350, height: 150)
         .background(Color.primary.colorInvert())
         .cornerRadius(6)
         .shadow(color: Color.primaryShadow, radius: 1, x:2, y:2)
-        .padding(.vertical, 8)
     }
 }
 

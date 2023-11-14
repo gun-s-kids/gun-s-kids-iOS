@@ -19,6 +19,7 @@ struct MyClubView: View {
         NavigationView {
             List(myClubSamples) { club in
                 MyClubRow(clubInfo: club)
+                    .listRowSeparator(.hidden)
             }
             .listStyle(.plain)
             .navigationTitle("My Club !")
