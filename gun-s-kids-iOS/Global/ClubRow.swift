@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct MyClubRow: View {
-    let clubInfo: MyClub
-    
+struct ClubRow: View {
+    let clubInfo: Club
+
     var body: some View {
         HStack(alignment: .center) {
             productImage
@@ -22,7 +22,7 @@ struct MyClubRow: View {
     }
 }
 
-extension MyClubRow {
+extension ClubRow {
     var productImage: some View {
         Image(clubInfo.imageName)
             .resizable()
@@ -30,7 +30,7 @@ extension MyClubRow {
             .frame(width: 100, height: 100)
             .clipped()
     }
-    
+
     var productDescription: some View {
         VStack(alignment: .leading){
             Text(clubInfo.title)
@@ -54,8 +54,8 @@ extension MyClubRow {
     }
 }
 
-struct MyClubRow_Previews: PreviewProvider {
+struct ClubRow_Previews: PreviewProvider {
     static var previews: some View {
-        MyClubRow(clubInfo: MyClub(title: "[논알콜] 소.취.생 (소소한 취미 생활)", imageName: "fig", foundationDate: "2022. 08. 08", members: 32, company: "한섬"))
+        ClubRow(clubInfo: Club(title: "[논알콜] 소.취.생 (소소한 취미 생활)", imageName: "fig", foundationDate: "2022. 08. 08", members: 32, company: "한섬"))
     }
 }

@@ -11,7 +11,7 @@ struct Company: Identifiable {
     let id = UUID()
     let image: Image
     let name: String
-    
+
     static let sample: [Company] = [
         Company(image: Image("pineapple"), name: "현대 IT&E"),
         Company(image: Image("cherry"), name: "한섬"),

@@ -9,7 +9,14 @@ import SwiftUI
 
 struct ClubListView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            ScrollView(.vertical) {
+                Spacer(minLength: 30)
+                CompanySectionView()
+                Spacer(minLength: 30)
+                ClubSectionView()
+            }.navigationTitle("동호회 찾기")
+        }
     }
 }
 

@@ -11,13 +11,14 @@
 		2D0BDEAA2AAD835000A91728 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0BDEA92AAD835000A91728 /* ContentView.swift */; };
 		2D0BDEAC2AAD835100A91728 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D0BDEAB2AAD835100A91728 /* Assets.xcassets */; };
 		2D0BDEAF2AAD835100A91728 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D0BDEAE2AAD835100A91728 /* Preview Assets.xcassets */; };
+		2D44002C2B1C41E000BE7ADB /* ClubSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D44002B2B1C41E000BE7ADB /* ClubSectionView.swift */; };
 		2D5E37DC2AD3D7BF003EA3FC /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E37DB2AD3D7BF003EA3FC /* ColorExtension.swift */; };
 		2D5E37DE2AD3DA30003EA3FC /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E37DD2AD3DA30003EA3FC /* ProfileView.swift */; };
 		2D5E37E22AD3E966003EA3FC /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E37E12AD3E966003EA3FC /* EditProfileView.swift */; };
 		2D5E37E92AEE47C4003EA3FC /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E37E82AEE47C4003EA3FC /* ViewExtension.swift */; };
 		2D5E37EB2AF78EE9003EA3FC /* MyClubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E37EA2AF78EE9003EA3FC /* MyClubView.swift */; };
-		2D5E37ED2AF78F5B003EA3FC /* MyClubRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E37EC2AF78F5B003EA3FC /* MyClubRow.swift */; };
-		2D5E37F02AF790E9003EA3FC /* MyClub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E37EF2AF790E9003EA3FC /* MyClub.swift */; };
+		2D5E37ED2AF78F5B003EA3FC /* ClubRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E37EC2AF78F5B003EA3FC /* ClubRow.swift */; };
+		2D5E37F02AF790E9003EA3FC /* Club.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E37EF2AF790E9003EA3FC /* Club.swift */; };
 		2DA4A8B92AB5544D006E1342 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4A8B82AB5544D006E1342 /* LoginView.swift */; };
 		2DA4A8BB2AB565CD006E1342 /* PressableButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4A8BA2AB565CD006E1342 /* PressableButtonStyle.swift */; };
 		2DA4A8BD2AB57589006E1342 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4A8BC2AB57589006E1342 /* SignUpView.swift */; };
@@ -36,13 +37,14 @@
 		2D0BDEA92AAD835000A91728 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; usesTabs = 0; };
 		2D0BDEAB2AAD835100A91728 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D0BDEAE2AAD835100A91728 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2D44002B2B1C41E000BE7ADB /* ClubSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubSectionView.swift; sourceTree = "<group>"; };
 		2D5E37DB2AD3D7BF003EA3FC /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		2D5E37DD2AD3DA30003EA3FC /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileView.swift; path = "gun-s-kids-iOS/Global/ProfileView.swift"; sourceTree = SOURCE_ROOT; };
 		2D5E37E12AD3E966003EA3FC /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EditProfileView.swift; path = "gun-s-kids-iOS/Feature/EditProfileView.swift"; sourceTree = SOURCE_ROOT; };
 		2D5E37E82AEE47C4003EA3FC /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		2D5E37EA2AF78EE9003EA3FC /* MyClubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyClubView.swift; path = "gun-s-kids-iOS/Global/MyClubView.swift"; sourceTree = SOURCE_ROOT; };
-		2D5E37EC2AF78F5B003EA3FC /* MyClubRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyClubRow.swift; path = "gun-s-kids-iOS/Global/MyClubRow.swift"; sourceTree = SOURCE_ROOT; };
-		2D5E37EF2AF790E9003EA3FC /* MyClub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClub.swift; sourceTree = "<group>"; };
+		2D5E37EC2AF78F5B003EA3FC /* ClubRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ClubRow.swift; path = "gun-s-kids-iOS/Global/ClubRow.swift"; sourceTree = SOURCE_ROOT; };
+		2D5E37EF2AF790E9003EA3FC /* Club.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Club.swift; sourceTree = "<group>"; };
 		2DA4A8B82AB5544D006E1342 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		2DA4A8BA2AB565CD006E1342 /* PressableButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressableButtonStyle.swift; sourceTree = "<group>"; };
 		2DA4A8BC2AB57589006E1342 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -168,8 +170,8 @@
 			isa = PBXGroup;
 			children = (
 				2D5E37EA2AF78EE9003EA3FC /* MyClubView.swift */,
-				2D5E37EC2AF78F5B003EA3FC /* MyClubRow.swift */,
-				2D5E37EF2AF790E9003EA3FC /* MyClub.swift */,
+				2D5E37EC2AF78F5B003EA3FC /* ClubRow.swift */,
+				2D5E37EF2AF790E9003EA3FC /* Club.swift */,
 			);
 			path = MyClub;
 			sourceTree = "<group>";
@@ -180,6 +182,7 @@
 				99E70AAD2AF86FE800548E45 /* ClubListView.swift */,
 				9908FABA2B03564F00BEF286 /* Company.swift */,
 				9908FABE2B03583400BEF286 /* CompanySectionView.swift */,
+				2D44002B2B1C41E000BE7ADB /* ClubSectionView.swift */,
 			);
 			path = ClubList;
 			sourceTree = "<group>";
@@ -302,10 +305,11 @@
 				2DA4A8B92AB5544D006E1342 /* LoginView.swift in Sources */,
 				2D5E37DE2AD3DA30003EA3FC /* ProfileView.swift in Sources */,
 				2DA4A8BF2AB57B84006E1342 /* AuthMailView.swift in Sources */,
-				2D5E37ED2AF78F5B003EA3FC /* MyClubRow.swift in Sources */,
+				2D5E37ED2AF78F5B003EA3FC /* ClubRow.swift in Sources */,
 				2DA4A8BD2AB57589006E1342 /* SignUpView.swift in Sources */,
+				2D44002C2B1C41E000BE7ADB /* ClubSectionView.swift in Sources */,
 				2D5E37DC2AD3D7BF003EA3FC /* ColorExtension.swift in Sources */,
-				2D5E37F02AF790E9003EA3FC /* MyClub.swift in Sources */,
+				2D5E37F02AF790E9003EA3FC /* Club.swift in Sources */,
 				2D5E37E92AEE47C4003EA3FC /* ViewExtension.swift in Sources */,
 				2D0BDEAA2AAD835000A91728 /* ContentView.swift in Sources */,
 				2D0BDEA82AAD835000A91728 /* gun_s_kids_iOSApp.swift in Sources */,
