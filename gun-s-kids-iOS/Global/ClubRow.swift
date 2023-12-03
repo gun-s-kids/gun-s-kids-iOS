@@ -36,6 +36,7 @@ extension ClubRow {
             Text(clubInfo.title)
                 .font(.headline)
                 .fontWeight(.medium)
+                .foregroundColor(.black)
                 .padding([.top, .bottom], 6)
             
             Text("Since " + clubInfo.foundationDate)
@@ -45,8 +46,11 @@ extension ClubRow {
             
             HStack(spacing: 0) {
                 Text(clubInfo.company)
+                    .foregroundColor(.black)
                 Text(" | ")
+                    .foregroundColor(.black)
                 Text("멤버 \(clubInfo.members)")
+                    .foregroundColor(.black)
             }
         }
         .padding([.leading, .bottom], 12)

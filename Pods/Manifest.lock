@@ -1,20 +1,24 @@
 PODS:
   - AEOTPTextField (1.2.6)
   - PanModal (1.2.7)
+  - Parchment (3.2.0)
 
 DEPENDENCIES:
   - AEOTPTextField
   - PanModal
+  - Parchment
 
 SPEC REPOS:
   trunk:
     - AEOTPTextField
     - PanModal
+    - Parchment
 
 SPEC CHECKSUMS:
   AEOTPTextField: a275823fde05601c5da7f8fb66aaecb41289b370
   PanModal: 3e16ead1a907fb06f4df3f13492fd00149fa4974
+  Parchment: a43c440b22c8a60f7e0196b74339446d4d1d18ea
 
-PODFILE CHECKSUM: 728d2b9d7f7ae2076432878c797cf0ce69cb1bc3
+PODFILE CHECKSUM: 4de183b67ffb2dc2b9d497ba03df27e5470bf484
 
 COCOAPODS: 1.11.2

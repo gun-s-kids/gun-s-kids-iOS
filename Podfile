@@ -8,4 +8,5 @@ target 'gun-s-kids-iOS' do
   # Pods for gun-s-kids-iOS
   pod 'AEOTPTextField'
   pod 'PanModal'
+  pod 'Parchment'
 end

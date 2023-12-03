@@ -12,7 +12,7 @@ struct MyClubView: View {
     var body: some View {
         NavigationView {
             List(Club.sample) { club in
-                ClubRow(clubInfo: club)
+                NavigationLink(destination: ClubDetailMainView(title: club.title), label: { ClubRow(clubInfo: club) })
                     .listRowSeparator(.hidden)
             }
             .listStyle(.plain)

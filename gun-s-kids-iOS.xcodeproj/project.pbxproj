@@ -12,6 +12,7 @@
 		2D0BDEAC2AAD835100A91728 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D0BDEAB2AAD835100A91728 /* Assets.xcassets */; };
 		2D0BDEAF2AAD835100A91728 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D0BDEAE2AAD835100A91728 /* Preview Assets.xcassets */; };
 		2D44002C2B1C41E000BE7ADB /* ClubSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D44002B2B1C41E000BE7ADB /* ClubSectionView.swift */; };
+		2D44002F2B1C48BF00BE7ADB /* ClubDetailMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D44002E2B1C48BF00BE7ADB /* ClubDetailMainView.swift */; };
 		2D5E37DC2AD3D7BF003EA3FC /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E37DB2AD3D7BF003EA3FC /* ColorExtension.swift */; };
 		2D5E37DE2AD3DA30003EA3FC /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E37DD2AD3DA30003EA3FC /* ProfileView.swift */; };
 		2D5E37E22AD3E966003EA3FC /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E37E12AD3E966003EA3FC /* EditProfileView.swift */; };
@@ -38,6 +39,7 @@
 		2D0BDEAB2AAD835100A91728 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D0BDEAE2AAD835100A91728 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2D44002B2B1C41E000BE7ADB /* ClubSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubSectionView.swift; sourceTree = "<group>"; };
+		2D44002E2B1C48BF00BE7ADB /* ClubDetailMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubDetailMainView.swift; sourceTree = "<group>"; };
 		2D5E37DB2AD3D7BF003EA3FC /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		2D5E37DD2AD3DA30003EA3FC /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileView.swift; path = "gun-s-kids-iOS/Global/ProfileView.swift"; sourceTree = SOURCE_ROOT; };
 		2D5E37E12AD3E966003EA3FC /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EditProfileView.swift; path = "gun-s-kids-iOS/Feature/EditProfileView.swift"; sourceTree = SOURCE_ROOT; };
@@ -105,6 +107,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		2D44002D2B1C48AE00BE7ADB /* ClubDetail */ = {
+			isa = PBXGroup;
+			children = (
+				2D44002E2B1C48BF00BE7ADB /* ClubDetailMainView.swift */,
+			);
+			path = ClubDetail;
+			sourceTree = "<group>";
+		};
 		2F6B5D0A0C8180F2E8852B2F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +147,7 @@
 		99CAC7522ACFC6B90070B64E /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				2D44002D2B1C48AE00BE7ADB /* ClubDetail */,
 				99E70AAC2AF86FD700548E45 /* ClubList */,
 				99CAC7532ACFC6D60070B64E /* Auth */,
 				99CAC7562ACFC8280070B64E /* MyClub */,
@@ -313,6 +324,7 @@
 				2D5E37E92AEE47C4003EA3FC /* ViewExtension.swift in Sources */,
 				2D0BDEAA2AAD835000A91728 /* ContentView.swift in Sources */,
 				2D0BDEA82AAD835000A91728 /* gun_s_kids_iOSApp.swift in Sources */,
+				2D44002F2B1C48BF00BE7ADB /* ClubDetailMainView.swift in Sources */,
 				2DA4A8C52AC949BF006E1342 /* SetMailView.swift in Sources */,
 				2D5E37EB2AF78EE9003EA3FC /* MyClubView.swift in Sources */,
 				99E70AAE2AF86FE800548E45 /* ClubListView.swift in Sources */,
