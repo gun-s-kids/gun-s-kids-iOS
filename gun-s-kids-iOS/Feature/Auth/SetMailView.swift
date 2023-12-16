@@ -16,25 +16,8 @@ struct SetMailView: View {
             VStack(alignment: .center, spacing: 30) {
                 Spacer()
                     .frame(height: 50)
-                VStack {
-                    Text("이메일 인증")
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .padding(10)
-                    Text("회사 이메일 인증을 해보아요!")
-                        .foregroundColor(.gray)
-                        .font(.system(size: 15))
-                }
-                VStack(alignment: .leading) {
-                    Text("Email")
-                        .foregroundColor(.secondary)
-                    TextField("", text: $email)
-                                   .frame(height: 50)
-                                   .cornerRadius(10)
-                                   .overlay(RoundedRectangle(cornerRadius: 10)
-                                            .stroke(Color.dcdcdc, lineWidth: 1))
-                }
-                .padding([.horizontal], 15)
+                LoginExplainTextVStack(title: "이메일 인증", subtitle: "회사 이메일 인증을 해보아요!")
+                EmailTextField(email: email)
                 NavigationLink(destination: AuthMailView(), isActive: $isButtonPressed) {
                     Button(action: {
                         isButtonPressed = true
@@ -54,6 +37,24 @@ struct SetMailView: View {
             .padding()
             .edgesIgnoringSafeArea(.all)
             }
+    }
+}
+
+struct EmailTextField: View {
+    @State var email = ""
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text("Email")
+                .foregroundColor(.secondary)
+            TextField("", text: $email)
+                           .frame(height: 50)
+                           .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
+                           .cornerRadius(10)
+                           .overlay(RoundedRectangle(cornerRadius: 10)
+                            .stroke(Color.dcdcdc, lineWidth: 1))
+        }
+        .padding([.horizontal], 15)
     }
 }
 

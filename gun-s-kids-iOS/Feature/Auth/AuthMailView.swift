@@ -18,12 +18,7 @@ struct AuthMailView: View {
             VStack(alignment: .center, spacing: 30) {
                 Spacer()
                     .frame(height: 50)
-                Text("메일 인증")
-                    .font(.title)
-                    .fontWeight(.bold)
-                Text("등록한 메일로 발송된 인증 코드를 입력하세요!")
-                    .foregroundColor(.gray)
-                    .font(.system(size: 15))
+                LoginExplainTextVStack(title: "메일 인증", subtitle: "등록한 메일로 발송된 인증 코드를 입력하세요!")
                 AEOTPView(text: $authCode,
                           slotsCount: 4,
                           width: .infinity,
@@ -33,21 +28,8 @@ struct AuthMailView: View {
                           otpFont: UIFont.systemFont(ofSize: 35),
                           isSecureTextEntry: false,
                           onCommit: {
-                })
-                        .padding()
-                VStack(alignment: .center) {
-                    Text("인증코드를 받지 못했나요?")
-                        .foregroundColor(.gray)
-                        .font(.system(size: 13))
-                    Spacer()
-                        .frame(height: 10)
-                    Button(action: {
-                        print("")
-                    }, label: {
-                        Text("인증코드 재발송하기")
-                            .font(.system(size: 13))
-                    })
-                }
+                }).padding()
+                AuthCodeResendVStack()
                 NavigationLink(destination: SignUpView(), isActive: $isButtonPressed) {
                     Button(action: {
                         isButtonPressed = true
@@ -66,6 +48,24 @@ struct AuthMailView: View {
             }
             .padding()
             .edgesIgnoringSafeArea(.all)
+        }
+    }
+}
+
+struct AuthCodeResendVStack: View {
+    var body: some View {
+        VStack(alignment: .center) {
+            Text("인증코드를 받지 못했나요?")
+                .foregroundColor(.gray)
+                .font(.system(size: 13))
+            Spacer()
+                .frame(height: 10)
+            Button(action: {
+                print("")
+            }, label: {
+                Text("인증코드 재발송하기")
+                    .font(.system(size: 13))
+            })
         }
     }
 }

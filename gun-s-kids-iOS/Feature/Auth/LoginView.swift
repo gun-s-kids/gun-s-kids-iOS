@@ -18,7 +18,7 @@ struct LoginView: View {
                 VStack(alignment: .center, spacing: 30) {
                     Spacer()
                         .frame(height: 50)
-                    LoginExplainTextVStack()
+                    LoginExplainTextVStack(title: "로그인", subtitle: "거녕이와 아이들 앱에 오신 것을 환영합니다!")
                     LoginTextFieldVStack(email: email, password: password)
                     FindUserInfoView()
                     SignInButton()
@@ -32,13 +32,16 @@ struct LoginView: View {
 }
 
 struct LoginExplainTextVStack: View {
+    var title: String
+    var subtitle: String
+    
     var body: some View {
         VStack {
-            Text("로그인")
+            Text(title)
                 .font(.title)
                 .fontWeight(.bold)
                 .padding(10)
-            Text("거녕이와 아이들 앱에 오신 것을 환영합니다!")
+            Text(subtitle)
                 .foregroundColor(.gray)
                 .font(.system(size: 15))
         }
