@@ -23,6 +23,7 @@ struct MainView: View {
                     Image(systemName: "magnifyingglass")
                 }
                 .tag(Tab.list)
+                
             MyClubView()
                 .tabItem {
                     Image(systemName: "person.3.fill")
@@ -35,6 +36,7 @@ struct MainView: View {
                 }
                 .tag(Tab.profile)
         }
+        .accentColor(Color.mainColor4)
     }
 }
 

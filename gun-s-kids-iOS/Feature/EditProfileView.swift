@@ -64,7 +64,7 @@ struct EditProfileView: View {
                                     .foregroundColor(.white)
                                     .frame(height: 32)
                                     .frame(maxWidth: 110)
-                                    .background(.blue)
+                                    .background(Color.mainColor3)
                                     .cornerRadius(10)
                                 })
                             .buttonStyle(PressableButtonStyle())

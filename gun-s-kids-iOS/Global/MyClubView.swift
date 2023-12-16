@@ -11,11 +11,7 @@ struct MyClubView: View {
     
     var body: some View {
         NavigationView {
-            List(Club.sample) { club in
-                NavigationLink(destination: ClubDetailMainView(title: club.title), label: { ClubRow(clubInfo: club) })
-                    .listRowSeparator(.hidden)
-            }
-            .listStyle(.plain)
+            ClubSectionView()
             .navigationTitle("My Club !")
         }
     }

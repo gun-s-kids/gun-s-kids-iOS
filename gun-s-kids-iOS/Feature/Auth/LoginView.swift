@@ -103,7 +103,7 @@ struct SignInButton: View {
                         .foregroundColor(.white)
                         .frame(height: 57)
                         .frame(maxWidth: 305)
-                        .background(.blue)
+                        .background(Color.mainColor3)
                         .cornerRadius(10)
                     })
                 .buttonStyle(PressableButtonStyle())

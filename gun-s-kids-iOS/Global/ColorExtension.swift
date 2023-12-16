@@ -13,6 +13,10 @@ extension Color {
     static let primaryShadow = Color.primary.opacity(0.2)
     static let secondaryText = Color(hex: "#6e6e6e")
     static let background = Color(UIColor.systemGray6)
+    static let mainColor1 = Color(hex: "F3EEEA")
+    static let mainColor2 = Color(hex: "EBE3D5")
+    static let mainColor3 = Color(hex: "B0A695")
+    static let mainColor4 = Color(hex: "776B5D")
     
     init(hex: String) {
         let scanner = Scanner(string: hex)
