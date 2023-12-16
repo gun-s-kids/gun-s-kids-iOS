@@ -15,6 +15,7 @@ struct ClubListView: View {
                 CompanySectionView()
                 Spacer(minLength: 30)
                 ClubSectionView()
+                Spacer(minLength: 10)
             }.navigationTitle("동호회 찾기")
         }
     }

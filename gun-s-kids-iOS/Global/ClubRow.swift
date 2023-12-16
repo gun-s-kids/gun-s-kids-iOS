@@ -14,6 +14,7 @@ struct ClubRow: View {
         HStack(alignment: .center) {
             productImage
             productDescription
+                .frame(width: 200)
         }
         .frame(width: 350, height: 150)
         .background(Color.primary.colorInvert())
@@ -34,7 +35,7 @@ extension ClubRow {
     var productDescription: some View {
         VStack(alignment: .leading){
             Text(clubInfo.title)
-                .font(.headline)
+                .font(.system(size: 16))
                 .fontWeight(.medium)
                 .foregroundColor(.black)
                 .padding([.top, .bottom], 6)

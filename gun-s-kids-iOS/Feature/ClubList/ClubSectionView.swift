@@ -14,7 +14,7 @@ struct ClubSectionView: View {
                 ForEach(Club.sample) { club in
                     NavigationLink(destination: ClubDetailMainView(title: club.title)) {
                         ClubRow(clubInfo: club)
-                    }
+                    }.padding([.bottom], 5)
                 }
             }
         }
