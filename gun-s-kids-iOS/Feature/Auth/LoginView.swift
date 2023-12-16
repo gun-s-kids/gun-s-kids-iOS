@@ -54,7 +54,7 @@ struct LoginTextFieldVStack: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Email")
+            Text("이메일")
                 .foregroundColor(.secondary)
             TextField("", text: $email)
                            .frame(height: 50)
@@ -64,7 +64,7 @@ struct LoginTextFieldVStack: View {
                                     .stroke(Color.dcdcdc, lineWidth: 1))
             Spacer()
                 .frame(height: 20)
-            Text("Password")
+            Text("비밀번호")
                 .foregroundColor(.secondary)
             TextField("", text: $password)
                            .frame(height: 50)
@@ -98,7 +98,7 @@ struct SignInButton: View {
     var body: some View {
         Button(action: { print("") },
                label: {
-                    Text("Sign In")
+                    Text("로그인")
                         .font(.headline)
                         .foregroundColor(.white)
                         .frame(height: 57)

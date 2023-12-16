@@ -52,7 +52,7 @@ struct PasswordTextFieldVStack: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Password")
+            Text("비밀번호")
                 .foregroundColor(.secondary)
             TextField("", text: $password)
                            .frame(height: 50)
@@ -62,7 +62,7 @@ struct PasswordTextFieldVStack: View {
                             .stroke(isValid ? Color.dcdcdc : Color.red, lineWidth: 1))
             Spacer()
                 .frame(height: 20)
-            Text("Confirm Password")
+            Text("비밀번호 확인")
                 .foregroundColor(.secondary)
             TextField("", text: $confirmPassword)
                            .frame(height: 50)

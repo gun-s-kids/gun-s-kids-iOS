@@ -51,7 +51,7 @@ struct NicknameTextField: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Nickname")
+            Text("닉네임")
                 .foregroundColor(.secondary)
             TextField("", text: $nickname)
                            .frame(height: 50)
