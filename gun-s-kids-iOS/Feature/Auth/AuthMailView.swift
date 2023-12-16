@@ -15,7 +15,7 @@ struct AuthMailView: View {
 
     var body: some View {
         GeometryReader { geometry in
-            VStack(alignment: .center, spacing: 30) {
+            VStack(alignment: .center, spacing: 15) {
                 Spacer()
                     .frame(height: 50)
                 LoginExplainTextVStack(title: "메일 인증", subtitle: "등록한 메일로 발송된 인증 코드를 입력하세요!")
@@ -30,12 +30,14 @@ struct AuthMailView: View {
                           onCommit: {
                 }).padding()
                 AuthCodeResendVStack()
-                NavigationLink(destination: SignUpView(), isActive: $isButtonPressed) {
+                Text("인증번호가 일치하지 않습니다.")
+                    .foregroundColor(isValid ? .clear : .red)
+                NavigationLink(destination: SetPasswordView(), isActive: $isButtonPressed) {
                     Button(action: {
                         isButtonPressed = true
                     },
                            label: {
-                                Text("Sign Up")
+                                Text("인증하기")
                                     .font(.headline)
                                     .foregroundColor(.white)
                                     .frame(height: 57)
