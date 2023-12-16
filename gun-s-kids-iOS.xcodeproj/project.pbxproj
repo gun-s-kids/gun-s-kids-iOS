@@ -28,6 +28,7 @@
 		2DF2B9002B2D628C0037EBE0 /* ConfirmSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF2B8FF2B2D628C0037EBE0 /* ConfirmSignUpView.swift */; };
 		2DF2B9022B2D62A10037EBE0 /* SetNicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF2B9012B2D62A10037EBE0 /* SetNicknameView.swift */; };
 		2DF2B9042B2D73780037EBE0 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF2B9032B2D73780037EBE0 /* MainView.swift */; };
+		2DF2B9062B2D756B0037EBE0 /* FindEmailWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF2B9052B2D756B0037EBE0 /* FindEmailWebView.swift */; };
 		7C93057ACC44BDBB32C71DB0 /* Pods_gun_s_kids_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A499A11E81026D74CEEC582 /* Pods_gun_s_kids_iOS.framework */; };
 		9908FABB2B03564F00BEF286 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9908FABA2B03564F00BEF286 /* Company.swift */; };
 		9908FABF2B03583400BEF286 /* CompanySectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9908FABE2B03583400BEF286 /* CompanySectionView.swift */; };
@@ -58,6 +59,7 @@
 		2DF2B8FF2B2D628C0037EBE0 /* ConfirmSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmSignUpView.swift; sourceTree = "<group>"; };
 		2DF2B9012B2D62A10037EBE0 /* SetNicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNicknameView.swift; sourceTree = "<group>"; };
 		2DF2B9032B2D73780037EBE0 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		2DF2B9052B2D756B0037EBE0 /* FindEmailWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindEmailWebView.swift; sourceTree = "<group>"; };
 		9908FABA2B03564F00BEF286 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		9908FABE2B03583400BEF286 /* CompanySectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanySectionView.swift; sourceTree = "<group>"; };
 		99E70AAD2AF86FE800548E45 /* ClubListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubListView.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				2DA4A8B82AB5544D006E1342 /* LoginView.swift */,
+				2DF2B9052B2D756B0037EBE0 /* FindEmailWebView.swift */,
 				2DA4A8C42AC949BF006E1342 /* SetMailView.swift */,
 				2DA4A8BE2AB57B84006E1342 /* AuthMailView.swift */,
 				2DA4A8BC2AB57589006E1342 /* SetPasswordView.swift */,
@@ -328,6 +331,7 @@
 				2D5E37ED2AF78F5B003EA3FC /* ClubRow.swift in Sources */,
 				2DA4A8BD2AB57589006E1342 /* SetPasswordView.swift in Sources */,
 				2D44002C2B1C41E000BE7ADB /* ClubSectionView.swift in Sources */,
+				2DF2B9062B2D756B0037EBE0 /* FindEmailWebView.swift in Sources */,
 				2DF2B9042B2D73780037EBE0 /* MainView.swift in Sources */,
 				2D5E37DC2AD3D7BF003EA3FC /* ColorExtension.swift in Sources */,
 				2D5E37F02AF790E9003EA3FC /* Club.swift in Sources */,

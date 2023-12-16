@@ -80,7 +80,7 @@ struct LoginTextFieldVStack: View {
 struct FindUserInfoView: View {
     var body: some View {
         HStack {
-            NavigationLink(destination: SetMailView()) {
+            NavigationLink(destination: FindEmailWebView(url: "https://webmail.ehyundai.com/mail/find/id")) {
                 Text("이메일 찾기")
                      .font(.system(size: 16))
             }
