@@ -17,21 +17,25 @@ struct ClubListView: View {
                 ClubSectionView()
                 Spacer(minLength: 10)
             }.toolbar {
-                Button {} label: {
-                        Image("magnifyglass")
-                        .resizable()
-                        .frame(width: 30, height: 30)
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    HStack {
+                        NavigationLink(destination: MyClubView()) {
+                            Image("magnifyglass")
+                                .resizable()
+                                .frame(width: 30, height: 30)
+                        }
+                        NavigationLink(destination: MyClubView()) {
+                            Image("myclub")
+                                .resizable()
+                                .frame(width: 30, height: 30)
+                        }
+                        NavigationLink(destination: ProfileView()) {
+                            Image("gear")
+                                .resizable()
+                                .frame(width: 30, height: 30)
+                        }
                     }
-                Button {} label: {
-                        Image("myclub")
-                        .resizable()
-                        .frame(width: 30, height: 30)
-                    }
-                Button {} label: {
-                        Image("gear")
-                        .resizable()
-                        .frame(width: 30, height: 30)
-                    }
+                }
             }
         }
     }
