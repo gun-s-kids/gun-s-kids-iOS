@@ -12,29 +12,35 @@ struct MainView: View {
 
     enum Tab {
         case list
-        case myClub
-        case profile
+        case board
+        case calendar
     }
 
     var body: some View {
         TabView(selection: $selection) {
             ClubListView()
                 .tabItem {
-                    Image(systemName: "magnifyingglass")
+                    selection == .list ?
+                    Image("home_clicked") :
+                    Image("home")
                 }
                 .tag(Tab.list)
                 
             MyClubView()
                 .tabItem {
-                    Image(systemName: "person.3.fill")
+                    selection == .board ?
+                    Image("board_clicked") :
+                    Image("board")
                 }
                 .edgesIgnoringSafeArea(.all)
-                .tag(Tab.myClub)
+                .tag(Tab.board)
             ProfileView()
                 .tabItem {
-                    Image(systemName: "person.circle")
+                    selection == .calendar ?
+                    Image("calendar_clicked") :
+                    Image("calendar")
                 }
-                .tag(Tab.profile)
+                .tag(Tab.calendar)
         }
         .accentColor(Color.mainColor4)
     }

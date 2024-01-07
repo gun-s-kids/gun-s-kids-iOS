@@ -16,7 +16,23 @@ struct ClubListView: View {
                 Spacer(minLength: 30)
                 ClubSectionView()
                 Spacer(minLength: 10)
-            }.navigationTitle("동호회 찾기")
+            }.toolbar {
+                Button {} label: {
+                        Image("magnifyglass")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                    }
+                Button {} label: {
+                        Image("myclub")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                    }
+                Button {} label: {
+                        Image("gear")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                    }
+            }
         }
     }
 }
