@@ -9,4 +9,5 @@ target 'gun-s-kids-iOS' do
   pod 'AEOTPTextField'
   pod 'PanModal'
   pod 'Parchment'
+  pod 'Alamofire'
 end
