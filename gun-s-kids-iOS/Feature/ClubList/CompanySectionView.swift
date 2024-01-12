@@ -6,13 +6,16 @@
 //
 
 import SwiftUI
+import URLImage
 
 struct CompanySectionView: View {
+    var companyInfoList: [CompanyInfo]
+    
     var body: some View {
         if #available(iOS 16.0, *) {
             ScrollView(.horizontal) {
                 LazyHStack {
-                    ForEach(Company.sample) { company in
+                    ForEach(companyInfoList) { company in
                         CompanyItemView(company: company)
                     }
                 }
@@ -22,7 +25,7 @@ struct CompanySectionView: View {
         } else {
             ScrollView(.horizontal) {
                 LazyHStack {
-                    ForEach(Company.sample) { company in
+                    ForEach(companyInfoList) { company in
                         CompanyItemView(company: company)
                     }
                 }
@@ -33,21 +36,24 @@ struct CompanySectionView: View {
 }
 
 struct CompanyItemView: View {
-    let company: Company
+    let company: CompanyInfo
 
     var body: some View {
         VStack {
-            company.image
-                .resizable()
-                .clipShape(Circle())
-                .frame(width: 90.0, height: 90.0)
-            Text(company.name)
+            URLImage(URL(string: company.companyImg)!,
+                     content: { image in
+                        image
+                            .resizable()
+                            .clipShape(Circle())
+                            .frame(width: 90.0, height: 90.0)
+            })
+            Text(company.companyNm)
         }.padding([.horizontal], 5)
     }
 }
 
 struct CompanySectionView_Previews: PreviewProvider {
     static var previews: some View {
-        CompanySectionView()
+        CompanySectionView(companyInfoList: [CompanyInfo(companyNo: 1, companyNm: "aa", companyImg: "aaa")])
     }
 }

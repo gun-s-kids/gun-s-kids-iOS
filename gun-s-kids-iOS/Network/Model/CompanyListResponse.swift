@@ -12,9 +12,15 @@ struct CompanyListResponse: Codable {
     let data: [CompanyInfo]
 }
 
-struct CompanyInfo: Codable {
+struct CompanyInfo: Codable, Identifiable {
+    let id = UUID()
     let companyNo: Int
     let companyNm: String
     let companyImg: String
+    
+    private enum CodingKeys: String, CodingKey {
+        case companyNo
+        case companyNm
+        case companyImg
+    }
 }
-

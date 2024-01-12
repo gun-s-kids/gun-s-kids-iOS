@@ -8,11 +8,17 @@
 import SwiftUI
 
 struct ClubListView: View {
+    @StateObject var viewModel: ClubListViewModel
+    
+    init(){
+        self._viewModel = StateObject.init(wrappedValue: ClubListViewModel())
+    }
+    
     var body: some View {
         NavigationView {
             ScrollView(.vertical) {
                 Spacer(minLength: 30)
-                CompanySectionView()
+                CompanySectionView(companyInfoList: viewModel.companyInfoList)
                 Spacer(minLength: 30)
                 ClubSectionView()
                 Spacer(minLength: 10)
