@@ -21,7 +21,7 @@ class ClubListViewModel: ObservableObject {
             fetchCompanyList()
         }
     
-    func fetchCompanyList(){
+    func fetchCompanyList() {
         APIService.shared.getCompanyListData()
             .sink { completion in
                 switch completion {

@@ -54,6 +54,6 @@ struct CompanyItemView: View {
 
 struct CompanySectionView_Previews: PreviewProvider {
     static var previews: some View {
-        CompanySectionView(companyInfoList: [CompanyInfo(companyNo: 1, companyNm: "aa", companyImg: "aaa")])
+        CompanySectionView(companyInfoList: [CompanyInfo(companyNo: 1, companyNm: "현대홈쇼핑", companyImg: "https://storage.googleapis.com/gunskid/afc3a953-84f3-4e38-b4e3-250a92b19f48")])
     }
 }

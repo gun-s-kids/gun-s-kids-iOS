@@ -20,6 +20,8 @@
 		2D5E37EB2AF78EE9003EA3FC /* MyClubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E37EA2AF78EE9003EA3FC /* MyClubView.swift */; };
 		2D5E37ED2AF78F5B003EA3FC /* ClubRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E37EC2AF78F5B003EA3FC /* ClubRow.swift */; };
 		2D5E37F02AF790E9003EA3FC /* Club.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E37EF2AF790E9003EA3FC /* Club.swift */; };
+		2D7788EA2B52611800C38902 /* BoardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7788E92B52611800C38902 /* BoardListView.swift */; };
+		2D7788EC2B52626800C38902 /* BoardRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7788EB2B52626800C38902 /* BoardRow.swift */; };
 		2DA4A8B92AB5544D006E1342 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4A8B82AB5544D006E1342 /* LoginView.swift */; };
 		2DA4A8BB2AB565CD006E1342 /* PressableButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4A8BA2AB565CD006E1342 /* PressableButtonStyle.swift */; };
 		2DA4A8BD2AB57589006E1342 /* SetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4A8BC2AB57589006E1342 /* SetPasswordView.swift */; };
@@ -61,6 +63,8 @@
 		2D5E37EA2AF78EE9003EA3FC /* MyClubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyClubView.swift; path = "gun-s-kids-iOS/Global/MyClubView.swift"; sourceTree = SOURCE_ROOT; };
 		2D5E37EC2AF78F5B003EA3FC /* ClubRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ClubRow.swift; path = "gun-s-kids-iOS/Global/ClubRow.swift"; sourceTree = SOURCE_ROOT; };
 		2D5E37EF2AF790E9003EA3FC /* Club.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Club.swift; sourceTree = "<group>"; };
+		2D7788E92B52611800C38902 /* BoardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardListView.swift; sourceTree = "<group>"; };
+		2D7788EB2B52626800C38902 /* BoardRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardRow.swift; sourceTree = "<group>"; };
 		2DA4A8B82AB5544D006E1342 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		2DA4A8BA2AB565CD006E1342 /* PressableButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressableButtonStyle.swift; sourceTree = "<group>"; };
 		2DA4A8BC2AB57589006E1342 /* SetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPasswordView.swift; sourceTree = "<group>"; };
@@ -142,6 +146,15 @@
 				2D44002E2B1C48BF00BE7ADB /* ClubDetailMainView.swift */,
 			);
 			path = ClubDetail;
+			sourceTree = "<group>";
+		};
+		2D7788E82B5260FA00C38902 /* Board */ = {
+			isa = PBXGroup;
+			children = (
+				2D7788E92B52611800C38902 /* BoardListView.swift */,
+				2D7788EB2B52626800C38902 /* BoardRow.swift */,
+			);
+			path = Board;
 			sourceTree = "<group>";
 		};
 		2DA93C622B4FFE0D00C3DCA7 /* Network */ = {
@@ -229,6 +242,7 @@
 		99CAC7522ACFC6B90070B64E /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				2D7788E82B5260FA00C38902 /* Board */,
 				2DF2B9072B2D76A20037EBE0 /* FindPassword */,
 				2D44002D2B1C48AE00BE7ADB /* ClubDetail */,
 				99E70AAC2AF86FD700548E45 /* ClubList */,
@@ -409,6 +423,7 @@
 			files = (
 				2DA93C6B2B5012EA00C3DCA7 /* APIService.swift in Sources */,
 				2DA93C662B5004C800C3DCA7 /* CompanyListResponse.swift in Sources */,
+				2D7788EC2B52626800C38902 /* BoardRow.swift in Sources */,
 				2D5E37E22AD3E966003EA3FC /* EditProfileView.swift in Sources */,
 				2DA93C792B51697600C3DCA7 /* ClubListViewModel.swift in Sources */,
 				2DA4A8B92AB5544D006E1342 /* LoginView.swift in Sources */,
@@ -420,6 +435,7 @@
 				2DF2B9062B2D756B0037EBE0 /* FindEmailWebView.swift in Sources */,
 				2DF2B9042B2D73780037EBE0 /* MainView.swift in Sources */,
 				2D5E37DC2AD3D7BF003EA3FC /* ColorExtension.swift in Sources */,
+				2D7788EA2B52611800C38902 /* BoardListView.swift in Sources */,
 				2DA93C722B50188000C3DCA7 /* API.swift in Sources */,
 				2D5E37F02AF790E9003EA3FC /* Club.swift in Sources */,
 				2DF2B9022B2D62A10037EBE0 /* SetNicknameView.swift in Sources */,
