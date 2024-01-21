@@ -6,12 +6,18 @@
 //
 
 import SwiftUI
+import URLImage
+import URLImageStore
 
 @main
 struct gun_s_kids_iOSApp: App {
     var body: some Scene {
-        WindowGroup {
+        let urlImageService = URLImageService(fileStore: URLImageFileStore(),
+                                              inMemoryStore: URLImageInMemoryStore())
+
+        return WindowGroup {
             MainView()
+                .environment(\.urlImageService, urlImageService)
         }
     }
 }

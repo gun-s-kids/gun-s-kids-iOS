@@ -11,8 +11,9 @@ struct MyClubView: View {
     
     var body: some View {
         NavigationView {
-            ClubSectionView()
-            .navigationTitle("My Club !")
+            Text("ds")
+//            ClubSectionView()
+//            .navigationTitle("My Club !")
         }
     }
 }

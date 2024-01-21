@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
+import URLImage
 
 struct ClubRow: View {
-    let clubInfo: Club
+    let clubInfo: Datum
 
     var body: some View {
         HStack(alignment: .center) {
@@ -25,11 +26,15 @@ struct ClubRow: View {
 
 extension ClubRow {
     var productImage: some View {
-        Image(clubInfo.clubImg)
-            .resizable()
-            .scaledToFill()
-            .frame(width: 100, height: 100)
-            .clipped()
+        URLImage(URL(string: clubInfo.clubImg)!,
+                 content: { image in
+                    image
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 100, height: 100)
+                        .clipped()
+
+        })
     }
 
     var productDescription: some View {
@@ -40,17 +45,17 @@ extension ClubRow {
                 .foregroundColor(.black)
                 .padding([.top, .bottom], 6)
             
-            Text("Since " + clubInfo.foundationDate)
+            Text("Since " + "2022. 08. 08")
                 .font(.body)
                 .foregroundColor(Color.secondaryText)
                 .padding(.bottom, 6)
             
             HStack(spacing: 0) {
-                Text(clubInfo.company)
+                Text("현대백화점")
                     .foregroundColor(.black)
                 Text(" | ")
                     .foregroundColor(.black)
-                Text("멤버 \(clubInfo.members)")
+                Text("멤버 10")
                     .foregroundColor(.black)
             }
         }
@@ -61,6 +66,6 @@ extension ClubRow {
 
 struct ClubRow_Previews: PreviewProvider {
     static var previews: some View {
-        ClubRow(clubInfo: Club(clubNm: "[논알콜] 소.취.생 (소소한 취미 생활)", clubImg: "fig", foundationDate: "2022. 08. 08", members: 32, company: "한섬"))
+        ClubRow(clubInfo: Datum(clubNo: 1, companyNo: 1, clubNm: "클라이밍 동호회", clubImg: "https://storage.googleapis.com/gunskid/adf55b4e-767f-4cc0-90b5-5b4ccbe8886f"))
     }
 }

@@ -20,17 +20,17 @@ struct ClubListView: View {
                 Spacer(minLength: 30)
                 CompanySectionView(viewModel: viewModel)
                 Spacer(minLength: 30)
-                ClubSectionView()
+                ClubSectionView(viewModel: viewModel)
                 Spacer(minLength: 10)
             }.toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     HStack {
-                        NavigationLink(destination: MyClubView()) {
+                        NavigationLink(destination: ProfileView()) {
                             Image("magnifyglass")
                                 .resizable()
                                 .frame(width: 30, height: 30)
                         }
-                        NavigationLink(destination: MyClubView()) {
+                        NavigationLink(destination: ProfileView()) {
                             Image("myclub")
                                 .resizable()
                                 .frame(width: 30, height: 30)

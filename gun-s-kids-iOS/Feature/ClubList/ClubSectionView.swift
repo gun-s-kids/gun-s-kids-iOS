@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import URLImage
 
 struct ClubSectionView: View {
+    @ObservedObject var viewModel: ClubListViewModel
+
     var body: some View {
         ScrollView(.vertical) {
             LazyVStack {
-                ForEach(Club.sample) { club in
+                ForEach(viewModel.clubInfoList) { club in
                     NavigationLink(destination: ClubDetailMainView(title: club.clubNm)) {
                         ClubRow(clubInfo: club)
                     }.padding([.bottom], 5)
@@ -37,6 +40,6 @@ struct ClubItemView: View {
 
 struct ClubSectionView_Previews: PreviewProvider {
     static var previews: some View {
-        ClubSectionView()
+        ClubSectionView(viewModel: ClubListViewModel())
     }
 }
