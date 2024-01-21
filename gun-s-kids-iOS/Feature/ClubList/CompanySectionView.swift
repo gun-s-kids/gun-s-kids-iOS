@@ -10,21 +10,29 @@ import URLImage
 
 struct CompanySectionView: View {
     @ObservedObject var viewModel: ClubListViewModel
+    @State private var scrollToIndex: Int = 30
     
     var body: some View {
         if #available(iOS 16.0, *) {
             ScrollView(.horizontal) {
-                LazyHStack {
-                    ForEach(viewModel.companyInfoList) { company in
-                        CompanyItemView(company: company)
-                            .onTapGesture {
-                                viewModel.fetchClubList(selectedIndex: company.companyNo)
-                            }
+                ScrollViewReader { proxy in
+                    LazyHStack {
+                        ForEach(viewModel.companyInfoList) { company in
+                            CompanyItemView(company: company)
+                                .onTapGesture {
+                                    viewModel.fetchClubList(selectedIndex: company.companyNo)
+                                    scrollToIndex = company.companyNo * 30
+                                }
+                        }
                     }
-                }.padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: -10))
+                    .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: -10))
+                    .onChange(of: scrollToIndex, perform: { value in
+                        proxy.scrollTo(value, anchor: .center)
+                    })
+                }
+                .frame(maxHeight: 150.0)
+                .scrollIndicators(.hidden)
             }
-            .frame(maxHeight: 150.0)
-            .scrollIndicators(.hidden)
         } else {
             ScrollView(.horizontal) {
                 LazyHStack {

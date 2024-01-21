@@ -34,7 +34,7 @@ class APIService {
         .eraseToAnyPublisher()
     }
     
-    func getClubListData(companyNo: Int) -> AnyPublisher<[Datum], Error> {
+    func getClubListData(companyNo: Int) -> AnyPublisher<[Club], Error> {
         let parameter: Parameters = ["companyNo" : "\(companyNo)"]
         
         return Future() { promise in

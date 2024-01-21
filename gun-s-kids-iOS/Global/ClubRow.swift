@@ -9,7 +9,7 @@ import SwiftUI
 import URLImage
 
 struct ClubRow: View {
-    let clubInfo: Datum
+    let clubInfo: Club
 
     var body: some View {
         HStack(alignment: .center) {
@@ -45,17 +45,17 @@ extension ClubRow {
                 .foregroundColor(.black)
                 .padding([.top, .bottom], 6)
             
-            Text("Since " + "2022. 08. 08")
+            Text("Since " + String(clubInfo.createdDate.prefix(10)))
                 .font(.body)
                 .foregroundColor(Color.secondaryText)
                 .padding(.bottom, 6)
             
             HStack(spacing: 0) {
-                Text("현대백화점")
+                Text(clubInfo.companyNm)
                     .foregroundColor(.black)
                 Text(" | ")
                     .foregroundColor(.black)
-                Text("멤버 10")
+                Text("멤버 \(clubInfo.memberCount)")
                     .foregroundColor(.black)
             }
         }
@@ -66,6 +66,6 @@ extension ClubRow {
 
 struct ClubRow_Previews: PreviewProvider {
     static var previews: some View {
-        ClubRow(clubInfo: Datum(clubNo: 1, companyNo: 1, clubNm: "클라이밍 동호회", clubImg: "https://storage.googleapis.com/gunskid/adf55b4e-767f-4cc0-90b5-5b4ccbe8886f"))
+        ClubRow(clubInfo: Club(clubNo: 1, companyNm: "현대홈쇼핑", clubNm: "꽃꽂이 동호회", clubImg: "https://storage.googleapis.com/gunskid/3a51f6ae-233e-47aa-b90e-29cba7c8d384", memberCount: 10, createdDate: "2024-01-21T07:20:25.824219"))
     }
 }

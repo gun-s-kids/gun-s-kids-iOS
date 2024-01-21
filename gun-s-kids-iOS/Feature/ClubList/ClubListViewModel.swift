@@ -13,8 +13,7 @@ class ClubListViewModel: ObservableObject {
     var subscriptions = Set<AnyCancellable>()
     
     @Published var companyInfoList = [CompanyInfo]()
-    @Published var clubInfoList = [Datum]()
-    @Published var clubList = [Club]()
+    @Published var clubInfoList = [Club]()
     @Published var selectedIndex: Int?
     
     init()
@@ -47,7 +46,7 @@ class ClubListViewModel: ObservableObject {
                 case .finished:
                     print("[API] getClubList Finish")
                 }
-            } receiveValue: { (value: [Datum]) in
+            } receiveValue: { (value: [Club]) in
                 self.clubInfoList = value
                 print(self.clubInfoList)
             }.store(in: &subscriptions)
