@@ -8,7 +8,8 @@
 import Foundation
 
 struct CompanyListResponse: Codable {
-    let status, message: String
+    let status: String
+    let code: Int
     let data: [CompanyInfo]
 }
 
