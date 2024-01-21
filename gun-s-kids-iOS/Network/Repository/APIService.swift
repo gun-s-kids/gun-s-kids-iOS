@@ -33,4 +33,27 @@ class APIService {
         }
         .eraseToAnyPublisher()
     }
+    
+    func getClubListData(companyNo: Int) -> AnyPublisher<[Datum], Error> {
+        let parameter: Parameters = ["companyNo" : "\(companyNo)"]
+        
+        return Future() { promise in
+            AF.request(API.getClubList.url, method: .get, parameters: parameter)
+                .publishDecodable(type: ClubListResponse.self)
+                .value()
+                .sink { completion in
+                    switch completion {
+                    case .finished:
+                        print("getClubListData finished")
+                    case .failure(let error):
+                        print("getClubListData error: \(error)")
+                        promise(.failure(error))
+                    }
+                } receiveValue: { result in
+                    promise(.success(result.data))
+                }
+                .store(in: &self.cancellable)
+        }
+        .eraseToAnyPublisher()
+    }
 }

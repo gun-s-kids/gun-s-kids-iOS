@@ -13,7 +13,9 @@ class ClubListViewModel: ObservableObject {
     var subscriptions = Set<AnyCancellable>()
     
     @Published var companyInfoList = [CompanyInfo]()
+    @Published var clubInfoList = [Datum]()
     @Published var clubList = [Club]()
+    @Published var selectedIndex: Int?
     
     init()
         {
@@ -34,6 +36,20 @@ class ClubListViewModel: ObservableObject {
                 self.companyInfoList = value
                 print(self.companyInfoList)
             }.store(in: &subscriptions)
-        
+    }
+    
+    func fetchClubList(selectedIndex: Int) {
+        APIService.shared.getClubListData(companyNo: selectedIndex)
+            .sink { completion in
+                switch completion {
+                case .failure(let err):
+                    print("[API] getClubList ERROR : \(err)")
+                case .finished:
+                    print("[API] getClubList Finish")
+                }
+            } receiveValue: { (value: [Datum]) in
+                self.clubInfoList = value
+                print(self.clubInfoList)
+            }.store(in: &subscriptions)
     }
 }

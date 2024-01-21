@@ -18,7 +18,7 @@ struct ClubListView: View {
         NavigationView {
             ScrollView(.vertical) {
                 Spacer(minLength: 30)
-                CompanySectionView(companyInfoList: viewModel.companyInfoList)
+                CompanySectionView(viewModel: viewModel)
                 Spacer(minLength: 30)
                 ClubSectionView()
                 Spacer(minLength: 10)

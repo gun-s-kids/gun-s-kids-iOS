@@ -9,28 +9,32 @@ import SwiftUI
 import URLImage
 
 struct CompanySectionView: View {
-    var companyInfoList: [CompanyInfo]
+    @ObservedObject var viewModel: ClubListViewModel
     
     var body: some View {
         if #available(iOS 16.0, *) {
             ScrollView(.horizontal) {
                 LazyHStack {
-                    ForEach(companyInfoList) { company in
+                    ForEach(viewModel.companyInfoList) { company in
                         CompanyItemView(company: company)
+                            .onTapGesture {
+                                viewModel.fetchClubList(selectedIndex: company.companyNo)
+                            }
                     }
-                }
+                }.padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: -10))
             }
             .frame(maxHeight: 150.0)
             .scrollIndicators(.hidden)
         } else {
             ScrollView(.horizontal) {
                 LazyHStack {
-                    ForEach(companyInfoList) { company in
+                    ForEach(viewModel.companyInfoList) { company in
                         CompanyItemView(company: company)
                     }
-                }
+                }.padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: -10))
             }
             .frame(maxHeight: 160.0)
+            
         }
     }
 }
@@ -45,7 +49,7 @@ struct CompanyItemView: View {
                         image
                             .resizable()
                             .clipShape(Circle())
-                            .frame(width: 90.0, height: 90.0)
+                            .frame(width: 70.0, height: 70.0)
             })
             Text(company.companyNm)
         }.padding([.horizontal], 5)
@@ -54,6 +58,6 @@ struct CompanyItemView: View {
 
 struct CompanySectionView_Previews: PreviewProvider {
     static var previews: some View {
-        CompanySectionView(companyInfoList: [CompanyInfo(companyNo: 1, companyNm: "현대홈쇼핑", companyImg: "https://storage.googleapis.com/gunskid/afc3a953-84f3-4e38-b4e3-250a92b19f48")])
+        CompanySectionView(viewModel: ClubListViewModel())
     }
 }

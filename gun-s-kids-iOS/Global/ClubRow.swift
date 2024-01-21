@@ -25,7 +25,7 @@ struct ClubRow: View {
 
 extension ClubRow {
     var productImage: some View {
-        Image(clubInfo.imageName)
+        Image(clubInfo.clubImg)
             .resizable()
             .scaledToFill()
             .frame(width: 100, height: 100)
@@ -34,7 +34,7 @@ extension ClubRow {
 
     var productDescription: some View {
         VStack(alignment: .leading){
-            Text(clubInfo.title)
+            Text(clubInfo.clubNm)
                 .font(.system(size: 16))
                 .fontWeight(.medium)
                 .foregroundColor(.black)
@@ -61,6 +61,6 @@ extension ClubRow {
 
 struct ClubRow_Previews: PreviewProvider {
     static var previews: some View {
-        ClubRow(clubInfo: Club(title: "[논알콜] 소.취.생 (소소한 취미 생활)", imageName: "fig", foundationDate: "2022. 08. 08", members: 32, company: "한섬"))
+        ClubRow(clubInfo: Club(clubNm: "[논알콜] 소.취.생 (소소한 취미 생활)", clubImg: "fig", foundationDate: "2022. 08. 08", members: 32, company: "한섬"))
     }
 }

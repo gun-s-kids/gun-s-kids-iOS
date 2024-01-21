@@ -12,7 +12,7 @@ struct ClubSectionView: View {
         ScrollView(.vertical) {
             LazyVStack {
                 ForEach(Club.sample) { club in
-                    NavigationLink(destination: ClubDetailMainView(title: club.title)) {
+                    NavigationLink(destination: ClubDetailMainView(title: club.clubNm)) {
                         ClubRow(clubInfo: club)
                     }.padding([.bottom], 5)
                 }
