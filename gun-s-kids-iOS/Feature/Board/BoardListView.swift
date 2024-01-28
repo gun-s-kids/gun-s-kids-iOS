@@ -9,15 +9,34 @@ import SwiftUI
 
 struct BoardListView: View {
     var body: some View {
-        ScrollView(.vertical) {
-            LazyVStack {
-                BoardRow()
-                BoardRow()
-                BoardRow()
-                BoardRow()
+        NavigationView {
+            ScrollView(.vertical) {
+                LazyVStack(alignment: .leading) {
+                    ForEach(BoardInfo.sample) { board in
+                        BoardRow(boardInfo: board)
+                    }
+                }
+            }.toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    HStack {
+                        NavigationLink(destination: ProfileView()) {
+                            Image("magnifyglass")
+                                .resizable()
+                                .frame(width: 30, height: 30)
+                        }
+                        NavigationLink(destination: ProfileView()) {
+                            Image("myclub")
+                                .resizable()
+                                .frame(width: 30, height: 30)
+                        }
+                        NavigationLink(destination: ProfileView()) {
+                            Image("gear")
+                                .resizable()
+                                .frame(width: 30, height: 30)
+                        }
+                    }
+                }
             }
-            .padding([.bottom], 5)
-            .listRowSeparator(.visible)
         }
     }
 }

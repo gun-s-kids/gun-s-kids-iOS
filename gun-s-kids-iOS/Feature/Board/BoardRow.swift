@@ -8,45 +8,49 @@
 import SwiftUI
 
 struct BoardRow: View {
+    let boardInfo: BoardInfo
+    
     var body: some View {
         VStack(alignment: .leading) {
             profileStack
-            boardInfo
+            boardDetailInfo
             likeAndCommentStack
+            Divider()
         }
-        .frame(width: .infinity, height: 200)
+        .padding([.horizontal], 20)
+        .frame(width: UIScreen.main.bounds.width, height: 160)
     }
 }
 
 extension BoardRow {
     var profileStack: some View {
         HStack(alignment: .center, spacing: 10) {
-            Image("banana")
+            Image(boardInfo.profileImg)
                 .resizable()
                 .scaledToFill()
                 .frame(width: 30, height: 30)
                 .clipShape(Circle())
             
             VStack(alignment: .leading, spacing: 3) {
-                Text("3분 전")
+                Text(boardInfo.createdDate)
                     .foregroundColor(.black)
                     .font(.system(size: 11))
-                Text("방금 전 현대 IT&E • 볼빵빵짱구")
+                Text("\(boardInfo.companyNm) • \(boardInfo.nickname)")
                     .foregroundColor(.black)
                     .font(.system(size: 11))
             }
         }
     }
     
-    var boardInfo: some View {
+    var boardDetailInfo: some View {
         VStack(alignment: .leading) {
-            Text("23.09.04 정모 후기!!")
+            Text(boardInfo.title)
                 .font(.system(size: 20))
                 .fontWeight(.medium)
                 .foregroundColor(.black)
                 .padding([.top, .bottom], 3)
             
-            Text("너무너무재밌었어요옹너무너무 재밌었어요옹너무")
+            Text(boardInfo.description)
                 .font(.system(size: 16))
                 .foregroundColor(Color.secondaryText)
                 .lineLimit(2)
@@ -59,13 +63,13 @@ extension BoardRow {
             Image("like")
                 .resizable()
                 .frame(width: 25, height: 25)
-            Text("5")
+            Text("\(boardInfo.likeCount)")
                 .font(.system(size: 16))
                 .foregroundColor(Color.secondaryText)
             Image("comment")
                 .resizable()
                 .frame(width: 25, height: 25)
-            Text("5")
+            Text("\(boardInfo.commentCount)")
                 .font(.system(size: 16))
                 .foregroundColor(Color.secondaryText)
         }
@@ -74,6 +78,6 @@ extension BoardRow {
 
 struct BoardRow_Previews: PreviewProvider {
     static var previews: some View {
-        BoardRow()
+        BoardRow(boardInfo: BoardInfo.sample[0])
     }
 }

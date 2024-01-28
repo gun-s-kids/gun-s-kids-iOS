@@ -26,7 +26,7 @@ struct MainView: View {
                 }
                 .tag(Tab.list)
                 
-            ProfileView()
+            BoardListView()
                 .tabItem {
                     selection == .board ?
                     Image("board_clicked") :

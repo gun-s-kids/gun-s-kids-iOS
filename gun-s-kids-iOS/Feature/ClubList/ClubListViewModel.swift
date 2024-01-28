@@ -11,6 +11,7 @@ import Alamofire
 
 class ClubListViewModel: ObservableObject {
     var subscriptions = Set<AnyCancellable>()
+    var localCacheClub = Dictionary<Int, [Club]>()
     
     @Published var companyInfoList = [CompanyInfo]()
     @Published var clubInfoList = [Club]()
@@ -38,17 +39,22 @@ class ClubListViewModel: ObservableObject {
     }
     
     func fetchClubList(selectedIndex: Int) {
-        APIService.shared.getClubListData(companyNo: selectedIndex)
-            .sink { completion in
-                switch completion {
-                case .failure(let err):
-                    print("[API] getClubList ERROR : \(err)")
-                case .finished:
-                    print("[API] getClubList Finish")
-                }
-            } receiveValue: { (value: [Club]) in
-                self.clubInfoList = value
-                print(self.clubInfoList)
-            }.store(in: &subscriptions)
+        if localCacheClub[selectedIndex] == nil {
+            APIService.shared.getClubListData(companyNo: selectedIndex)
+                .sink { completion in
+                    switch completion {
+                    case .failure(let err):
+                        print("[API] getClubList ERROR : \(err)")
+                    case .finished:
+                        print("[API] getClubList Finish")
+                    }
+                } receiveValue: { (value: [Club]) in
+                    self.clubInfoList = value
+                    self.localCacheClub[selectedIndex] = value
+                    print(self.clubInfoList)
+                }.store(in: &subscriptions)
+        } else {
+            self.clubInfoList = localCacheClub[selectedIndex] ?? []
+        }
     }
 }
