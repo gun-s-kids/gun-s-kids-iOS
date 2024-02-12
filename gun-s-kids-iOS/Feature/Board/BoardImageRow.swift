@@ -1,28 +1,44 @@
 //
-//  BoardRow.swift
+//  BoardImageRow.swift
 //  gun-s-kids-iOS
 //
-//  Created by 권준상 on 2024/01/13.
+//  Created by 권준상 on 2024/02/12.
 //
 
 import SwiftUI
+import URLImage
 
-struct BoardRow: View {
+struct BoardImageRow: View {
     let boardInfo: BoardInfo
     
     var body: some View {
-        VStack(alignment: .leading) {
-            profileStack
-            boardDetailInfo
-            likeAndCommentStack
-            Divider()
+        HStack {
+            VStack(alignment: .leading) {
+                profileStack
+                boardDetailInfo
+                likeAndCommentStack
+                Divider()
+            }
+            postImage
         }
         .padding([.horizontal], 20)
         .frame(width: UIScreen.main.bounds.width, height: 160)
+        
     }
 }
 
-extension BoardRow {
+extension BoardImageRow {
+    var postImage: some View {
+        URLImage(URL(string: boardInfo.postImg[0].url)!,
+                 content: { image in
+                    image
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 100, height: 100)
+                        .clipped()
+        })
+    }
+    
     var profileStack: some View {
         HStack(alignment: .center, spacing: 10) {
             Image(boardInfo.profileImg)
@@ -76,8 +92,8 @@ extension BoardRow {
     }
 }
 
-struct BoardRow_Previews: PreviewProvider {
+struct BoardImageRow_Previews: PreviewProvider {
     static var previews: some View {
-        BoardRow(boardInfo: BoardInfo.sample[0])
+        BoardImageRow(boardInfo: BoardInfo.sample[0])
     }
 }

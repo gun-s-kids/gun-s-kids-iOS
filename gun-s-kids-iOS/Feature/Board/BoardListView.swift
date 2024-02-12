@@ -13,7 +13,11 @@ struct BoardListView: View {
             ScrollView(.vertical) {
                 LazyVStack(alignment: .leading) {
                     ForEach(BoardInfo.sample) { board in
-                        BoardRow(boardInfo: board)
+                        if board.postImg.count > 0 {
+                            BoardImageRow(boardInfo: board)
+                        } else {
+                            BoardRow(boardInfo: board)
+                        }
                     }
                 }
             }.toolbar {
