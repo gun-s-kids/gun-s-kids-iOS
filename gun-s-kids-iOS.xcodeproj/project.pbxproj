@@ -37,6 +37,8 @@
 		2DA93C772B5166EA00C3DCA7 /* URLImageStore in Frameworks */ = {isa = PBXBuildFile; productRef = 2DA93C762B5166EA00C3DCA7 /* URLImageStore */; };
 		2DA93C792B51697600C3DCA7 /* ClubListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA93C782B51697600C3DCA7 /* ClubListViewModel.swift */; };
 		2DAAD4002B79F7B200DFD0B2 /* BoardImageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD3FF2B79F7B200DFD0B2 /* BoardImageRow.swift */; };
+		2DAAD4032B7A0BCF00DFD0B2 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD4022B7A0BCF00DFD0B2 /* SettingView.swift */; };
+		2DAAD4052B7A117000DFD0B2 /* ResetNicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD4042B7A117000DFD0B2 /* ResetNicknameView.swift */; };
 		2DF2B9002B2D628C0037EBE0 /* ConfirmSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF2B8FF2B2D628C0037EBE0 /* ConfirmSignUpView.swift */; };
 		2DF2B9022B2D62A10037EBE0 /* SetNicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF2B9012B2D62A10037EBE0 /* SetNicknameView.swift */; };
 		2DF2B9042B2D73780037EBE0 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF2B9032B2D73780037EBE0 /* MainView.swift */; };
@@ -81,6 +83,8 @@
 		2DA93C712B50188000C3DCA7 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		2DA93C782B51697600C3DCA7 /* ClubListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubListViewModel.swift; sourceTree = "<group>"; };
 		2DAAD3FF2B79F7B200DFD0B2 /* BoardImageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardImageRow.swift; sourceTree = "<group>"; };
+		2DAAD4022B7A0BCF00DFD0B2 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		2DAAD4042B7A117000DFD0B2 /* ResetNicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetNicknameView.swift; sourceTree = "<group>"; };
 		2DF2B8FF2B2D628C0037EBE0 /* ConfirmSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmSignUpView.swift; sourceTree = "<group>"; };
 		2DF2B9012B2D62A10037EBE0 /* SetNicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNicknameView.swift; sourceTree = "<group>"; };
 		2DF2B9032B2D73780037EBE0 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -209,6 +213,15 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		2DAAD4012B7A0BC000DFD0B2 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				2DAAD4022B7A0BCF00DFD0B2 /* SettingView.swift */,
+				2DAAD4042B7A117000DFD0B2 /* ResetNicknameView.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
 		2DF2B9072B2D76A20037EBE0 /* FindPassword */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,6 +264,7 @@
 		99CAC7522ACFC6B90070B64E /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				2DAAD4012B7A0BC000DFD0B2 /* Setting */,
 				2D7788E82B5260FA00C38902 /* Board */,
 				2DF2B9072B2D76A20037EBE0 /* FindPassword */,
 				2D44002D2B1C48AE00BE7ADB /* ClubDetail */,
@@ -434,6 +448,7 @@
 				2DAAD4002B79F7B200DFD0B2 /* BoardImageRow.swift in Sources */,
 				2DA93C662B5004C800C3DCA7 /* CompanyListResponse.swift in Sources */,
 				2D7788EC2B52626800C38902 /* BoardRow.swift in Sources */,
+				2DAAD4032B7A0BCF00DFD0B2 /* SettingView.swift in Sources */,
 				2D5E37E22AD3E966003EA3FC /* EditProfileView.swift in Sources */,
 				2DA93C792B51697600C3DCA7 /* ClubListViewModel.swift in Sources */,
 				2DA4A8B92AB5544D006E1342 /* LoginView.swift in Sources */,
@@ -455,6 +470,7 @@
 				2D0BDEA82AAD835000A91728 /* gun_s_kids_iOSApp.swift in Sources */,
 				2D44002F2B1C48BF00BE7ADB /* ClubDetailMainView.swift in Sources */,
 				2DA4A8C52AC949BF006E1342 /* SetMailView.swift in Sources */,
+				2DAAD4052B7A117000DFD0B2 /* ResetNicknameView.swift in Sources */,
 				2D5E37EB2AF78EE9003EA3FC /* MyClubView.swift in Sources */,
 				2DF2B90D2B2D77640037EBE0 /* ReauthMailView.swift in Sources */,
 				2DA93C6D2B5013DA00C3DCA7 /* NetworkResult.swift in Sources */,
