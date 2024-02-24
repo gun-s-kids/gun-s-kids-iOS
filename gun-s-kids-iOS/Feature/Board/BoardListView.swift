@@ -10,17 +10,26 @@ import SwiftUI
 struct BoardListView: View {
     var body: some View {
         NavigationView {
-            ScrollView(.vertical) {
-                LazyVStack(alignment: .leading) {
-                    ForEach(BoardInfo.sample) { board in
-                        if board.postImg.count > 0 {
-                            BoardImageRow(boardInfo: board)
-                        } else {
-                            BoardRow(boardInfo: board)
+            ZStack(alignment: .bottomTrailing) {
+                ScrollView(.vertical) {
+                    LazyVStack(alignment: .leading) {
+                        ForEach(BoardInfo.sample) { board in
+                            if board.postImg.count > 0 {
+                                NavigationLink(destination: BoardDetailView(boardInfo: board)) {
+                                    BoardImageRow(boardInfo: board)
+                                }
+                            } else {
+                                NavigationLink(destination: BoardDetailView(boardInfo: board)) {
+                                    BoardRow(boardInfo: board)
+                                }
+                            }
                         }
                     }
                 }
-            }.toolbar {
+                addBoardButton
+                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 20))
+            }
+            .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     HStack {
                         NavigationLink(destination: ProfileView()) {
@@ -42,6 +51,22 @@ struct BoardListView: View {
                 }
             }
         }
+    }
+}
+
+extension BoardListView {
+    var addBoardButton: some View {
+        Button(action: {}) {
+            HStack {
+                Image(systemName: "pencil")
+                Text("글쓰기")
+                    .font(.title3)
+            }
+        }
+        .padding()
+        .background(Color.mainColor4)
+        .foregroundColor(.white)
+        .clipShape(RoundedRectangle(cornerRadius: 15))
     }
 }
 
