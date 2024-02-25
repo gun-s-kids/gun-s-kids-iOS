@@ -78,7 +78,7 @@ extension BoardDetailView {
         Button {
             self.presentationMode.wrappedValue.dismiss()
         } label: {
-            Image(systemName: "chevron.left") // 화살표 Image
+            Image(systemName: "chevron.left")
                 .aspectRatio(contentMode: .fit)
         }
     }

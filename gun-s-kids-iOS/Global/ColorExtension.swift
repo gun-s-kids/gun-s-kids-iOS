@@ -12,6 +12,7 @@ extension Color {
     static let dcdcdc = Color(hex: "dcdcdc")
     static let primaryShadow = Color.primary.opacity(0.2)
     static let secondaryText = Color(hex: "#6e6e6e")
+    static let grayColor = Color(hex: "888888")
     static let background = Color(UIColor.systemGray6)
     static let mainColor1 = Color(hex: "F3EEEA")
     static let mainColor2 = Color(hex: "EBE3D5")

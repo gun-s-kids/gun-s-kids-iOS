@@ -11,6 +11,7 @@
 		2D0BDEAA2AAD835000A91728 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0BDEA92AAD835000A91728 /* ContentView.swift */; };
 		2D0BDEAC2AAD835100A91728 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D0BDEAB2AAD835100A91728 /* Assets.xcassets */; };
 		2D0BDEAF2AAD835100A91728 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D0BDEAE2AAD835100A91728 /* Preview Assets.xcassets */; };
+		2D2C9D9E2B8B089900EAEA2B /* WriteBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2C9D9D2B8B089900EAEA2B /* WriteBoardView.swift */; };
 		2D351C2C2B5CEF91007F8131 /* ClubListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D351C2B2B5CEF91007F8131 /* ClubListResponse.swift */; };
 		2D44002C2B1C41E000BE7ADB /* ClubSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D44002B2B1C41E000BE7ADB /* ClubSectionView.swift */; };
 		2D44002F2B1C48BF00BE7ADB /* ClubDetailMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D44002E2B1C48BF00BE7ADB /* ClubDetailMainView.swift */; };
@@ -64,6 +65,7 @@
 		2D0BDEA92AAD835000A91728 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; usesTabs = 0; };
 		2D0BDEAB2AAD835100A91728 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D0BDEAE2AAD835100A91728 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2D2C9D9D2B8B089900EAEA2B /* WriteBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteBoardView.swift; sourceTree = "<group>"; };
 		2D351C2B2B5CEF91007F8131 /* ClubListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubListResponse.swift; sourceTree = "<group>"; };
 		2D44002B2B1C41E000BE7ADB /* ClubSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubSectionView.swift; sourceTree = "<group>"; };
 		2D44002E2B1C48BF00BE7ADB /* ClubDetailMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubDetailMainView.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				2D7788EB2B52626800C38902 /* BoardRow.swift */,
 				2DAAD3FF2B79F7B200DFD0B2 /* BoardImageRow.swift */,
 				2DAAD40E2B89C8C300DFD0B2 /* BoardDetailView.swift */,
+				2D2C9D9D2B8B089900EAEA2B /* WriteBoardView.swift */,
 			);
 			path = Board;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 				2DA93C662B5004C800C3DCA7 /* CompanyListResponse.swift in Sources */,
 				2DAAD4072B7A151900DFD0B2 /* ChangeCompanyView.swift in Sources */,
 				2D7788EC2B52626800C38902 /* BoardRow.swift in Sources */,
+				2D2C9D9E2B8B089900EAEA2B /* WriteBoardView.swift in Sources */,
 				2DAAD4032B7A0BCF00DFD0B2 /* SettingView.swift in Sources */,
 				2D5E37E22AD3E966003EA3FC /* EditProfileView.swift in Sources */,
 				2DA93C792B51697600C3DCA7 /* ClubListViewModel.swift in Sources */,

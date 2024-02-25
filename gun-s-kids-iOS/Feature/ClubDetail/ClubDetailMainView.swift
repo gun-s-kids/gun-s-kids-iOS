@@ -9,7 +9,8 @@ import SwiftUI
 import Parchment
 
 struct ClubDetailMainView: View {
-    
+    @Environment(\.presentationMode) var presentationMode
+
     let items = [
             PagingIndexItem(index: 0, title: "홈"),
             PagingIndexItem(index: 1, title: "게시판"),
@@ -18,7 +19,7 @@ struct ClubDetailMainView: View {
         ]
     
     var option: PagingOptions?
-    var navigationTitle: String
+    var navigationTitleString: String
     
     init(title: String) {
         option = PagingOptions()
@@ -26,19 +27,58 @@ struct ClubDetailMainView: View {
         option?.indicatorOptions = .hidden
         option?.selectedTextColor = .black
         option?.textColor = UIColor.secondaryLabel
-        navigationTitle = title
+        navigationTitleString = title
     }
     
     var body: some View {
-        NavigationView {
-            PageView(options: option ?? PagingOptions(), items: items) { item in
-                Text(item.title)
-                    .font(.largeTitle)
-                    .foregroundColor(.gray)
+        if #available(iOS 16.0, *) {
+            NavigationView {
+                PageView(options: option ?? PagingOptions(), items: items) { item in
+                    Text(item.title)
+                        .font(.largeTitle)
+                        .foregroundColor(.gray)
+                }
+                .navigationBarTitle(navigationTitleString, displayMode: .inline)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        backButton
+                    }
+                }
             }
+            .navigationBarBackButtonHidden(true)
+        } else {
+            NavigationView {
+                PageView(options: option ?? PagingOptions(), items: items) { item in
+                    Text(item.title)
+                        .font(.largeTitle)
+                        .foregroundColor(.gray)
+                }
+                .navigationBarTitle(navigationTitleString, displayMode: .inline)
+                .navigationBarItems(leading: backButton)
+            }
+            .navigationBarBackButtonHidden(true)
         }
-        .navigationBarTitleDisplayMode(.inline)
-        .navigationTitle(navigationTitle)
+        
+    }
+}
+
+extension ClubDetailMainView {
+    var boardListView: some View {
+        BoardListView()
+    }
+    
+    var navigationTitle: some View {
+        Text(navigationTitleString)
+            .foregroundColor(.black)
+    }
+    var backButton: some View {
+        Button {
+            self.presentationMode.wrappedValue.dismiss()
+        } label: {
+            Image(systemName: "chevron.left")
+                .aspectRatio(contentMode: .fit)
+                .foregroundColor(.black)
+        }
     }
 }
 

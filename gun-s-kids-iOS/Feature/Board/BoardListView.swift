@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct BoardListView: View {
+    @State var isButtonPressed: Bool = false
+
     var body: some View {
         NavigationView {
             ZStack(alignment: .bottomTrailing) {
@@ -26,8 +28,10 @@ struct BoardListView: View {
                         }
                     }
                 }
-                addBoardButton
-                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 20))
+                NavigationLink(destination: WriteBoardView(), isActive: $isButtonPressed) {
+                    addBoardButton
+                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 20))
+                }
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -40,7 +44,9 @@ struct BoardListView: View {
 
 extension BoardListView {
     var addBoardButton: some View {
-        Button(action: {}) {
+        Button(action: {
+            isButtonPressed = true
+        }) {
             HStack {
                 Image(systemName: "pencil")
                 Text("글쓰기")
