@@ -34,11 +34,12 @@ struct MainView: View {
                 }
                 .edgesIgnoringSafeArea(.all)
                 .tag(Tab.board)
+
             ProfileView()
                 .tabItem {
                     selection == .calendar ?
-                    Image("calendar_clicked") :
-                    Image("calendar")
+                    Image("gear_clicked") :
+                    Image("gear")
                 }
                 .tag(Tab.calendar)
         }

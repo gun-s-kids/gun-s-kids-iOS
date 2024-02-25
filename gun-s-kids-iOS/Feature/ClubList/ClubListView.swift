@@ -24,24 +24,25 @@ struct ClubListView: View {
                 Spacer(minLength: 10)
             }.toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    HStack {
-                        NavigationLink(destination: ProfileView()) {
-                            Image("magnifyglass")
-                                .resizable()
-                                .frame(width: 30, height: 30)
-                        }
-                        NavigationLink(destination: ProfileView()) {
-                            Image("myclub")
-                                .resizable()
-                                .frame(width: 30, height: 30)
-                        }
-                        NavigationLink(destination: ProfileView()) {
-                            Image("gear")
-                                .resizable()
-                                .frame(width: 30, height: 30)
-                        }
-                    }
+                    navigationBarButtonStack
                 }
+            }
+        }
+    }
+}
+
+extension ClubListView {
+    var navigationBarButtonStack: some View {
+        HStack {
+            NavigationLink(destination: ProfileView()) {
+                Image("magnifyglass")
+                    .resizable()
+                    .frame(width: 30, height: 30)
+            }
+            NavigationLink(destination: ProfileView()) {
+                Image("myclub")
+                    .resizable()
+                    .frame(width: 30, height: 30)
             }
         }
     }
