@@ -34,9 +34,18 @@ struct ClubDetailMainView: View {
         if #available(iOS 16.0, *) {
             NavigationView {
                 PageView(options: option ?? PagingOptions(), items: items) { item in
-                    Text(item.title)
-                        .font(.largeTitle)
-                        .foregroundColor(.gray)
+                    VStack {
+                        switch item.index {
+                        case 0:
+                            ClubDetailHomeView()
+                        case 1:
+                            BoardListView()
+                        default:
+                            Text(item.title)
+                                .font(.largeTitle)
+                                .foregroundColor(.gray)
+                        }
+                    }
                 }
                 .navigationBarTitle(navigationTitleString, displayMode: .inline)
                 .toolbar {

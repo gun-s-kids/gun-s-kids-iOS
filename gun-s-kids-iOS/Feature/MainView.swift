@@ -13,7 +13,7 @@ struct MainView: View {
     enum Tab {
         case list
         case board
-        case calendar
+        case setting
     }
 
     var body: some View {
@@ -35,13 +35,13 @@ struct MainView: View {
                 .edgesIgnoringSafeArea(.all)
                 .tag(Tab.board)
 
-            ProfileView()
+            SettingView()
                 .tabItem {
-                    selection == .calendar ?
+                    selection == .setting ?
                     Image("gear_clicked") :
                     Image("gear")
                 }
-                .tag(Tab.calendar)
+                .tag(Tab.setting)
         }
         .accentColor(Color.mainColor4)
     }
