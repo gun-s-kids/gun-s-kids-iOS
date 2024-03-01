@@ -7,15 +7,25 @@
 
 import SwiftUI
 import URLImage
+import URLImageStore
 
 struct ClubDetailHomeView: View {
+    @State var isButtonPressed: Bool = false
+    @State var showingAlert: Bool = false
+    @State var messageToManagement: String = ""
+
     var body: some View {
-        ScrollView(.vertical) {
-            VStack(spacing: 30) {
-                clubRepresentImage
-                introduceClub
-                introduceClubManagement
+        ZStack(alignment: .bottomTrailing) {
+            ScrollView(.vertical) {
+                VStack(spacing: 30) {
+                    clubRepresentImage
+                    introduceClub
+                    introduceClubManagement
+                    Spacer(minLength: 60)
+                }
             }
+            registerButton
+                .padding(EdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 20))
         }
     }
 }
@@ -76,6 +86,47 @@ extension ClubDetailHomeView {
             }
         }
         .padding(.horizontal, 20)
+    }
+    
+    var registerButton: some View {
+        Button(action: {
+            showingAlert = true
+        }) {
+            HStack {
+                Image(systemName: "plus")
+                Text("가입하기")
+                    .font(.title3)
+            }
+        }
+        .padding()
+        .background(Color.mainColor4)
+        .foregroundColor(.white)
+        .clipShape(RoundedRectangle(cornerRadius: 15))
+        .alert("가입인사를 작성해주세요.", isPresented: $showingAlert) {
+            TextField("", text: $messageToManagement)
+            Button("확인", role: .cancel) {
+                showingAlert = false
+            }
+            Button("취소", role: .destructive) {
+                showingAlert = false
+            }
+        }
+    }
+    
+    var manageButton: some View {
+        Button(action: {
+            isButtonPressed = true
+        }) {
+            HStack {
+                Image(systemName: "plus")
+                Text("관리하기")
+                    .font(.title3)
+            }
+        }
+        .padding()
+        .background(Color.mainColor4)
+        .foregroundColor(.white)
+        .clipShape(RoundedRectangle(cornerRadius: 15))
     }
 }
 
