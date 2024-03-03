@@ -25,7 +25,7 @@ struct BoardRow: View {
 extension BoardRow {
     var profileStack: some View {
         HStack(alignment: .center, spacing: 10) {
-            Image(boardInfo.profileImg)
+            Image("fig")
                 .resizable()
                 .scaledToFill()
                 .frame(width: 30, height: 30)

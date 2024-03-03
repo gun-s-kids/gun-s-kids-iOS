@@ -56,4 +56,48 @@ class APIService {
         }
         .eraseToAnyPublisher()
     }
+    
+    func getAllClubListData() -> AnyPublisher<[Club], Error> {
+        return Future() { promise in
+            AF.request(API.getAllClubList.url, method: .get)
+                .publishDecodable(type: ClubListResponse.self)
+                .value()
+                .sink { completion in
+                    switch completion {
+                    case .finished:
+                        print("getAllClubListData finished")
+                    case .failure(let error):
+                        print("getAllClubListData error: \(error)")
+                        promise(.failure(error))
+                    }
+                } receiveValue: { result in
+                    promise(.success(result.data))
+                }
+                .store(in: &self.cancellable)
+        }
+        .eraseToAnyPublisher()
+    }
+    
+    func getClubPostListData(clubNo: Int) -> AnyPublisher<[BoardInfo], Error> {
+        let parameter: Parameters = ["clubNo" : "\(clubNo)"]
+
+        return Future() { promise in
+            AF.request(API.getClubPostList.url, method: .get, parameters: parameter)
+                .publishDecodable(type: ClubPostListResponse.self)
+                .value()
+                .sink { completion in
+                    switch completion {
+                    case .finished:
+                        print("getAllClubListData finished")
+                    case .failure(let error):
+                        print("getAllClubListData error: \(error)")
+                        promise(.failure(error))
+                    }
+                } receiveValue: { result in
+                    promise(.success(result.data))
+                }
+                .store(in: &self.cancellable)
+        }
+        .eraseToAnyPublisher()
+    }
 }

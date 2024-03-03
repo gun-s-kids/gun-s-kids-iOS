@@ -8,14 +8,21 @@
 import SwiftUI
 
 struct BoardListView: View {
+    let clubNo: Int
+    @StateObject var viewModel: BoardListViewModel
     @State var isButtonPressed: Bool = false
+    
+    init(clubNo: Int){
+        self.clubNo = clubNo
+        self._viewModel = StateObject.init(wrappedValue: BoardListViewModel(clubNo: clubNo))
+    }
 
     var body: some View {
         NavigationView {
             ZStack(alignment: .bottomTrailing) {
                 ScrollView(.vertical) {
                     LazyVStack(alignment: .leading) {
-                        ForEach(BoardInfo.sample) { board in
+                        ForEach(viewModel.boardInfoList) { board in
                             if board.postImg.count > 0 {
                                 NavigationLink(destination: BoardDetailView(boardInfo: board)) {
                                     BoardImageRow(boardInfo: board)
@@ -77,6 +84,6 @@ extension BoardListView {
 
 struct BoardListView_Previews: PreviewProvider {
     static var previews: some View {
-        BoardListView()
+        BoardListView(clubNo: 1)
     }
 }

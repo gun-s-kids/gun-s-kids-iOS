@@ -10,11 +10,15 @@ import Foundation
 enum API{
     case getCompanyList
     case getClubList
+    case getAllClubList
+    case getClubPostList
     
     var url: URL{
         switch self {
         case .getCompanyList: return URL(string: "https://server-gunskids.koyeb.app/api/v1/company/list")!
         case .getClubList: return URL(string: "https://server-gunskids.koyeb.app/api/v1/club/list")!
+        case .getAllClubList: return URL(string: "https://server-gunskids.koyeb.app/api/v1/club/list/all")!
+        case .getClubPostList: return URL(string: "https://server-gunskids.koyeb.app/api/v1/clubPost/list")!
         }
     }
 }

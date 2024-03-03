@@ -41,7 +41,7 @@ extension BoardImageRow {
     
     var profileStack: some View {
         HStack(alignment: .center, spacing: 10) {
-            Image(boardInfo.profileImg)
+            Image("lemon")
                 .resizable()
                 .scaledToFill()
                 .frame(width: 30, height: 30)

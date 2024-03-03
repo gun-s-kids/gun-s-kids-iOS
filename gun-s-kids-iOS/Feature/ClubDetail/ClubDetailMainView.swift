@@ -39,7 +39,7 @@ struct ClubDetailMainView: View {
                         case 0:
                             ClubDetailHomeView()
                         case 1:
-                            BoardListView()
+                            BoardListView(clubNo: 1)
                         default:
                             Text(item.title)
                                 .font(.largeTitle)
@@ -73,7 +73,7 @@ struct ClubDetailMainView: View {
 
 extension ClubDetailMainView {
     var boardListView: some View {
-        BoardListView()
+        BoardListView(clubNo: 1)
     }
     
     var navigationTitle: some View {

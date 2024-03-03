@@ -21,6 +21,7 @@ class ClubListViewModel: ObservableObject {
         {
             print(#fileID,#function, #line, "")
             fetchCompanyList()
+            fetchAllClubList()
         }
     
     func fetchCompanyList() {
@@ -56,5 +57,20 @@ class ClubListViewModel: ObservableObject {
         } else {
             self.clubInfoList = localCacheClub[selectedIndex] ?? []
         }
+    }
+    
+    func fetchAllClubList() {
+        APIService.shared.getAllClubListData()
+            .sink { completion in
+                switch completion {
+                case .failure(let err):
+                    print("[API] getAllClubList ERROR : \(err)")
+                case .finished:
+                    print("[API] getAllClubList Finish")
+                }
+            } receiveValue: { (value: [Club]) in
+                self.clubInfoList = value
+                print(self.clubInfoList)
+            }.store(in: &subscriptions)
     }
 }
