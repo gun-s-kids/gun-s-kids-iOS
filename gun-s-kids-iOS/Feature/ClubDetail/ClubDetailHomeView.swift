@@ -15,17 +15,19 @@ struct ClubDetailHomeView: View {
     @State var messageToManagement: String = ""
 
     var body: some View {
-        ZStack(alignment: .bottomTrailing) {
-            ScrollView(.vertical) {
-                VStack(spacing: 30) {
-                    clubRepresentImage
-                    introduceClub
-                    introduceClubManagement
-                    Spacer(minLength: 60)
+        NavigationView {
+            ZStack(alignment: .bottomTrailing) {
+                ScrollView(.vertical) {
+                    VStack(spacing: 30) {
+                        clubRepresentImage
+                        introduceClub
+                        introduceClubManagement
+                        Spacer(minLength: 60)
+                    }
                 }
+                manageButton
+                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 20))
             }
-            registerButton
-                .padding(EdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 20))
         }
     }
 }
@@ -114,19 +116,21 @@ extension ClubDetailHomeView {
     }
     
     var manageButton: some View {
-        Button(action: {
-            isButtonPressed = true
-        }) {
-            HStack {
-                Image(systemName: "plus")
-                Text("관리하기")
-                    .font(.title3)
+        NavigationLink(destination: ClubRegisterListView(), isActive: $isButtonPressed) {
+            Button(action: {
+                isButtonPressed = true
+            }) {
+                HStack {
+                    Image(systemName: "plus")
+                    Text("관리하기")
+                        .font(.title3)
+                }
             }
+            .padding()
+            .background(Color.mainColor4)
+            .foregroundColor(.white)
+            .clipShape(RoundedRectangle(cornerRadius: 15))
         }
-        .padding()
-        .background(Color.mainColor4)
-        .foregroundColor(.white)
-        .clipShape(RoundedRectangle(cornerRadius: 15))
     }
 }
 
