@@ -20,6 +20,7 @@
 		2D3690072B943C1000D0E445 /* ClubRegisterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3690062B943C1000D0E445 /* ClubRegisterListView.swift */; };
 		2D3690092B943D2700D0E445 /* ClubRegisterRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3690082B943D2700D0E445 /* ClubRegisterRow.swift */; };
 		2D36900B2B943D6800D0E445 /* RegisterInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D36900A2B943D6800D0E445 /* RegisterInfo.swift */; };
+		2D36900D2B94522700D0E445 /* MakeClubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D36900C2B94522700D0E445 /* MakeClubView.swift */; };
 		2D44002C2B1C41E000BE7ADB /* ClubSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D44002B2B1C41E000BE7ADB /* ClubSectionView.swift */; };
 		2D44002F2B1C48BF00BE7ADB /* ClubDetailMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D44002E2B1C48BF00BE7ADB /* ClubDetailMainView.swift */; };
 		2D5E37DC2AD3D7BF003EA3FC /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E37DB2AD3D7BF003EA3FC /* ColorExtension.swift */; };
@@ -80,6 +81,7 @@
 		2D3690062B943C1000D0E445 /* ClubRegisterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubRegisterListView.swift; sourceTree = "<group>"; };
 		2D3690082B943D2700D0E445 /* ClubRegisterRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubRegisterRow.swift; sourceTree = "<group>"; };
 		2D36900A2B943D6800D0E445 /* RegisterInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInfo.swift; sourceTree = "<group>"; };
+		2D36900C2B94522700D0E445 /* MakeClubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeClubView.swift; sourceTree = "<group>"; };
 		2D44002B2B1C41E000BE7ADB /* ClubSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubSectionView.swift; sourceTree = "<group>"; };
 		2D44002E2B1C48BF00BE7ADB /* ClubDetailMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubDetailMainView.swift; sourceTree = "<group>"; };
 		2D5E37DB2AD3D7BF003EA3FC /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 				9908FABE2B03583400BEF286 /* CompanySectionView.swift */,
 				2D44002B2B1C41E000BE7ADB /* ClubSectionView.swift */,
 				2DA93C782B51697600C3DCA7 /* ClubListViewModel.swift */,
+				2D36900C2B94522700D0E445 /* MakeClubView.swift */,
 			);
 			path = ClubList;
 			sourceTree = "<group>";
@@ -488,6 +491,7 @@
 				2D7788EC2B52626800C38902 /* BoardRow.swift in Sources */,
 				2D2C9D9E2B8B089900EAEA2B /* WriteBoardView.swift in Sources */,
 				2DAAD4032B7A0BCF00DFD0B2 /* SettingView.swift in Sources */,
+				2D36900D2B94522700D0E445 /* MakeClubView.swift in Sources */,
 				2D5E37E22AD3E966003EA3FC /* EditProfileView.swift in Sources */,
 				2DA93C792B51697600C3DCA7 /* ClubListViewModel.swift in Sources */,
 				2DA4A8B92AB5544D006E1342 /* LoginView.swift in Sources */,
