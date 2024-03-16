@@ -25,7 +25,7 @@ class ClubListViewModel: ObservableObject {
         }
     
     func fetchCompanyList() {
-        APIService.shared.getCompanyListData()
+        MainAPIService.shared.getCompanyListData()
             .sink { completion in
                 switch completion {
                 case .failure(let err):
@@ -41,7 +41,7 @@ class ClubListViewModel: ObservableObject {
     
     func fetchClubList(selectedIndex: Int) {
         if localCacheClub[selectedIndex] == nil {
-            APIService.shared.getClubListData(companyNo: selectedIndex)
+            MainAPIService.shared.getClubListData(companyNo: selectedIndex)
                 .sink { completion in
                     switch completion {
                     case .failure(let err):
@@ -60,7 +60,7 @@ class ClubListViewModel: ObservableObject {
     }
     
     func fetchAllClubList() {
-        APIService.shared.getAllClubListData()
+        MainAPIService.shared.getAllClubListData()
             .sink { completion in
                 switch completion {
                 case .failure(let err):

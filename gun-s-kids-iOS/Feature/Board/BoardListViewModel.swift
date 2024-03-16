@@ -24,7 +24,7 @@ class BoardListViewModel: ObservableObject {
 
     func fetchClubPostList(clubNo: Int) {
         if localCacheBoard[clubNo] == nil {
-            APIService.shared.getClubPostListData(clubNo: clubNo)
+            MainAPIService.shared.getClubPostListData(clubNo: clubNo)
                 .sink { completion in
                     switch completion {
                     case .failure(let err):

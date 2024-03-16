@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum API{
+enum MainAPI{
     case getCompanyList
     case getClubList
     case getAllClubList

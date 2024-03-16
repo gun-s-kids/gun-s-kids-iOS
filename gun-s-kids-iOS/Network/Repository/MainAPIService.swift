@@ -8,14 +8,14 @@
 import Alamofire
 import Combine
 
-class APIService {
-    static let shared = APIService()
+class MainAPIService {
+    static let shared = MainAPIService()
     let decoder = JSONDecoder()
     var cancellable = Set<AnyCancellable>()
 
     func getCompanyListData() -> AnyPublisher<[CompanyInfo], Error> {
         return Future() { promise in
-            AF.request(API.getCompanyList.url, method: .get)
+            AF.request(MainAPI.getCompanyList.url, method: .get)
                 .publishDecodable(type: CompanyListResponse.self)
                 .value()
                 .sink { completion in
@@ -38,7 +38,7 @@ class APIService {
         let parameter: Parameters = ["companyNo" : "\(companyNo)"]
         
         return Future() { promise in
-            AF.request(API.getClubList.url, method: .get, parameters: parameter)
+            AF.request(MainAPI.getClubList.url, method: .get, parameters: parameter)
                 .publishDecodable(type: ClubListResponse.self)
                 .value()
                 .sink { completion in
@@ -59,7 +59,7 @@ class APIService {
     
     func getAllClubListData() -> AnyPublisher<[Club], Error> {
         return Future() { promise in
-            AF.request(API.getAllClubList.url, method: .get)
+            AF.request(MainAPI.getAllClubList.url, method: .get)
                 .publishDecodable(type: ClubListResponse.self)
                 .value()
                 .sink { completion in
@@ -82,15 +82,15 @@ class APIService {
         let parameter: Parameters = ["clubNo" : "\(clubNo)"]
 
         return Future() { promise in
-            AF.request(API.getClubPostList.url, method: .get, parameters: parameter)
+            AF.request(MainAPI.getClubPostList.url, method: .get, parameters: parameter)
                 .publishDecodable(type: ClubPostListResponse.self)
                 .value()
                 .sink { completion in
                     switch completion {
                     case .finished:
-                        print("getAllClubListData finished")
+                        print("getClubPostListData finished")
                     case .failure(let error):
-                        print("getAllClubListData error: \(error)")
+                        print("getClubPostListData error: \(error)")
                         promise(.failure(error))
                     }
                 } receiveValue: { result in

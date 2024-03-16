@@ -38,9 +38,9 @@
 		2DA4A8BF2AB57B84006E1342 /* AuthMailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4A8BE2AB57B84006E1342 /* AuthMailView.swift */; };
 		2DA4A8C52AC949BF006E1342 /* SetMailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4A8C42AC949BF006E1342 /* SetMailView.swift */; };
 		2DA93C662B5004C800C3DCA7 /* CompanyListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA93C652B5004C800C3DCA7 /* CompanyListResponse.swift */; };
-		2DA93C6B2B5012EA00C3DCA7 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA93C6A2B5012EA00C3DCA7 /* APIService.swift */; };
+		2DA93C6B2B5012EA00C3DCA7 /* MainAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA93C6A2B5012EA00C3DCA7 /* MainAPIService.swift */; };
 		2DA93C6D2B5013DA00C3DCA7 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA93C6C2B5013DA00C3DCA7 /* NetworkResult.swift */; };
-		2DA93C722B50188000C3DCA7 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA93C712B50188000C3DCA7 /* API.swift */; };
+		2DA93C722B50188000C3DCA7 /* MainAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA93C712B50188000C3DCA7 /* MainAPI.swift */; };
 		2DA93C752B5166EA00C3DCA7 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 2DA93C742B5166EA00C3DCA7 /* URLImage */; };
 		2DA93C772B5166EA00C3DCA7 /* URLImageStore in Frameworks */ = {isa = PBXBuildFile; productRef = 2DA93C762B5166EA00C3DCA7 /* URLImageStore */; };
 		2DA93C792B51697600C3DCA7 /* ClubListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA93C782B51697600C3DCA7 /* ClubListViewModel.swift */; };
@@ -52,6 +52,10 @@
 		2DAAD40B2B7A18D500DFD0B2 /* ChangeLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD40A2B7A18D500DFD0B2 /* ChangeLocationView.swift */; };
 		2DAAD40D2B7A1A3B00DFD0B2 /* IntroduceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD40C2B7A1A3B00DFD0B2 /* IntroduceView.swift */; };
 		2DAAD40F2B89C8C300DFD0B2 /* BoardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD40E2B89C8C300DFD0B2 /* BoardDetailView.swift */; };
+		2DD7EBF92BA593E300005727 /* AuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD7EBF82BA593E300005727 /* AuthAPI.swift */; };
+		2DD7EBFB2BA5954500005727 /* AuthAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD7EBFA2BA5954500005727 /* AuthAPIService.swift */; };
+		2DD7EBFD2BA59D2C00005727 /* SignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD7EBFC2BA59D2C00005727 /* SignUpResponse.swift */; };
+		2DD7EBFF2BA5A3C900005727 /* TokenUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD7EBFE2BA5A3C900005727 /* TokenUtil.swift */; };
 		2DF2B9002B2D628C0037EBE0 /* ConfirmSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF2B8FF2B2D628C0037EBE0 /* ConfirmSignUpView.swift */; };
 		2DF2B9022B2D62A10037EBE0 /* SetNicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF2B9012B2D62A10037EBE0 /* SetNicknameView.swift */; };
 		2DF2B9042B2D73780037EBE0 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF2B9032B2D73780037EBE0 /* MainView.swift */; };
@@ -99,9 +103,9 @@
 		2DA4A8BE2AB57B84006E1342 /* AuthMailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthMailView.swift; sourceTree = "<group>"; };
 		2DA4A8C42AC949BF006E1342 /* SetMailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetMailView.swift; sourceTree = "<group>"; };
 		2DA93C652B5004C800C3DCA7 /* CompanyListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyListResponse.swift; sourceTree = "<group>"; };
-		2DA93C6A2B5012EA00C3DCA7 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		2DA93C6A2B5012EA00C3DCA7 /* MainAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAPIService.swift; sourceTree = "<group>"; };
 		2DA93C6C2B5013DA00C3DCA7 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
-		2DA93C712B50188000C3DCA7 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		2DA93C712B50188000C3DCA7 /* MainAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAPI.swift; sourceTree = "<group>"; };
 		2DA93C782B51697600C3DCA7 /* ClubListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubListViewModel.swift; sourceTree = "<group>"; };
 		2DAAD3FF2B79F7B200DFD0B2 /* BoardImageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardImageRow.swift; sourceTree = "<group>"; };
 		2DAAD4022B7A0BCF00DFD0B2 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
@@ -111,6 +115,10 @@
 		2DAAD40A2B7A18D500DFD0B2 /* ChangeLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLocationView.swift; sourceTree = "<group>"; };
 		2DAAD40C2B7A1A3B00DFD0B2 /* IntroduceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroduceView.swift; sourceTree = "<group>"; };
 		2DAAD40E2B89C8C300DFD0B2 /* BoardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardDetailView.swift; sourceTree = "<group>"; };
+		2DD7EBF82BA593E300005727 /* AuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAPI.swift; sourceTree = "<group>"; };
+		2DD7EBFA2BA5954500005727 /* AuthAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAPIService.swift; sourceTree = "<group>"; };
+		2DD7EBFC2BA59D2C00005727 /* SignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResponse.swift; sourceTree = "<group>"; };
+		2DD7EBFE2BA5A3C900005727 /* TokenUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenUtil.swift; sourceTree = "<group>"; };
 		2DF2B8FF2B2D628C0037EBE0 /* ConfirmSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmSignUpView.swift; sourceTree = "<group>"; };
 		2DF2B9012B2D62A10037EBE0 /* SetNicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNicknameView.swift; sourceTree = "<group>"; };
 		2DF2B9032B2D73780037EBE0 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -219,6 +227,7 @@
 				2DA93C652B5004C800C3DCA7 /* CompanyListResponse.swift */,
 				2D351C2B2B5CEF91007F8131 /* ClubListResponse.swift */,
 				2D3690022B94257300D0E445 /* ClubPostResponse.swift */,
+				2DD7EBFC2BA59D2C00005727 /* SignUpResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -227,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				2DA93C6C2B5013DA00C3DCA7 /* NetworkResult.swift */,
+				2DD7EBFE2BA5A3C900005727 /* TokenUtil.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -234,7 +244,8 @@
 		2DA93C6F2B50186800C3DCA7 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				2DA93C6A2B5012EA00C3DCA7 /* APIService.swift */,
+				2DA93C6A2B5012EA00C3DCA7 /* MainAPIService.swift */,
+				2DD7EBFA2BA5954500005727 /* AuthAPIService.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -242,7 +253,8 @@
 		2DA93C702B50187200C3DCA7 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				2DA93C712B50188000C3DCA7 /* API.swift */,
+				2DA93C712B50188000C3DCA7 /* MainAPI.swift */,
+				2DD7EBF82BA593E300005727 /* AuthAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -484,12 +496,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D368FFD2B91B03500D0E445 /* ClubDetailHomeView.swift in Sources */,
-				2DA93C6B2B5012EA00C3DCA7 /* APIService.swift in Sources */,
+				2DA93C6B2B5012EA00C3DCA7 /* MainAPIService.swift in Sources */,
 				2DAAD4002B79F7B200DFD0B2 /* BoardImageRow.swift in Sources */,
 				2DA93C662B5004C800C3DCA7 /* CompanyListResponse.swift in Sources */,
 				2DAAD4072B7A151900DFD0B2 /* ChangeCompanyView.swift in Sources */,
 				2D7788EC2B52626800C38902 /* BoardRow.swift in Sources */,
 				2D2C9D9E2B8B089900EAEA2B /* WriteBoardView.swift in Sources */,
+				2DD7EBFB2BA5954500005727 /* AuthAPIService.swift in Sources */,
 				2DAAD4032B7A0BCF00DFD0B2 /* SettingView.swift in Sources */,
 				2D36900D2B94522700D0E445 /* MakeClubView.swift in Sources */,
 				2D5E37E22AD3E966003EA3FC /* EditProfileView.swift in Sources */,
@@ -499,8 +512,10 @@
 				2D36900B2B943D6800D0E445 /* RegisterInfo.swift in Sources */,
 				2D368FFF2B91C1C500D0E445 /* ClubManagementView.swift in Sources */,
 				2D3690032B94257300D0E445 /* ClubPostResponse.swift in Sources */,
+				2DD7EBF92BA593E300005727 /* AuthAPI.swift in Sources */,
 				2D5E37DE2AD3DA30003EA3FC /* ProfileView.swift in Sources */,
 				2DA4A8BF2AB57B84006E1342 /* AuthMailView.swift in Sources */,
+				2DD7EBFF2BA5A3C900005727 /* TokenUtil.swift in Sources */,
 				2D5E37ED2AF78F5B003EA3FC /* ClubRow.swift in Sources */,
 				2DAAD40D2B7A1A3B00DFD0B2 /* IntroduceView.swift in Sources */,
 				2DA4A8BD2AB57589006E1342 /* SetPasswordView.swift in Sources */,
@@ -509,8 +524,9 @@
 				2D351C2C2B5CEF91007F8131 /* ClubListResponse.swift in Sources */,
 				2DF2B9042B2D73780037EBE0 /* MainView.swift in Sources */,
 				2D5E37DC2AD3D7BF003EA3FC /* ColorExtension.swift in Sources */,
+				2DD7EBFD2BA59D2C00005727 /* SignUpResponse.swift in Sources */,
 				2D7788EA2B52611800C38902 /* BoardListView.swift in Sources */,
-				2DA93C722B50188000C3DCA7 /* API.swift in Sources */,
+				2DA93C722B50188000C3DCA7 /* MainAPI.swift in Sources */,
 				2DAAD40B2B7A18D500DFD0B2 /* ChangeLocationView.swift in Sources */,
 				2D5E37F02AF790E9003EA3FC /* Club.swift in Sources */,
 				2DF2B9022B2D62A10037EBE0 /* SetNicknameView.swift in Sources */,
