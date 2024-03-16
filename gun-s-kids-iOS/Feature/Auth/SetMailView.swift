@@ -8,39 +8,51 @@
 import SwiftUI
 
 struct SetMailView: View {
+    @StateObject var viewModel: SignUpViewModel
     @State var email = ""
     @State var isButtonPressed: Bool = false
     @State var isValid: Bool = true
     
+    init() {
+        self._viewModel = StateObject.init(wrappedValue: SignUpViewModel())
+    }
+
     var body: some View {
         GeometryReader { geometry in
             VStack(alignment: .center, spacing: 15) {
                 Spacer()
                     .frame(height: 50)
-                LoginExplainTextVStack(title: "이메일 인증", subtitle: "회사 이메일 인증을 해보아요!")
+                AuthExplainTextVStack(title: "이메일 인증", subtitle: "회사 이메일 인증을 해보아요!")
                 Spacer()
                     .frame(height: 15)
                 EmailTextField(email: email)
                 Text("유효한 이메일이 아닙니다.")
                     .foregroundColor(isValid ? .clear : .red)
-                NavigationLink(destination: AuthMailView(), isActive: $isButtonPressed) {
-                    Button(action: {
-                        isButtonPressed = true
-                        },
-                           label: {
-                            Text("인증하기")
-                                .font(.headline)
-                                .foregroundColor(.white)
-                                .frame(height: 57)
-                                .frame(maxWidth: 305)
-                                .background(Color.mainColor3)      .cornerRadius(10)
-                            })
-                        .buttonStyle(PressableButtonStyle())
-                }
+                nextButton
             }
             .padding()
             .edgesIgnoringSafeArea(.all)
             }
+    }
+}
+
+extension SetMailView {
+    var nextButton: some View {
+        NavigationLink(destination: AuthMailView(viewModel: viewModel), isActive: $isButtonPressed) {
+            Button(action: {
+                viewModel.authEmail(email: email)
+                isButtonPressed = true
+                },
+                   label: {
+                    Text("인증하기")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .frame(height: 57)
+                        .frame(maxWidth: 305)
+                        .background(Color.mainColor3)      .cornerRadius(10)
+                    })
+                .buttonStyle(PressableButtonStyle())
+        }
     }
 }
 

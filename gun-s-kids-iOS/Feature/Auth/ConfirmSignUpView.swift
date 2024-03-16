@@ -15,7 +15,7 @@ struct ConfirmSignUpView: View {
             VStack(alignment: .center, spacing: 30) {
                 Spacer()
                     .frame(height: 50)
-                LoginExplainTextVStack(title: "가입 완료!", subtitle: "")
+                AuthExplainTextVStack(title: "가입 완료!", subtitle: "")
                 Image("welcome")
                     .resizable()
                     .frame(maxWidth: .infinity, maxHeight: 300)

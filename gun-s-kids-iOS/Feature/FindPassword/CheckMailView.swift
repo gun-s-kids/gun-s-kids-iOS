@@ -17,7 +17,7 @@ struct CheckMailView: View {
             VStack(alignment: .center, spacing: 15) {
                 Spacer()
                     .frame(height: 50)
-                LoginExplainTextVStack(title: "비밀번호 찾기", subtitle: "회원가입 시 사용한 이메일을 입력하세요.")
+                AuthExplainTextVStack(title: "비밀번호 찾기", subtitle: "회원가입 시 사용한 이메일을 입력하세요.")
                 Spacer()
                     .frame(height: 15)
                 EmailTextField(email: email)

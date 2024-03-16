@@ -18,7 +18,7 @@ struct ResetPasswordView: View {
             VStack(alignment: .center, spacing: 15) {
                 Spacer()
                     .frame(height: 50)
-                LoginExplainTextVStack(title: "비밀번호 재설정", subtitle: "비밀번호를 재설정하세요!")
+                AuthExplainTextVStack(title: "비밀번호 재설정", subtitle: "비밀번호를 재설정하세요!")
                 Spacer()
                     .frame(height: 15)
                 PasswordTextFieldVStack(password: password, confirmPassword: confirmPassword, isValid: isValid)

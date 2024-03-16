@@ -8,9 +8,14 @@
 import SwiftUI
 
 struct LoginView: View {
+    @StateObject var loginViewModel: LoginViewModel
     @State private var email = ""
     @State private var password = ""
     @State private var isButtonPressed = false
+    
+    init() {
+        self._loginViewModel = StateObject.init(wrappedValue: LoginViewModel())
+    }
 
     var body: some View {
         NavigationView {
@@ -18,11 +23,11 @@ struct LoginView: View {
                 VStack(alignment: .center, spacing: 30) {
                     Spacer()
                         .frame(height: 50)
-                    LoginExplainTextVStack(title: "로그인", subtitle: "거녕이와 아이들 앱에 오신 것을 환영합니다!")
-                    LoginTextFieldVStack(email: email, password: password)
-                    FindUserInfoView()
-                    SignInButton()
-                    SignUpHStack()
+                    AuthExplainTextVStack(title: "로그인", subtitle: "거녕이와 아이들 앱에 오신 것을 환영합니다!")
+                    loginTextFieldVStack
+                    findUserInfoView
+                    signInButton
+                    signUpHStack
                 }
                 .padding()
                 .edgesIgnoringSafeArea(.all)
@@ -31,28 +36,8 @@ struct LoginView: View {
     }
 }
 
-struct LoginExplainTextVStack: View {
-    var title: String
-    var subtitle: String
-    
-    var body: some View {
-        VStack {
-            Text(title)
-                .font(.title)
-                .fontWeight(.bold)
-                .padding(10)
-            Text(subtitle)
-                .foregroundColor(.gray)
-                .font(.system(size: 15))
-        }
-    }
-}
-
-struct LoginTextFieldVStack: View {
-    @State var email = ""
-    @State var password = ""
-    
-    var body: some View {
+extension LoginView {
+    var loginTextFieldVStack: some View {
         VStack(alignment: .leading) {
             Text("이메일")
                 .foregroundColor(.secondary)
@@ -75,10 +60,8 @@ struct LoginTextFieldVStack: View {
         }
         .padding([.horizontal], 15)
     }
-}
-
-struct FindUserInfoView: View {
-    var body: some View {
+    
+    var findUserInfoView: some View {
         HStack {
             NavigationLink(destination: FindEmailWebView(url: "https://webmail.ehyundai.com/mail/find/id")) {
                 Text("이메일 찾기")
@@ -92,11 +75,11 @@ struct FindUserInfoView: View {
             }
         }
     }
-}
-
-struct SignInButton: View {
-    var body: some View {
-        Button(action: { print("") },
+    
+    var signInButton: some View {
+        Button(action: {
+            loginViewModel.login(email: email, password: password)
+        },
                label: {
                     Text("로그인")
                         .font(.headline)
@@ -108,10 +91,8 @@ struct SignInButton: View {
                     })
                 .buttonStyle(PressableButtonStyle())
     }
-}
-
-struct SignUpHStack: View {
-    var body: some View {
+    
+    var signUpHStack: some View {
         HStack {
             Text("계정이 없으신가요?")
                 .foregroundColor(.gray)
@@ -123,7 +104,23 @@ struct SignUpHStack: View {
                      .font(.system(size: 16))
             }
         }
+    }
+}
 
+struct AuthExplainTextVStack: View {
+    var title: String
+    var subtitle: String
+    
+    var body: some View {
+        VStack {
+            Text(title)
+                .font(.title)
+                .fontWeight(.bold)
+                .padding(10)
+            Text(subtitle)
+                .foregroundColor(.gray)
+                .font(.system(size: 15))
+        }
     }
 }
 

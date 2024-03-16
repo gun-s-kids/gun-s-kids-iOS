@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SetPasswordView: View {
+    @StateObject var viewModel: SignUpViewModel
     @State private var password = ""
     @State private var confirmPassword = ""
     @State private var isValid = true
@@ -18,29 +19,36 @@ struct SetPasswordView: View {
             VStack(alignment: .center, spacing: 15) {
                 Spacer()
                     .frame(height: 50)
-                LoginExplainTextVStack(title: "회원가입", subtitle: "비밀번호를 입력하세요!")
+                AuthExplainTextVStack(title: "회원가입", subtitle: "비밀번호를 입력하세요!")
                 Spacer()
                     .frame(height: 15)
                 PasswordTextFieldVStack(password: password, confirmPassword: confirmPassword, isValid: isValid)
                 Text("비밀번호가 일치하지 않습니다.")
                     .foregroundColor(isValid ? .clear : .red)
-                NavigationLink(destination: SetNicknameView(), isActive: $isButtonPressed) {
-                    Button(action: {
-                        isButtonPressed = true
-                    }, label: {
-                        Text("다음")
-                            .font(.headline)
-                            .foregroundColor(.white)
-                            .frame(height: 57)
-                            .frame(maxWidth: 305)
-                            .background(Color.mainColor3)
-                            .cornerRadius(10)
-                    })
-                    .buttonStyle(PressableButtonStyle())
-                }
+                nextButton
             }
             .padding()
             .edgesIgnoringSafeArea(.all)
+        }
+    }
+}
+
+extension SetPasswordView {
+    var nextButton: some View {
+        NavigationLink(destination: SetNicknameView(viewModel: viewModel), isActive: $isButtonPressed) {
+            Button(action: {
+                viewModel.setPassword(password: password)
+                isButtonPressed = true
+            }, label: {
+                Text("다음")
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .frame(height: 57)
+                    .frame(maxWidth: 305)
+                    .background(Color.mainColor3)
+                    .cornerRadius(10)
+            })
+            .buttonStyle(PressableButtonStyle())
         }
     }
 }
@@ -76,6 +84,6 @@ struct PasswordTextFieldVStack: View {
 
 struct SetPasswordView_Previews: PreviewProvider {
     static var previews: some View {
-        SetPasswordView()
+        SetPasswordView(viewModel: SignUpViewModel())
     }
 }

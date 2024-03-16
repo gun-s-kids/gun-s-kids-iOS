@@ -9,6 +9,7 @@ import SwiftUI
 import AEOTPTextField
 
 struct AuthMailView: View {
+    @StateObject var viewModel: SignUpViewModel
     @State private var authCode: String = ""
     @State private var isValid = true
     @State private var isButtonPressed = false
@@ -18,7 +19,7 @@ struct AuthMailView: View {
             VStack(alignment: .center, spacing: 15) {
                 Spacer()
                     .frame(height: 50)
-                LoginExplainTextVStack(title: "메일 인증", subtitle: "등록한 메일로 발송된 인증 코드를 입력하세요!")
+                AuthExplainTextVStack(title: "메일 인증", subtitle: "등록한 메일로 발송된 인증 코드를 입력하세요!")
                 AEOTPView(text: $authCode,
                           slotsCount: 4,
                           width: .infinity,
@@ -29,24 +30,10 @@ struct AuthMailView: View {
                           isSecureTextEntry: false,
                           onCommit: {
                 }).padding()
-                AuthCodeResendVStack()
+                authCodeResendVStack
                 Text("인증번호가 일치하지 않습니다.")
                     .foregroundColor(isValid ? .clear : .red)
-                NavigationLink(destination: SetPasswordView(), isActive: $isButtonPressed) {
-                    Button(action: {
-                        isButtonPressed = true
-                    },
-                           label: {
-                                Text("인증하기")
-                                    .font(.headline)
-                                    .foregroundColor(.white)
-                                    .frame(height: 57)
-                                    .frame(maxWidth: 305)
-                                    .background(Color.mainColor3)
-                                    .cornerRadius(10)
-                                })
-                            .buttonStyle(PressableButtonStyle())
-                }
+                nextButton
             }
             .padding()
             .edgesIgnoringSafeArea(.all)
@@ -54,8 +41,8 @@ struct AuthMailView: View {
     }
 }
 
-struct AuthCodeResendVStack: View {
-    var body: some View {
+extension AuthMailView {
+    var authCodeResendVStack: some View {
         VStack(alignment: .center) {
             Text("인증코드를 받지 못했나요?")
                 .foregroundColor(.gray)
@@ -70,10 +57,29 @@ struct AuthCodeResendVStack: View {
             })
         }
     }
+    
+    var nextButton: some View {
+        NavigationLink(destination: SetPasswordView(viewModel: viewModel), isActive: $isButtonPressed) {
+            Button(action: {
+                viewModel.authCode(code: authCode)
+                isButtonPressed = true
+            },
+                   label: {
+                        Text("인증하기")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .frame(height: 57)
+                            .frame(maxWidth: 305)
+                            .background(Color.mainColor3)
+                            .cornerRadius(10)
+                        })
+                    .buttonStyle(PressableButtonStyle())
+        }
+    }
 }
 
 struct AuthMailView_Previews: PreviewProvider {
     static var previews: some View {
-        AuthMailView()
+        AuthMailView(viewModel: SignUpViewModel())
     }
 }

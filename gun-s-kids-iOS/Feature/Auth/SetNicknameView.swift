@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SetNicknameView: View {
+    @StateObject var viewModel: SignUpViewModel
     @State var nickname = ""
     @State private var isValid = true
     @State var isButtonPressed: Bool = false
@@ -17,31 +18,39 @@ struct SetNicknameView: View {
             VStack(alignment: .center, spacing: 15) {
                 Spacer()
                     .frame(height: 50)
-                LoginExplainTextVStack(title: "회원가입", subtitle: "활동명으로 사용할 닉네임을 입력해주세요!")
+                AuthExplainTextVStack(title: "회원가입", subtitle: "활동명으로 사용할 닉네임을 입력해주세요!")
                 Spacer()
                     .frame(height: 15)
                 NicknameTextField(nickname: nickname, isValid: isValid)
                 Text("이미 사용중인 별명입니다.")
                     .foregroundColor(isValid ? .clear : .red)
-                NavigationLink(destination: ConfirmSignUpView(), isActive: $isButtonPressed) {
-                    Button(action: {
-                        isButtonPressed = true
-                        },
-                           label: {
-                            Text("다음")
-                                .font(.headline)
-                                .foregroundColor(.white)
-                                .frame(height: 57)
-                                .frame(maxWidth: 305)
-                                .background(Color.mainColor3)
-                                .cornerRadius(10)
-                            })
-                        .buttonStyle(PressableButtonStyle())
-                }
+                nextButton
             }
             .padding()
             .edgesIgnoringSafeArea(.all)
             }
+    }
+}
+
+extension SetNicknameView {
+    var nextButton: some View {
+        NavigationLink(destination: ConfirmSignUpView(), isActive: $isButtonPressed) {
+            Button(action: {
+                viewModel.setNickname(nickname: nickname)
+                viewModel.signUp()
+                isButtonPressed = true
+                },
+                   label: {
+                    Text("다음")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .frame(height: 57)
+                        .frame(maxWidth: 305)
+                        .background(Color.mainColor3)
+                        .cornerRadius(10)
+                    })
+                .buttonStyle(PressableButtonStyle())
+        }
     }
 }
 
@@ -64,7 +73,7 @@ struct NicknameTextField: View {
 
 struct SetNicknameView_Previews: PreviewProvider {
     static var previews: some View {
-        SetNicknameView()
+        SetNicknameView(viewModel: SignUpViewModel())
     }
 }
 

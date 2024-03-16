@@ -18,7 +18,7 @@ struct ReauthMailView: View {
             VStack(alignment: .center, spacing: 15) {
                 Spacer()
                     .frame(height: 50)
-                LoginExplainTextVStack(title: "비밀번호 찾기", subtitle: "등록한 메일로 발송된 인증 코드를 입력하세요!")
+                AuthExplainTextVStack(title: "비밀번호 찾기", subtitle: "등록한 메일로 발송된 인증 코드를 입력하세요!")
                 AEOTPView(text: $authCode,
                           slotsCount: 4,
                           width: .infinity,
@@ -29,7 +29,7 @@ struct ReauthMailView: View {
                           isSecureTextEntry: false,
                           onCommit: {
                 }).padding()
-                AuthCodeResendVStack()
+                authCodeResendVStack
                 Text("인증번호가 일치하지 않습니다.")
                     .foregroundColor(isValid ? .clear : .red)
                 NavigationLink(destination: ResetPasswordView(), isActive: $isButtonPressed) {
@@ -50,6 +50,24 @@ struct ReauthMailView: View {
             }
             .padding()
             .edgesIgnoringSafeArea(.all)
+        }
+    }
+}
+
+extension ReauthMailView {
+    var authCodeResendVStack: some View {
+        VStack(alignment: .center) {
+            Text("인증코드를 받지 못했나요?")
+                .foregroundColor(.gray)
+                .font(.system(size: 13))
+            Spacer()
+                .frame(height: 10)
+            Button(action: {
+                print("")
+            }, label: {
+                Text("인증코드 재발송하기")
+                    .font(.system(size: 13))
+            })
         }
     }
 }
