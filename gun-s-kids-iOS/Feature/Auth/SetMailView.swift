@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SetMailView: View {
+    @Environment(\.presentationMode) var presentationMode
     @StateObject var viewModel: SignUpViewModel
     @State var email = ""
     @State var isButtonPressed: Bool = false
@@ -18,21 +19,29 @@ struct SetMailView: View {
     }
 
     var body: some View {
-        GeometryReader { geometry in
-            VStack(alignment: .center, spacing: 15) {
-                Spacer()
-                    .frame(height: 50)
-                AuthExplainTextVStack(title: "이메일 인증", subtitle: "회사 이메일 인증을 해보아요!")
-                Spacer()
-                    .frame(height: 15)
-                EmailTextField(email: email)
-                Text("유효한 이메일이 아닙니다.")
-                    .foregroundColor(isValid ? .clear : .red)
-                nextButton
+        NavigationView {
+            GeometryReader { geometry in
+                VStack(alignment: .center, spacing: 15) {
+                    Spacer()
+                        .frame(height: 50)
+                    AuthExplainTextVStack(title: "이메일 인증", subtitle: "회사 이메일 인증을 해보아요!")
+                    Spacer()
+                        .frame(height: 15)
+                    EmailTextField(email: email)
+                    Text("유효한 이메일이 아닙니다.")
+                        .foregroundColor(isValid ? .clear : .red)
+                    nextButton
+                }
+                .padding()
+                .edgesIgnoringSafeArea(.all)
+                }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    backButton
+                }
             }
-            .padding()
-            .edgesIgnoringSafeArea(.all)
-            }
+        }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
@@ -52,6 +61,16 @@ extension SetMailView {
                         .background(Color.mainColor3)      .cornerRadius(10)
                     })
                 .buttonStyle(PressableButtonStyle())
+        }
+    }
+    
+    var backButton: some View {
+        Button {
+            self.presentationMode.wrappedValue.dismiss()
+        } label: {
+            Image(systemName: "chevron.left")
+                .aspectRatio(contentMode: .fit)
+                .foregroundColor(.black)
         }
     }
 }

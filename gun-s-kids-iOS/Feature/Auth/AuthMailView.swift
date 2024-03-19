@@ -9,35 +9,44 @@ import SwiftUI
 import AEOTPTextField
 
 struct AuthMailView: View {
+    @Environment(\.presentationMode) var presentationMode
     @StateObject var viewModel: SignUpViewModel
     @State private var authCode: String = ""
     @State private var isValid = true
     @State private var isButtonPressed = false
 
     var body: some View {
-        GeometryReader { geometry in
-            VStack(alignment: .center, spacing: 15) {
-                Spacer()
-                    .frame(height: 50)
-                AuthExplainTextVStack(title: "메일 인증", subtitle: "등록한 메일로 발송된 인증 코드를 입력하세요!")
-                AEOTPView(text: $authCode,
-                          slotsCount: 4,
-                          width: .infinity,
-                          height: 80,
-                          otpFilledBorderColor: .clear,
-                          otpFontSize: 35,
-                          otpFont: UIFont.systemFont(ofSize: 35),
-                          isSecureTextEntry: false,
-                          onCommit: {
-                }).padding()
-                authCodeResendVStack
-                Text("인증번호가 일치하지 않습니다.")
-                    .foregroundColor(isValid ? .clear : .red)
-                nextButton
+        NavigationView {
+            GeometryReader { geometry in
+                VStack(alignment: .center, spacing: 15) {
+                    Spacer()
+                        .frame(height: 50)
+                    AuthExplainTextVStack(title: "메일 인증", subtitle: "등록한 메일로 발송된 인증 코드를 입력하세요!")
+                    AEOTPView(text: $authCode,
+                              slotsCount: 4,
+                              width: .infinity,
+                              height: 80,
+                              otpFilledBorderColor: .clear,
+                              otpFontSize: 35,
+                              otpFont: UIFont.systemFont(ofSize: 35),
+                              isSecureTextEntry: false,
+                              onCommit: {
+                    }).padding()
+                    authCodeResendVStack
+                    Text("인증번호가 일치하지 않습니다.")
+                        .foregroundColor(isValid ? .clear : .red)
+                    nextButton
+                }
+                .padding()
+                .edgesIgnoringSafeArea(.all)
             }
-            .padding()
-            .edgesIgnoringSafeArea(.all)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    backButton
+                }
+            }
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
@@ -74,6 +83,16 @@ extension AuthMailView {
                             .cornerRadius(10)
                         })
                     .buttonStyle(PressableButtonStyle())
+        }
+    }
+    
+    var backButton: some View {
+        Button {
+            self.presentationMode.wrappedValue.dismiss()
+        } label: {
+            Image(systemName: "chevron.left")
+                .aspectRatio(contentMode: .fit)
+                .foregroundColor(.black)
         }
     }
 }

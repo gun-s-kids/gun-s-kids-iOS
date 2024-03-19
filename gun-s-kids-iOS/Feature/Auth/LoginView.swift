@@ -10,6 +10,7 @@ import SwiftUI
 struct LoginView: View {
     @EnvironmentObject private var appRootManager: AppRootManager
     @StateObject var loginViewModel: LoginViewModel
+
     @State private var email = ""
     @State private var password = ""
     @State private var isButtonPressed = false

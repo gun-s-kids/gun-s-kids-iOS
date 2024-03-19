@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SetPasswordView: View {
+    @Environment(\.presentationMode) var presentationMode
     @StateObject var viewModel: SignUpViewModel
     @State private var password = ""
     @State private var confirmPassword = ""
@@ -15,21 +16,29 @@ struct SetPasswordView: View {
     @State private var isButtonPressed = false
 
     var body: some View {
-        GeometryReader { geometry in
-            VStack(alignment: .center, spacing: 15) {
-                Spacer()
-                    .frame(height: 50)
-                AuthExplainTextVStack(title: "회원가입", subtitle: "비밀번호를 입력하세요!")
-                Spacer()
-                    .frame(height: 15)
-                PasswordTextFieldVStack(password: password, confirmPassword: confirmPassword, isValid: isValid)
-                Text("비밀번호가 일치하지 않습니다.")
-                    .foregroundColor(isValid ? .clear : .red)
-                nextButton
+        NavigationView {
+            GeometryReader { geometry in
+                VStack(alignment: .center, spacing: 15) {
+                    Spacer()
+                        .frame(height: 50)
+                    AuthExplainTextVStack(title: "회원가입", subtitle: "비밀번호를 입력하세요!")
+                    Spacer()
+                        .frame(height: 15)
+                    PasswordTextFieldVStack(password: password, confirmPassword: confirmPassword, isValid: isValid)
+                    Text("비밀번호가 일치하지 않습니다.")
+                        .foregroundColor(isValid ? .clear : .red)
+                    nextButton
+                }
+                .padding()
+                .edgesIgnoringSafeArea(.all)
             }
-            .padding()
-            .edgesIgnoringSafeArea(.all)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    backButton
+                }
+            }
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
@@ -49,6 +58,16 @@ extension SetPasswordView {
                     .cornerRadius(10)
             })
             .buttonStyle(PressableButtonStyle())
+        }
+    }
+    
+    var backButton: some View {
+        Button {
+            self.presentationMode.wrappedValue.dismiss()
+        } label: {
+            Image(systemName: "chevron.left")
+                .aspectRatio(contentMode: .fit)
+                .foregroundColor(.black)
         }
     }
 }
