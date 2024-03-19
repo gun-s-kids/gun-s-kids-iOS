@@ -59,6 +59,8 @@
 		2DF2679B2BA5B14E002CE28A /* AuthInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF2679A2BA5B14E002CE28A /* AuthInfo.swift */; };
 		2DF2679D2BA5B238002CE28A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF2679C2BA5B238002CE28A /* LoginViewModel.swift */; };
 		2DF2679F2BA5B23F002CE28A /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF2679E2BA5B23F002CE28A /* SignUpViewModel.swift */; };
+		2DF267A12BA869F6002CE28A /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF267A02BA869F6002CE28A /* LoginResponse.swift */; };
+		2DF267A32BA87451002CE28A /* AppRootManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF267A22BA87451002CE28A /* AppRootManager.swift */; };
 		2DF2B9002B2D628C0037EBE0 /* ConfirmSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF2B8FF2B2D628C0037EBE0 /* ConfirmSignUpView.swift */; };
 		2DF2B9022B2D62A10037EBE0 /* SetNicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF2B9012B2D62A10037EBE0 /* SetNicknameView.swift */; };
 		2DF2B9042B2D73780037EBE0 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF2B9032B2D73780037EBE0 /* MainView.swift */; };
@@ -125,6 +127,8 @@
 		2DF2679A2BA5B14E002CE28A /* AuthInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInfo.swift; sourceTree = "<group>"; };
 		2DF2679C2BA5B238002CE28A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		2DF2679E2BA5B23F002CE28A /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		2DF267A02BA869F6002CE28A /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		2DF267A22BA87451002CE28A /* AppRootManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootManager.swift; sourceTree = "<group>"; };
 		2DF2B8FF2B2D628C0037EBE0 /* ConfirmSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmSignUpView.swift; sourceTree = "<group>"; };
 		2DF2B9012B2D62A10037EBE0 /* SetNicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNicknameView.swift; sourceTree = "<group>"; };
 		2DF2B9032B2D73780037EBE0 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -234,6 +238,7 @@
 				2D351C2B2B5CEF91007F8131 /* ClubListResponse.swift */,
 				2D3690022B94257300D0E445 /* ClubPostResponse.swift */,
 				2DD7EBFC2BA59D2C00005727 /* SignUpResponse.swift */,
+				2DF267A02BA869F6002CE28A /* LoginResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -330,6 +335,7 @@
 				99CAC7542ACFC79F0070B64E /* Profile */,
 				2D0BDEA92AAD835000A91728 /* ContentView.swift */,
 				2DF2B9032B2D73780037EBE0 /* MainView.swift */,
+				2DF267A22BA87451002CE28A /* AppRootManager.swift */,
 			);
 			path = Feature;
 			sourceTree = "<group>";
@@ -539,6 +545,7 @@
 				2D7788EA2B52611800C38902 /* BoardListView.swift in Sources */,
 				2DA93C722B50188000C3DCA7 /* MainAPI.swift in Sources */,
 				2DAAD40B2B7A18D500DFD0B2 /* ChangeLocationView.swift in Sources */,
+				2DF267A32BA87451002CE28A /* AppRootManager.swift in Sources */,
 				2D5E37F02AF790E9003EA3FC /* Club.swift in Sources */,
 				2DF2B9022B2D62A10037EBE0 /* SetNicknameView.swift in Sources */,
 				2D5E37E92AEE47C4003EA3FC /* ViewExtension.swift in Sources */,
@@ -549,6 +556,7 @@
 				2DAAD4092B7A181A00DFD0B2 /* ChangeDepartmentView.swift in Sources */,
 				2DA4A8C52AC949BF006E1342 /* SetMailView.swift in Sources */,
 				2DAAD4052B7A117000DFD0B2 /* ResetNicknameView.swift in Sources */,
+				2DF267A12BA869F6002CE28A /* LoginResponse.swift in Sources */,
 				2D5E37EB2AF78EE9003EA3FC /* MyClubView.swift in Sources */,
 				2DF2B90D2B2D77640037EBE0 /* ReauthMailView.swift in Sources */,
 				2DA93C6D2B5013DA00C3DCA7 /* NetworkResult.swift in Sources */,

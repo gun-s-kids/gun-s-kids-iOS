@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
+    @EnvironmentObject private var appRootManager: AppRootManager
     @StateObject var loginViewModel: LoginViewModel
     @State private var email = ""
     @State private var password = ""
@@ -32,6 +33,14 @@ struct LoginView: View {
                 .padding()
                 .edgesIgnoringSafeArea(.all)
             }
+        }
+        .onChange(of: loginViewModel.loginSuccess) { value in
+            if value {
+                appRootManager.currentRoot = .home
+            }
+        }
+        .alert(isPresented: $loginViewModel.loginFailure) {
+            Alert(title: Text("로그인 실패"), message: Text("유효하지 않은 아이디 혹은 비밀번호 입니다. "), dismissButton: .default(Text("Dismiss")))
         }
     }
 }
@@ -78,6 +87,7 @@ extension LoginView {
     
     var signInButton: some View {
         Button(action: {
+            print("email: \(email) password: \(password)")
             loginViewModel.login(email: email, password: password)
         },
                label: {

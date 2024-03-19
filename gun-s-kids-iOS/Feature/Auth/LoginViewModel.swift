@@ -10,6 +10,9 @@ import Combine
 import Alamofire
 
 class LoginViewModel: ObservableObject {
+    var subscriptions = Set<AnyCancellable>()
+    @Published var loginFailure: Bool = false
+    @Published var loginSuccess: Bool = false
 
     init()
         {
@@ -18,5 +21,21 @@ class LoginViewModel: ObservableObject {
 
     func login(email: String, password: String) {
         // TODO: 로그인 API 호출
+        AuthAPIService.shared.postSignInData(email: email, password: password)
+            .sink { completion in
+                switch completion {
+                case .failure(let err):
+                    self.loginFailure = true
+                    print("[API] postSignInData ERROR : \(err)")
+                case .finished:
+                    print("[API] postSignInData Finish")
+                }
+            } receiveValue: { (value: Tokens) in
+                print("[API] postSignInData Success")
+                let tokenUtil = TokenUtils()
+                tokenUtil.create(account: "accessToken", value: value.accessToken)
+                tokenUtil.create(account: "refreshToken", value: value.refreshToken)
+                self.loginSuccess = true
+            }.store(in: &subscriptions)
     }
 }

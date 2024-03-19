@@ -11,6 +11,7 @@ import Alamofire
 
 class SignUpViewModel: ObservableObject {
     var subscriptions = Set<AnyCancellable>()
+    @Published var signUpSuccess: Bool = false
     var authInfo: AuthInfoVO?
 
     init()
@@ -19,7 +20,26 @@ class SignUpViewModel: ObservableObject {
         }
 
     func signUp() {
+        let email = authInfo?.email ?? ""
+        let password = authInfo?.password ?? ""
+        let nickname = authInfo?.nickname ?? ""
+        
         // TODO: 회원가입 API 호출
+        AuthAPIService.shared.postSignUpData(email: email, password: password, nickname: nickname)
+            .sink { completion in
+                switch completion {
+                case .failure(let err):
+                    print("[API] postSignUp ERROR : \(err)")
+                case .finished:
+                    print("[API] postSignUp Finish")
+                }
+            } receiveValue: { (value: Bool) in
+                if value {
+                    self.signUpSuccess = true
+                } else {
+                    self.signUpSuccess = false
+                }
+            }.store(in: &subscriptions)
     }
     
     func authEmail(email: String) {
