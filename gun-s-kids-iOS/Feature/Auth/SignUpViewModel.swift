@@ -42,12 +42,37 @@ class SignUpViewModel: ObservableObject {
             }.store(in: &subscriptions)
     }
     
-    func authEmail(email: String) {
-        // TODO: 이메일 인증 API 호출
+    func sendEmailAuthCode(email: String) {
+        // TODO: 이메일 인증코드 전송 API 호출
+        AuthAPIService.shared.postSendEmailAuthCode(email: email)
+            .sink { completion in
+                switch completion {
+                case .failure(let err):
+                    print("[API] postSendEmailAuthCode ERROR : \(err)")
+                case .finished:
+                    print("[API] postSendEmailAuthCode Finish")
+                }
+            } receiveValue: { (value: String) in
+                print("[API] postSendEmailAuthCode \(value)")
+                self.setValidateEmail(email: email)
+            }.store(in: &subscriptions)
     }
     
-    func authCode(code: String) {
-        // TODO: 이메일 인증 API 호출
+    func validateAuthCode(authCode: String) {
+        // TODO: 이메일 인증코드 검증 API 호출
+        let email = authInfo?.email ?? ""
+
+        AuthAPIService.shared.getEmailVerification(email: email, authCode: authCode)
+            .sink { completion in
+                switch completion {
+                case .failure(let err):
+                    print("[API] getEmailVerification ERROR : \(err)")
+                case .finished:
+                    print("[API] getEmailVerification Finish")
+                }
+            } receiveValue: { (value: String) in
+                print("[API] getEmailVerification \(value)")
+            }.store(in: &subscriptions)
     }
     
     func validateNickname(nickname: String) {

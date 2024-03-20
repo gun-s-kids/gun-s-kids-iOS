@@ -66,21 +66,46 @@ class AuthAPIService {
         .eraseToAnyPublisher()
     }
     
-    func getEmailAuthData(email: String) -> AnyPublisher<[Club], Error> {
+    func postSendEmailAuthCode(email: String) -> AnyPublisher<String, Error> {
+        let parameter: Parameters = ["email" : "\(email)"]
+
         return Future() { promise in
-            AF.request(AuthAPI.getEmailAuth(email: email).url, method: .get)
-                .publishDecodable(type: ClubListResponse.self)
+            AF.request(AuthAPI.postSendEmailAuthCode.url, method: .post, parameters: parameter)
+                .publishDecodable(type: BaseResponse.self)
                 .value()
                 .sink { completion in
                     switch completion {
                     case .finished:
-                        print("getAllClubListData finished")
+                        print("postSendEmailAuthCode finished")
                     case .failure(let error):
-                        print("getAllClubListData error: \(error)")
+                        print("postSendEmailAuthCode error: \(error)")
                         promise(.failure(error))
                     }
                 } receiveValue: { result in
                     promise(.success(result.data))
+                }
+                .store(in: &self.cancellable)
+        }
+        .eraseToAnyPublisher()
+    }
+    
+    func getEmailVerification(email: String, authCode: String) -> AnyPublisher<String, Error> {
+        let parameter: Parameters = ["email" : "\(email)", "authCode" : "\(authCode)"]
+
+        return Future() { promise in
+            AF.request(AuthAPI.getEmailVerification.url, method: .get, parameters: parameter)
+                .publishDecodable(type: SignUpResponse.self)
+                .value()
+                .sink { completion in
+                    switch completion {
+                    case .finished:
+                        print("getEmailVerification finished")
+                    case .failure(let error):
+                        print("getEmailVerification error: \(error)")
+                        promise(.failure(error))
+                    }
+                } receiveValue: { result in
+                    promise(.success(result.message))
                 }
                 .store(in: &self.cancellable)
         }

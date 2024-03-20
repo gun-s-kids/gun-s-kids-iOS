@@ -24,7 +24,7 @@ struct SetMailView: View {
                     AuthExplainTextVStack(title: "이메일 인증", subtitle: "회사 이메일 인증을 해보아요!")
                     Spacer()
                         .frame(height: 15)
-                    EmailTextField(email: email)
+                    EmailTextField(email: $email)
                     Text("유효한 이메일이 아닙니다.")
                         .foregroundColor(isValid ? .clear : .red)
                     nextButton
@@ -46,7 +46,8 @@ extension SetMailView {
     var nextButton: some View {
         NavigationLink(destination: AuthMailView(viewModel: viewModel, path: $path), isActive: $isButtonPressed) {
             Button(action: {
-                viewModel.authEmail(email: email)
+                viewModel.sendEmailAuthCode(email: email)
+                print("email: \(email)")
                 isButtonPressed = true
                 },
                    label: {
@@ -55,7 +56,8 @@ extension SetMailView {
                         .foregroundColor(.white)
                         .frame(height: 57)
                         .frame(maxWidth: 305)
-                        .background(Color.mainColor3)      .cornerRadius(10)
+                        .background(Color.mainColor3)
+                        .cornerRadius(10)
                     })
                 .buttonStyle(PressableButtonStyle())
         }
@@ -73,7 +75,7 @@ extension SetMailView {
 }
 
 struct EmailTextField: View {
-    @State var email = ""
+    @Binding var email: String
     
     var body: some View {
         VStack(alignment: .leading) {

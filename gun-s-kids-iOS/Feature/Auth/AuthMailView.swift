@@ -48,6 +48,11 @@ struct AuthMailView: View {
             }
         }
         .navigationBarBackButtonHidden(true)
+//        .onChange(of: loginViewModel.loginSuccess) { value in
+//            if value {
+//                appRootManager.currentRoot = .home
+//            }
+//        }
     }
 }
 
@@ -71,19 +76,18 @@ extension AuthMailView {
     var nextButton: some View {
         NavigationLink(destination: SetPasswordView(viewModel: viewModel, path: $path), isActive: $isButtonPressed) {
             Button(action: {
-                viewModel.authCode(code: authCode)
+                viewModel.validateAuthCode(authCode: authCode)
                 isButtonPressed = true
-            },
-                   label: {
-                        Text("인증하기")
-                            .font(.headline)
-                            .foregroundColor(.white)
-                            .frame(height: 57)
-                            .frame(maxWidth: 305)
-                            .background(Color.mainColor3)
-                            .cornerRadius(10)
-                        })
-                    .buttonStyle(PressableButtonStyle())
+            }, label: {
+                Text("인증하기")
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .frame(height: 57)
+                    .frame(maxWidth: 305)
+                    .background(Color.mainColor3)
+                    .cornerRadius(10)
+            })
+            .buttonStyle(PressableButtonStyle())
         }
     }
     
