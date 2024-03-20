@@ -12,6 +12,7 @@ enum AuthAPI {
     case postSignIn
     case postSendEmailAuthCode
     case getEmailVerification
+    case getCheckNickname
     
     var url: URL{
         switch self {
@@ -19,6 +20,7 @@ enum AuthAPI {
         case .postSignIn: return URL(string: "https://server-gunskids.koyeb.app/api/v1/members/login")!
         case .postSendEmailAuthCode: return URL(string: "https://server-gunskids.koyeb.app/api/v1/members/emails/send-authcode")!
         case .getEmailVerification: return URL(string: "https://server-gunskids.koyeb.app/api/v1/members/emails/verifications")!
+        case .getCheckNickname: return URL(string: "https://server-gunskids.koyeb.app/api/v1/members/check-duplicated-nickname")!
         }
     }
 }

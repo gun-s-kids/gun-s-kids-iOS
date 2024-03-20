@@ -77,6 +77,17 @@ class SignUpViewModel: ObservableObject {
     
     func validateNickname(nickname: String) {
         // TODO: 닉네임 검증 API 호출
+        AuthAPIService.shared.getCheckNickname(nickname: nickname)
+            .sink { completion in
+                switch completion {
+                case .failure(let err):
+                    print("[API] getCheckNickname ERROR : \(err)")
+                case .finished:
+                    print("[API] getCheckNickname Finish")
+                }
+            } receiveValue: { (value: String) in
+                print("[API] getCheckNickname \(value)")
+            }.store(in: &subscriptions)
     }
     
     func setValidateEmail(email: String) {

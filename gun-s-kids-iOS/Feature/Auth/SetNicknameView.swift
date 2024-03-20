@@ -24,7 +24,7 @@ struct SetNicknameView: View {
                     AuthExplainTextVStack(title: "회원가입", subtitle: "활동명으로 사용할 닉네임을 입력해주세요!")
                     Spacer()
                         .frame(height: 15)
-                    NicknameTextField(nickname: nickname, isValid: isValid)
+                    NicknameTextField(nickname: $nickname, isValid: $isValid)
                     Text("이미 사용중인 별명입니다.")
                         .foregroundColor(isValid ? .clear : .red)
                     nextButton
@@ -46,8 +46,7 @@ extension SetNicknameView {
     var nextButton: some View {
         NavigationLink(destination: ConfirmSignUpView(path: $path), isActive: $isButtonPressed) {
             Button(action: {
-                viewModel.setNickname(nickname: nickname)
-                viewModel.signUp()
+                viewModel.validateNickname(nickname: nickname)
                 isButtonPressed = true
                 },
                    label: {
@@ -75,8 +74,8 @@ extension SetNicknameView {
 }
 
 struct NicknameTextField: View {
-    @State var nickname: String = ""
-    @State var isValid: Bool = true
+    @Binding var nickname: String
+    @Binding var isValid: Bool
     
     var body: some View {
         VStack(alignment: .leading) {

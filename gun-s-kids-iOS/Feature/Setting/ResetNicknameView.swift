@@ -22,7 +22,7 @@ struct ResetNicknameView: View {
                 SettingTitleVStack(title: "닉네임 변경")
                 Spacer()
                     .frame(height: 15)
-                NicknameTextField(nickname: nickname, isValid: isValid)
+                NicknameTextField(nickname: $nickname, isValid: $isValid)
                 Text("이미 사용중인 별명입니다.")
                     .foregroundColor(isValid ? .clear : .red)
                 Button(action: {

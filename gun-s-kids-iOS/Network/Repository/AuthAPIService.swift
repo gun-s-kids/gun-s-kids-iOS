@@ -111,4 +111,27 @@ class AuthAPIService {
         }
         .eraseToAnyPublisher()
     }
+    
+    func getCheckNickname(nickname: String) -> AnyPublisher<String, Error> {
+        let parameter: Parameters = ["nickname" : "\(nickname)"]
+
+        return Future() { promise in
+            AF.request(AuthAPI.getCheckNickname.url, method: .get, parameters: parameter)
+                .publishDecodable(type: SignUpResponse.self)
+                .value()
+                .sink { completion in
+                    switch completion {
+                    case .finished:
+                        print("getCheckNickname finished")
+                    case .failure(let error):
+                        print("getCheckNickname error: \(error)")
+                        promise(.failure(error))
+                    }
+                } receiveValue: { result in
+                    promise(.success(result.message))
+                }
+                .store(in: &self.cancellable)
+        }
+        .eraseToAnyPublisher()
+    }
 }
