@@ -14,6 +14,7 @@ struct AuthMailView: View {
     @State private var authCode: String = ""
     @State private var isValid = true
     @State private var isButtonPressed = false
+    @Binding var path: Bool
 
     var body: some View {
         NavigationView {
@@ -68,7 +69,7 @@ extension AuthMailView {
     }
     
     var nextButton: some View {
-        NavigationLink(destination: SetPasswordView(viewModel: viewModel), isActive: $isButtonPressed) {
+        NavigationLink(destination: SetPasswordView(viewModel: viewModel, path: $path), isActive: $isButtonPressed) {
             Button(action: {
                 viewModel.authCode(code: authCode)
                 isButtonPressed = true
@@ -99,6 +100,6 @@ extension AuthMailView {
 
 struct AuthMailView_Previews: PreviewProvider {
     static var previews: some View {
-        AuthMailView(viewModel: SignUpViewModel())
+        AuthMailView(viewModel: SignUpViewModel(), path: .constant(false))
     }
 }

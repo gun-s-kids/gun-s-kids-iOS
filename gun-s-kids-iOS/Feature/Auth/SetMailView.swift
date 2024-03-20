@@ -13,10 +13,7 @@ struct SetMailView: View {
     @State var email = ""
     @State var isButtonPressed: Bool = false
     @State var isValid: Bool = true
-    
-    init() {
-        self._viewModel = StateObject.init(wrappedValue: SignUpViewModel())
-    }
+    @Binding var path: Bool
 
     var body: some View {
         NavigationView {
@@ -47,7 +44,7 @@ struct SetMailView: View {
 
 extension SetMailView {
     var nextButton: some View {
-        NavigationLink(destination: AuthMailView(viewModel: viewModel), isActive: $isButtonPressed) {
+        NavigationLink(destination: AuthMailView(viewModel: viewModel, path: $path), isActive: $isButtonPressed) {
             Button(action: {
                 viewModel.authEmail(email: email)
                 isButtonPressed = true
@@ -95,6 +92,6 @@ struct EmailTextField: View {
 
 struct SetMailView_Previews: PreviewProvider {
     static var previews: some View {
-        SetMailView()
+        SetMailView(viewModel: SignUpViewModel(), path: .constant(false))
     }
 }

@@ -10,13 +10,16 @@ import SwiftUI
 struct LoginView: View {
     @EnvironmentObject private var appRootManager: AppRootManager
     @StateObject var loginViewModel: LoginViewModel
+    @StateObject var signUpViewModel: SignUpViewModel
 
     @State private var email = ""
     @State private var password = ""
     @State private var isButtonPressed = false
+    @State var path: Bool = false
     
     init() {
         self._loginViewModel = StateObject.init(wrappedValue: LoginViewModel())
+        self._signUpViewModel = StateObject.init(wrappedValue: SignUpViewModel())
     }
 
     var body: some View {
@@ -79,7 +82,7 @@ extension LoginView {
             }
             Spacer()
                 .frame(width: 50)
-            NavigationLink(destination: SetMailView()) {
+            NavigationLink(destination: SetMailView(viewModel: signUpViewModel, path: $path), isActive: $path) {
                 Text("비밀번호 찾기")
                      .font(.system(size: 16))
             }
@@ -110,7 +113,7 @@ extension LoginView {
                 .font(.system(size: 15))
             Spacer()
                 .frame(width: 10)
-            NavigationLink(destination: SetMailView()) {
+            NavigationLink(destination: SetMailView(viewModel: signUpViewModel, path: $path), isActive: $path) {
                 Text("회원가입 하기")
                      .font(.system(size: 16))
             }

@@ -14,6 +14,7 @@ struct SetPasswordView: View {
     @State private var confirmPassword = ""
     @State private var isValid = true
     @State private var isButtonPressed = false
+    @Binding var path: Bool
 
     var body: some View {
         NavigationView {
@@ -44,7 +45,7 @@ struct SetPasswordView: View {
 
 extension SetPasswordView {
     var nextButton: some View {
-        NavigationLink(destination: SetNicknameView(viewModel: viewModel), isActive: $isButtonPressed) {
+        NavigationLink(destination: SetNicknameView(viewModel: viewModel, path: $path), isActive: $isButtonPressed) {
             Button(action: {
                 viewModel.setPassword(password: password)
                 isButtonPressed = true
@@ -103,6 +104,6 @@ struct PasswordTextFieldVStack: View {
 
 struct SetPasswordView_Previews: PreviewProvider {
     static var previews: some View {
-        SetPasswordView(viewModel: SignUpViewModel())
+        SetPasswordView(viewModel: SignUpViewModel(), path: .constant(false))
     }
 }

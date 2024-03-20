@@ -13,7 +13,8 @@ struct SetNicknameView: View {
     @State var nickname = ""
     @State private var isValid = true
     @State var isButtonPressed: Bool = false
-    
+    @Binding var path: Bool
+
     var body: some View {
         NavigationView {
             GeometryReader { geometry in
@@ -43,7 +44,7 @@ struct SetNicknameView: View {
 
 extension SetNicknameView {
     var nextButton: some View {
-        NavigationLink(destination: ConfirmSignUpView(), isActive: $isButtonPressed) {
+        NavigationLink(destination: ConfirmSignUpView(path: $path), isActive: $isButtonPressed) {
             Button(action: {
                 viewModel.setNickname(nickname: nickname)
                 viewModel.signUp()
@@ -92,7 +93,7 @@ struct NicknameTextField: View {
 
 struct SetNicknameView_Previews: PreviewProvider {
     static var previews: some View {
-        SetNicknameView(viewModel: SignUpViewModel())
+        SetNicknameView(viewModel: SignUpViewModel(), path: .constant(false))
     }
 }
 

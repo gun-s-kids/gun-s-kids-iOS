@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ConfirmSignUpView: View {
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @Binding var path: Bool
 
     var body: some View {
         NavigationView {
@@ -21,19 +21,18 @@ struct ConfirmSignUpView: View {
                         .resizable()
                         .frame(maxWidth: .infinity, maxHeight: 300)
                         .clipped()
-                    NavigationLink(destination: LoginView()) {
-                        Button(action: {},
-                               label: {
-                                Text("로그인하러 가기")
-                                    .font(.headline)
-                                    .foregroundColor(.white)
-                                    .frame(height: 57)
-                                    .frame(maxWidth: 305)
-                                    .background(Color.mainColor3)
-                                    .cornerRadius(10)
-                                })
-                            .buttonStyle(PressableButtonStyle())
-                    }
+                    Button(action: {
+                        path = false
+                    }, label: {
+                        Text("로그인하러 가기")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .frame(height: 57)
+                            .frame(maxWidth: 305)
+                            .background(Color.mainColor3)
+                            .cornerRadius(10)
+                    })
+                    .buttonStyle(PressableButtonStyle())
                 }
                 .padding()
                 .edgesIgnoringSafeArea(.all)
@@ -45,6 +44,6 @@ struct ConfirmSignUpView: View {
 
 struct ConfirmSignUpView_Previews: PreviewProvider {
     static var previews: some View {
-        ConfirmSignUpView()
+        ConfirmSignUpView(path: .constant(false))
     }
 }
