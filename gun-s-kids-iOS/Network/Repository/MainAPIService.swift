@@ -79,10 +79,11 @@ class MainAPIService {
     }
     
     func getClubPostListData(clubNo: Int) -> AnyPublisher<[BoardInfo], Error> {
+        let tokenUtil = TokenUtils()
         let parameter: Parameters = ["clubNo" : "\(clubNo)"]
 
         return Future() { promise in
-            AF.request(MainAPI.getClubPostList.url, method: .get, parameters: parameter)
+            AF.request(MainAPI.getClubPostList.url, method: .get, parameters: parameter, headers: tokenUtil.getAuthorizationHeader())
                 .publishDecodable(type: ClubPostListResponse.self)
                 .value()
                 .sink { completion in

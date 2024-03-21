@@ -14,6 +14,8 @@ struct LoginResponse: Codable {
 }
 
 struct Tokens: Codable {
+    let email: String
+    let auth: String
     let accessToken: String
     let refreshToken: String
 }
