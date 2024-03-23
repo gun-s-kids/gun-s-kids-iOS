@@ -82,10 +82,10 @@ extension LoginView {
             }
             Spacer()
                 .frame(width: 50)
-            NavigationLink(destination: SetMailView(viewModel: signUpViewModel, path: $path), isActive: $path) {
-                Text("비밀번호 찾기")
-                     .font(.system(size: 16))
-            }
+//            NavigationLink(destination: SetMailView(viewModel: signUpViewModel, path: $path), isActive: $path) {
+//                Text("비밀번호 찾기")
+//                     .font(.system(size: 16))
+//            }
         }
     }
     

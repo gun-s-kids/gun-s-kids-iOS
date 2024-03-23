@@ -16,11 +16,10 @@ class AuthAPIService {
     func postSignUpData(email: String, password: String, nickname: String) -> AnyPublisher<Bool, Error> {
         let parameter: Parameters = ["email" : "\(email)",
                                      "pwd" : "\(password)",
-                                     "memberNm" : "\(nickname)",
                                      "nickname" : "\(nickname)"]
 
         return Future() { promise in
-            AF.request(AuthAPI.postSignUp.url, method: .post, parameters: parameter)
+            AF.request(AuthAPI.postSignUp.url, method: .post, parameters: parameter, encoding: JSONEncoding.default)
                 .publishDecodable(type: SignUpResponse.self)
                 .value()
                 .sink { completion in

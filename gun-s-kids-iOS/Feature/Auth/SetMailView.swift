@@ -11,7 +11,7 @@ struct SetMailView: View {
     @Environment(\.presentationMode) var presentationMode
     @StateObject var viewModel: SignUpViewModel
     @State var email = ""
-    @State var isButtonPressed: Bool = false
+    @State var showNextView: Bool = false
     @State var isValid: Bool = true
     @Binding var path: Bool
 
@@ -38,17 +38,22 @@ struct SetMailView: View {
                 }
             }
         }
+        .onChange(of: viewModel.sendEmailCodeSuccess) { value in
+            showNextView = value
+        }
+        .onChange(of: viewModel.sendEmailCodeFailure) { value in
+            isValid = !value
+        }
         .navigationBarBackButtonHidden(true)
     }
 }
 
 extension SetMailView {
     var nextButton: some View {
-        NavigationLink(destination: AuthMailView(viewModel: viewModel, path: $path), isActive: $isButtonPressed) {
+        NavigationLink(destination: AuthMailView(viewModel: viewModel, path: $path), isActive: $showNextView) {
             Button(action: {
                 viewModel.sendEmailAuthCode(email: email)
                 print("email: \(email)")
-                isButtonPressed = true
                 },
                    label: {
                     Text("인증하기")

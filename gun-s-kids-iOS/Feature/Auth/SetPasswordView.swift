@@ -13,7 +13,7 @@ struct SetPasswordView: View {
     @State private var password = ""
     @State private var confirmPassword = ""
     @State private var isValid = true
-    @State private var isButtonPressed = false
+    @State private var showNextView = false
     @Binding var path: Bool
 
     var body: some View {
@@ -40,15 +40,20 @@ struct SetPasswordView: View {
             }
         }
         .navigationBarBackButtonHidden(true)
+        .onChange(of: viewModel.validatePasswordSuccess) { value in
+            showNextView = value
+        }
+        .onChange(of: viewModel.validatePasswordFailure) { value in
+            isValid = !value
+        }
     }
 }
 
 extension SetPasswordView {
     var nextButton: some View {
-        NavigationLink(destination: SetNicknameView(viewModel: viewModel, path: $path), isActive: $isButtonPressed) {
+        NavigationLink(destination: SetNicknameView(viewModel: viewModel, path: $path), isActive: $showNextView) {
             Button(action: {
-                viewModel.setPassword(password: password)
-                isButtonPressed = true
+                viewModel.validatePassword(password: password, confirmPassword: confirmPassword)
             }, label: {
                 Text("다음")
                     .font(.headline)

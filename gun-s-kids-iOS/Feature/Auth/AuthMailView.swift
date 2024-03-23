@@ -13,7 +13,7 @@ struct AuthMailView: View {
     @StateObject var viewModel: SignUpViewModel
     @State private var authCode: String = ""
     @State private var isValid = true
-    @State private var isButtonPressed = false
+    @State private var showNextView = false
     @Binding var path: Bool
 
     var body: some View {
@@ -48,11 +48,12 @@ struct AuthMailView: View {
             }
         }
         .navigationBarBackButtonHidden(true)
-//        .onChange(of: loginViewModel.loginSuccess) { value in
-//            if value {
-//                appRootManager.currentRoot = .home
-//            }
-//        }
+        .onChange(of: viewModel.validateAuthCodeSuccess) { value in
+            showNextView = value
+        }
+        .onChange(of: viewModel.validateAuthCodeFailure) { value in
+            isValid = !value
+        }
     }
 }
 
@@ -74,10 +75,9 @@ extension AuthMailView {
     }
     
     var nextButton: some View {
-        NavigationLink(destination: SetPasswordView(viewModel: viewModel, path: $path), isActive: $isButtonPressed) {
+        NavigationLink(destination: SetPasswordView(viewModel: viewModel, path: $path), isActive: $showNextView) {
             Button(action: {
                 viewModel.validateAuthCode(authCode: authCode)
-                isButtonPressed = true
             }, label: {
                 Text("인증하기")
                     .font(.headline)

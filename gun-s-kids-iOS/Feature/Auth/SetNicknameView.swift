@@ -12,7 +12,7 @@ struct SetNicknameView: View {
     @StateObject var viewModel: SignUpViewModel
     @State var nickname = ""
     @State private var isValid = true
-    @State var isButtonPressed: Bool = false
+    @State var showNextView: Bool = false
     @Binding var path: Bool
 
     var body: some View {
@@ -39,15 +39,26 @@ struct SetNicknameView: View {
             }
         }
         .navigationBarBackButtonHidden(true)
+        .onChange(of: viewModel.validateNicknameSuccess) { _ in
+            viewModel.signUp()
+        }
+        .onChange(of: viewModel.validateNicknameFailure) { value in
+            isValid = !value
+        }
+        .onChange(of: viewModel.signUpSuccess) { value in
+            showNextView = value
+        }
+        .alert(isPresented: $viewModel.signUpFailure) {
+            Alert(title: Text("회원가입 실패"), message: Text("유효하지 않은 정보입니다."), dismissButton: .default(Text("Dismiss")))
+        }
     }
 }
 
 extension SetNicknameView {
     var nextButton: some View {
-        NavigationLink(destination: ConfirmSignUpView(path: $path), isActive: $isButtonPressed) {
+        NavigationLink(destination: ConfirmSignUpView(path: $path), isActive: $showNextView) {
             Button(action: {
                 viewModel.validateNickname(nickname: nickname)
-                isButtonPressed = true
                 },
                    label: {
                     Text("다음")
