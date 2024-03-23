@@ -21,7 +21,7 @@ struct ResetPasswordView: View {
                 AuthExplainTextVStack(title: "비밀번호 재설정", subtitle: "비밀번호를 재설정하세요!")
                 Spacer()
                     .frame(height: 15)
-                PasswordTextFieldVStack(password: password, confirmPassword: confirmPassword, isValid: isValid)
+                PasswordTextFieldVStack(password: $password, confirmPassword: $confirmPassword, isValid: $isValid)
                 Text("비밀번호가 일치하지 않습니다.")
                     .foregroundColor(isValid ? .clear : .red)
                 NavigationLink(destination: LoginView(), isActive: $isButtonPressed) {

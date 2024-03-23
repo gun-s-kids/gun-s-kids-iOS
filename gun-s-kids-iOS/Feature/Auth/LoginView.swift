@@ -64,7 +64,7 @@ extension LoginView {
                 .frame(height: 20)
             Text("비밀번호")
                 .foregroundColor(.secondary)
-            TextField("", text: $password)
+            SecureField("", text: $password)
                            .frame(height: 50)
                            .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
                            .cornerRadius(10)

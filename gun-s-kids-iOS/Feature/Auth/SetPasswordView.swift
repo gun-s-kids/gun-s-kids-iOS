@@ -25,7 +25,7 @@ struct SetPasswordView: View {
                     AuthExplainTextVStack(title: "회원가입", subtitle: "비밀번호를 입력하세요!")
                     Spacer()
                         .frame(height: 15)
-                    PasswordTextFieldVStack(password: password, confirmPassword: confirmPassword, isValid: isValid)
+                    PasswordTextFieldVStack(password: $password, confirmPassword: $confirmPassword, isValid: $isValid)
                     Text("비밀번호가 일치하지 않습니다.")
                         .foregroundColor(isValid ? .clear : .red)
                     nextButton
@@ -74,15 +74,15 @@ extension SetPasswordView {
 }
 
 struct PasswordTextFieldVStack: View {
-    @State var password = ""
-    @State var confirmPassword = ""
-    @State var isValid: Bool = true
+    @Binding var password: String
+    @Binding var confirmPassword: String
+    @Binding var isValid: Bool
     
     var body: some View {
         VStack(alignment: .leading) {
             Text("비밀번호")
                 .foregroundColor(.secondary)
-            TextField("", text: $password)
+            SecureField("", text: $password)
                            .frame(height: 50)
                            .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
                            .cornerRadius(10)
@@ -92,7 +92,7 @@ struct PasswordTextFieldVStack: View {
                 .frame(height: 20)
             Text("비밀번호 확인")
                 .foregroundColor(.secondary)
-            TextField("", text: $confirmPassword)
+            SecureField("", text: $confirmPassword)
                            .frame(height: 50)
                            .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
                            .cornerRadius(10)
