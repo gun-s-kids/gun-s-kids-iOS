@@ -39,21 +39,15 @@ struct SetNicknameView: View {
             }
         }
         .navigationBarBackButtonHidden(true)
-        .onChange(of: viewModel.validateNicknameSuccess) { _ in
-            viewModel.signUp()
-        }
         .onChange(of: viewModel.validateNicknameFailure) { value in
             isValid = !value
-        }
-        .alert(isPresented: $viewModel.signUpFailure) {
-            Alert(title: Text("회원가입 실패"), message: Text("유효하지 않은 정보입니다."), dismissButton: .default(Text("Dismiss")))
         }
     }
 }
 
 extension SetNicknameView {
     var nextButton: some View {
-        NavigationLink(destination: ConfirmSignUpView(path: $path), isActive: $viewModel.signUpSuccess) {
+        NavigationLink(destination: SetCompanyView(viewModel: viewModel, path: $path), isActive: $viewModel.validateNicknameSuccess) {
             Button(action: {
                 viewModel.validateNickname(nickname: nickname)
                 },

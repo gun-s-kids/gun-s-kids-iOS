@@ -9,4 +9,5 @@ struct AuthInfoVO {
     var email: String?
     var password: String?
     var nickname: String?
+    var companyNo: Int?
 }

@@ -13,10 +13,11 @@ class AuthAPIService {
     let decoder = JSONDecoder()
     var cancellable = Set<AnyCancellable>()
 
-    func postSignUpData(email: String, password: String, nickname: String) -> AnyPublisher<Bool, Error> {
+    func postSignUpData(email: String, password: String, nickname: String, companyNo: Int) -> AnyPublisher<Bool, Error> {
         let parameter: Parameters = ["email" : "\(email)",
                                      "pwd" : "\(password)",
-                                     "nickname" : "\(nickname)"]
+                                     "nickname" : "\(nickname)",
+                                     "companyNo" : "\(companyNo)"]
 
         return Future() { promise in
             AF.request(AuthAPI.postSignUp.url, method: .post, parameters: parameter, encoding: JSONEncoding.default)

@@ -21,24 +21,27 @@ class SignUpViewModel: ObservableObject {
     @Published var validateNicknameFailure: Bool = false
     @Published var validatePasswordSuccess: Bool = false
     @Published var validatePasswordFailure: Bool = false
+    @Published var companyInfoList = [CompanyInfo]()
     
     var authInfo: AuthInfoVO?
 
     init()
         {
             print(#fileID,#function, #line, "")
+            fetchCompanyList()
         }
 
     func signUp() {
         let email = authInfo?.email ?? ""
         let password = authInfo?.password ?? ""
         let nickname = authInfo?.nickname ?? ""
+        let companyNo = authInfo?.companyNo ?? 0
         
-        print("AUTH INFO: E:\(email) P:\(password) N:\(nickname)")
+        print("AUTH INFO: E:\(email) P:\(password) N:\(nickname) C: \(companyNo)")
 
         
         // TODO: 회원가입 API 호출
-        AuthAPIService.shared.postSignUpData(email: email, password: password, nickname: nickname)
+        AuthAPIService.shared.postSignUpData(email: email, password: password, nickname: nickname, companyNo: companyNo)
             .sink { completion in
                 switch completion {
                 case .failure(let err):
@@ -111,6 +114,22 @@ class SignUpViewModel: ObservableObject {
             }.store(in: &subscriptions)
     }
     
+    func fetchCompanyList() {
+        MainAPIService.shared.getCompanyListData()
+            .sink { completion in
+                switch completion {
+                case .failure(let err):
+                    print("[API] getCompanyList ERROR : \(err)")
+                case .finished:
+                    print("[API] getCompanyList Finish")
+                }
+            } receiveValue: { (value: [CompanyInfo]) in
+                self.companyInfoList = value
+                print(self.companyInfoList)
+            }.store(in: &subscriptions)
+    }
+    
+    
     func validatePassword(password: String, confirmPassword: String) {
         // TODO: 닉네임 검증 API 호출
         if password == confirmPassword {
@@ -131,5 +150,9 @@ class SignUpViewModel: ObservableObject {
     
     func setNickname(nickname: String) {
         self.authInfo?.nickname = nickname
+    }
+    
+    func setCompanyNo(index: Int) {
+        self.authInfo?.companyNo = index
     }
 }
