@@ -48,9 +48,6 @@ struct AuthMailView: View {
             }
         }
         .navigationBarBackButtonHidden(true)
-        .onChange(of: viewModel.validateAuthCodeSuccess) { value in
-            showNextView = value
-        }
         .onChange(of: viewModel.validateAuthCodeFailure) { value in
             isValid = !value
         }
@@ -75,7 +72,7 @@ extension AuthMailView {
     }
     
     var nextButton: some View {
-        NavigationLink(destination: SetPasswordView(viewModel: viewModel, path: $path), isActive: $showNextView) {
+        NavigationLink(destination: SetPasswordView(viewModel: viewModel, path: $path), isActive: $viewModel.validateAuthCodeSuccess) {
             Button(action: {
                 viewModel.validateAuthCode(authCode: authCode)
             }, label: {

@@ -38,9 +38,6 @@ struct SetMailView: View {
                 }
             }
         }
-        .onChange(of: viewModel.sendEmailCodeSuccess) { value in
-            showNextView = value
-        }
         .onChange(of: viewModel.sendEmailCodeFailure) { value in
             isValid = !value
         }
@@ -50,7 +47,7 @@ struct SetMailView: View {
 
 extension SetMailView {
     var nextButton: some View {
-        NavigationLink(destination: AuthMailView(viewModel: viewModel, path: $path), isActive: $showNextView) {
+        NavigationLink(destination: AuthMailView(viewModel: viewModel, path: $path), isActive: $viewModel.sendEmailCodeSuccess) {
             Button(action: {
                 viewModel.sendEmailAuthCode(email: email)
                 print("email: \(email)")

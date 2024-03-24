@@ -40,9 +40,6 @@ struct SetPasswordView: View {
             }
         }
         .navigationBarBackButtonHidden(true)
-        .onChange(of: viewModel.validatePasswordSuccess) { value in
-            showNextView = value
-        }
         .onChange(of: viewModel.validatePasswordFailure) { value in
             isValid = !value
         }
@@ -51,7 +48,7 @@ struct SetPasswordView: View {
 
 extension SetPasswordView {
     var nextButton: some View {
-        NavigationLink(destination: SetNicknameView(viewModel: viewModel, path: $path), isActive: $showNextView) {
+        NavigationLink(destination: SetNicknameView(viewModel: viewModel, path: $path), isActive: $viewModel.validatePasswordSuccess) {
             Button(action: {
                 viewModel.validatePassword(password: password, confirmPassword: confirmPassword)
             }, label: {

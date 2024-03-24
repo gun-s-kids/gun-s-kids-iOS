@@ -45,9 +45,6 @@ struct SetNicknameView: View {
         .onChange(of: viewModel.validateNicknameFailure) { value in
             isValid = !value
         }
-        .onChange(of: viewModel.signUpSuccess) { value in
-            showNextView = value
-        }
         .alert(isPresented: $viewModel.signUpFailure) {
             Alert(title: Text("회원가입 실패"), message: Text("유효하지 않은 정보입니다."), dismissButton: .default(Text("Dismiss")))
         }
@@ -56,7 +53,7 @@ struct SetNicknameView: View {
 
 extension SetNicknameView {
     var nextButton: some View {
-        NavigationLink(destination: ConfirmSignUpView(path: $path), isActive: $showNextView) {
+        NavigationLink(destination: ConfirmSignUpView(path: $path), isActive: $viewModel.signUpSuccess) {
             Button(action: {
                 viewModel.validateNickname(nickname: nickname)
                 },
