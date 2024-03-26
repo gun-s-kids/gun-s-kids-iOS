@@ -15,7 +15,8 @@ class ClubListViewModel: ObservableObject {
     
     @Published var companyInfoList = [CompanyInfo]()
     @Published var clubInfoList = [Club]()
-    @Published var selectedIndex: Int?
+    @Published var clubInfo = ClubInfo(clubNo: 0, companyNm: "", clubNm: "", clubDesc: "", clubImg: "", createdDate: "", memberList: [])
+    @Published var isFetchedData: Bool = false
     
     init()
         {
@@ -71,6 +72,21 @@ class ClubListViewModel: ObservableObject {
             } receiveValue: { (value: [Club]) in
                 self.clubInfoList = value
                 print(self.clubInfoList)
+            }.store(in: &subscriptions)
+    }
+    
+    func fetchClubInfo(clubNo: Int) {
+        MainAPIService.shared.getClubInfo(clubNo: clubNo)
+            .sink { completion in
+                switch completion {
+                case .failure(let err):
+                    print("[API] getClubList ERROR : \(err)")
+                case .finished:
+                    print("[API] getClubList Finish")
+                }
+            } receiveValue: { (value: ClubInfo) in
+                self.clubInfo = value
+                self.isFetchedData = true
             }.store(in: &subscriptions)
     }
 }

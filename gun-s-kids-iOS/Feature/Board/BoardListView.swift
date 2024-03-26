@@ -40,11 +40,11 @@ struct BoardListView: View {
                         .padding(EdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 20))
                 }
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    navigationBarButtonStack
-                }
-            }
+//            .toolbar {
+//                ToolbarItem(placement: .navigationBarTrailing) {
+//                    navigationBarButtonStack
+//                }
+//            }
         }
     }
 }

@@ -9,6 +9,7 @@ import SwiftUI
 import Parchment
 
 struct ClubDetailMainView: View {
+    @StateObject var viewModel: ClubDetailViewModel
     @Environment(\.presentationMode) var presentationMode
 
     let items = [
@@ -20,14 +21,17 @@ struct ClubDetailMainView: View {
     
     var option: PagingOptions?
     var navigationTitleString: String
+    var clubDetail: ClubInfo
     
-    init(title: String) {
+    init(club: ClubInfo) {
         option = PagingOptions()
         option?.menuItemSize = .sizeToFit(minWidth: 80, height: 50)
         option?.indicatorOptions = .hidden
         option?.selectedTextColor = .black
         option?.textColor = UIColor.secondaryLabel
-        navigationTitleString = title
+        clubDetail = club
+        navigationTitleString = clubDetail.clubNm
+        self._viewModel = StateObject.init(wrappedValue: ClubDetailViewModel(clubNo: club.clubNo))
     }
     
     var body: some View {
@@ -37,7 +41,7 @@ struct ClubDetailMainView: View {
                     VStack {
                         switch item.index {
                         case 0:
-                            ClubDetailHomeView()
+                            ClubDetailHomeView(viewModel: viewModel, clubInfo: clubDetail)
                         case 1:
                             BoardListView(clubNo: 1)
                         default:
@@ -93,6 +97,6 @@ extension ClubDetailMainView {
 
 struct ClubDetailMainView_Previews: PreviewProvider {
     static var previews: some View {
-        ClubDetailMainView(title: "안녕")
+        ClubDetailMainView(club: ClubInfo(clubNo: 1, companyNm: "", clubNm: "", clubDesc: "", clubImg: "", createdDate: "", memberList: []))
     }
 }

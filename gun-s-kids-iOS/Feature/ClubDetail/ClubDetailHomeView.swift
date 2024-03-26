@@ -10,9 +10,11 @@ import URLImage
 import URLImageStore
 
 struct ClubDetailHomeView: View {
+    @ObservedObject var viewModel: ClubDetailViewModel
     @State var isButtonPressed: Bool = false
     @State var showingAlert: Bool = false
     @State var messageToManagement: String = ""
+    var clubInfo: ClubInfo
 
     var body: some View {
         NavigationView {
@@ -34,7 +36,7 @@ struct ClubDetailHomeView: View {
 
 extension ClubDetailHomeView {
     var clubRepresentImage: some View {
-        URLImage(URL(string:"https://placebear.com/g/200/100")!,
+        URLImage(URL(string: clubInfo.clubImg)!,
                  content: { image in
             image
                 .resizable()
@@ -50,7 +52,7 @@ extension ClubDetailHomeView {
                 .foregroundColor(.secondaryText)
             
             HStack {
-                Text("너무너무재밌었어요옹너무너무재밌었어요옹너무너무재밌었어요옹너무너무재밌었어요옹너무너무재밌었")
+                Text(clubInfo.clubDesc)
                     .font(.system(size: 20))
                     .foregroundColor(.black)
                     .padding([.leading, .top, .bottom], 20)
@@ -136,6 +138,6 @@ extension ClubDetailHomeView {
 
 struct ClubDetailHomeView_Previews: PreviewProvider {
     static var previews: some View {
-        ClubDetailHomeView()
+        ClubDetailHomeView(viewModel: ClubDetailViewModel(clubNo: 1), clubInfo: ClubInfo(clubNo: 1, companyNm: "현대IT&E", clubNm: "자바락", clubDesc: "클라이밍 동호회", clubImg: "https://gunskids.s3.ap-northeast-2.amazonaws.com/6a66bab5-a47f-4dc0-8560-eeb5870f8873", createdDate: "2024-03-20T08:28:23.297843", memberList: []))
     }
 }

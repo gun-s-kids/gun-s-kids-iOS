@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MakeClubView: View {
+    @Environment(\.presentationMode) var presentationMode
     @State var clubName: String = ""
     @State var content: String = ""
     
@@ -26,11 +27,27 @@ struct MakeClubView: View {
                 .padding()
                 .edgesIgnoringSafeArea(.all)
             }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    backButton
+                }
+            }
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
 extension MakeClubView {
+    var backButton: some View {
+        Button {
+            self.presentationMode.wrappedValue.dismiss()
+        } label: {
+            Image(systemName: "chevron.left")
+                .aspectRatio(contentMode: .fit)
+                .foregroundColor(.black)
+        }
+    }
+    
     var profileImage: some View {
         Image("avocado")
             .resizable()
