@@ -27,7 +27,7 @@ struct ClubDetailHomeView: View {
                         Spacer(minLength: 60)
                     }
                 }
-                manageButton
+                registerButton
                     .padding(EdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 20))
             }
         }
@@ -40,7 +40,7 @@ extension ClubDetailHomeView {
                  content: { image in
             image
                 .resizable()
-                .scaledToFill()
+                .scaledToFit()
                 .padding(.horizontal, 0)
         }).frame(width: UIScreen.main.bounds.width, height: 250)
     }

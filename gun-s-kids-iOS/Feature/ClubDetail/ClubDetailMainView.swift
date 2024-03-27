@@ -43,7 +43,7 @@ struct ClubDetailMainView: View {
                         case 0:
                             ClubDetailHomeView(viewModel: viewModel, clubInfo: clubDetail)
                         case 1:
-                            BoardListView(clubNo: 1)
+                            BoardListView(clubNo: clubDetail.clubNo)
                         default:
                             Text(item.title)
                                 .font(.largeTitle)
