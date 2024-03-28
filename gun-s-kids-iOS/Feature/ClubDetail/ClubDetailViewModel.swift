@@ -13,7 +13,7 @@ class ClubDetailViewModel: ObservableObject {
     var subscriptions = Set<AnyCancellable>()
     
     
-    init(clubNo: Int)
+    init()
         {
             print(#fileID,#function, #line, "")
         }

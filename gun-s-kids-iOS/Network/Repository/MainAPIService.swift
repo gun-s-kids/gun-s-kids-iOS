@@ -124,4 +124,79 @@ class MainAPIService {
         }
         .eraseToAnyPublisher()
     }
+    
+    func postClubSignUp(clubNo: Int, memberNo: Int, introdution: String) -> AnyPublisher<ClubInfo, Error> {
+        let tokenUtil = TokenUtils()
+        let parameter: Parameters = ["clubNo" : "\(clubNo)",
+                                     "memberNo" : "\(memberNo)",
+                                     "introduction" : "\(introdution)"]
+        return Future() { promise in
+            AF.request(MainAPI.postClubSignUp.url, method: .post, parameters: parameter, encoding: JSONEncoding.default, headers: tokenUtil.getAuthorizationHeader())
+                .publishDecodable(type: ClubInfoResponse.self)
+                .value()
+                .sink { completion in
+                    switch completion {
+                    case .finished:
+                        print("postClubSignUp finished")
+                    case .failure(let error):
+                        print("postClubSignUp error: \(error)")
+                        promise(.failure(error))
+                    }
+                } receiveValue: { result in
+                    promise(.success(result.data))
+                }
+                .store(in: &self.cancellable)
+        }
+        .eraseToAnyPublisher()
+    }
+    
+    func postClubApproval(clubNo: Int, memberNo: Int, introdution: String) -> AnyPublisher<ClubInfo, Error> {
+        let tokenUtil = TokenUtils()
+        let parameter: Parameters = ["clubNo" : "\(clubNo)",
+                                     "memberNo" : "\(memberNo)",
+                                     "introduction" : "\(introdution)"]
+        
+        return Future() { promise in
+            AF.request(MainAPI.postClubApproval.url, method: .post, parameters: parameter, encoding: JSONEncoding.default, headers: tokenUtil.getAuthorizationHeader())
+                .publishDecodable(type: ClubInfoResponse.self)
+                .value()
+                .sink { completion in
+                    switch completion {
+                    case .finished:
+                        print("postClubApproval finished")
+                    case .failure(let error):
+                        print("postClubApproval error: \(error)")
+                        promise(.failure(error))
+                    }
+                } receiveValue: { result in
+                    promise(.success(result.data))
+                }
+                .store(in: &self.cancellable)
+        }
+        .eraseToAnyPublisher()
+    }
+    
+    func getClubRequestMembers(clubNo: Int) -> AnyPublisher<ClubInfo, Error> {
+        let tokenUtil = TokenUtils()
+        let parameter: Parameters = ["clubNo" : "\(clubNo)"]
+        
+        return Future() { promise in
+            AF.request(MainAPI.getClubInfo.url, method: .get, parameters: parameter, headers: tokenUtil.getAuthorizationHeader())
+                .publishDecodable(type: ClubInfoResponse.self)
+                .value()
+                .sink { completion in
+                    switch completion {
+                    case .finished:
+                        print("getClubRequestMembers finished")
+                    case .failure(let error):
+                        print("getClubRequestMembers error: \(error)")
+                        promise(.failure(error))
+                    }
+                } receiveValue: { result in
+                    promise(.success(result.data))
+                }
+                .store(in: &self.cancellable)
+        }
+        .eraseToAnyPublisher()
+    }
 }
