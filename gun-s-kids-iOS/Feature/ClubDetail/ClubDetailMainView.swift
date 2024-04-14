@@ -31,7 +31,7 @@ struct ClubDetailMainView: View {
         option?.textColor = UIColor.secondaryLabel
         clubDetail = club
         navigationTitleString = clubDetail.clubNm
-        self._viewModel = StateObject.init(wrappedValue: ClubDetailViewModel(clubNo: club.clubNo))
+        self._viewModel = StateObject.init(wrappedValue: ClubDetailViewModel())
     }
     
     var body: some View {
@@ -97,6 +97,6 @@ extension ClubDetailMainView {
 
 struct ClubDetailMainView_Previews: PreviewProvider {
     static var previews: some View {
-        ClubDetailMainView(club: ClubInfo(clubNo: 1, companyNm: "", clubNm: "", clubDesc: "", clubImg: "", createdDate: "", memberList: []))
+        ClubDetailMainView(club: ClubInfo(clubNo: 1, companyNm: "", clubNm: "", clubDesc: "", clubImg: "", createdDate: "", adminList: []))
     }
 }

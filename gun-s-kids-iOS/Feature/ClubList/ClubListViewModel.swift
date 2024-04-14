@@ -15,7 +15,7 @@ class ClubListViewModel: ObservableObject {
     
     @Published var companyInfoList = [CompanyInfo]()
     @Published var clubInfoList = [Club]()
-    @Published var clubInfo = ClubInfo(clubNo: 0, companyNm: "", clubNm: "", clubDesc: "", clubImg: "", createdDate: "", memberList: [])
+    @Published var clubInfo = ClubInfo(clubNo: 0, companyNm: "", clubNm: "", clubDesc: "", clubImg: "", createdDate: "", adminList: [])
     @Published var isFetchedData: Bool = false
     
     init()

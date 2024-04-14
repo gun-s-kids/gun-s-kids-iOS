@@ -21,7 +21,7 @@ class AuthAPIService {
 
         return Future() { promise in
             AF.request(AuthAPI.postSignUp.url, method: .post, parameters: parameter, encoding: JSONEncoding.default)
-                .publishDecodable(type: SignUpResponse.self)
+                .publishDecodable(type: BaseResponse.self)
                 .value()
                 .sink { completion in
                     switch completion {
@@ -71,7 +71,7 @@ class AuthAPIService {
 
         return Future() { promise in
             AF.request(AuthAPI.postSendEmailAuthCode.url, method: .post, parameters: parameter)
-                .publishDecodable(type: BaseResponse.self)
+                .publishDecodable(type: StringDataResponse.self)
                 .value()
                 .sink { completion in
                     switch completion {
@@ -94,7 +94,7 @@ class AuthAPIService {
 
         return Future() { promise in
             AF.request(AuthAPI.getEmailVerification.url, method: .get, parameters: parameter)
-                .publishDecodable(type: SignUpResponse.self)
+                .publishDecodable(type: BaseResponse.self)
                 .value()
                 .sink { completion in
                     switch completion {
@@ -117,7 +117,7 @@ class AuthAPIService {
 
         return Future() { promise in
             AF.request(AuthAPI.getCheckNickname.url, method: .get, parameters: parameter)
-                .publishDecodable(type: SignUpResponse.self)
+                .publishDecodable(type: BaseResponse.self)
                 .value()
                 .sink { completion in
                     switch completion {

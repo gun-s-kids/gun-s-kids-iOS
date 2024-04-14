@@ -26,6 +26,8 @@
 		2D50A7802BB00FAA00FD8B5F /* SetCompanyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D50A77F2BB00FAA00FD8B5F /* SetCompanyView.swift */; };
 		2D50A7842BB2D91800FD8B5F /* ClubDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D50A7832BB2D91800FD8B5F /* ClubDetailViewModel.swift */; };
 		2D50A7862BB2DAF000FD8B5F /* ClubInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D50A7852BB2DAF000FD8B5F /* ClubInfoResponse.swift */; };
+		2D50A7882BCBAE2E00FD8B5F /* StringDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D50A7872BCBAE2E00FD8B5F /* StringDataResponse.swift */; };
+		2D50A78A2BCBBB2400FD8B5F /* MemberInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D50A7892BCBBB2400FD8B5F /* MemberInfoResponse.swift */; };
 		2D5E37DC2AD3D7BF003EA3FC /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E37DB2AD3D7BF003EA3FC /* ColorExtension.swift */; };
 		2D5E37DE2AD3DA30003EA3FC /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E37DD2AD3DA30003EA3FC /* ProfileView.swift */; };
 		2D5E37E22AD3E966003EA3FC /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E37E12AD3E966003EA3FC /* EditProfileView.swift */; };
@@ -57,7 +59,6 @@
 		2DAAD40F2B89C8C300DFD0B2 /* BoardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD40E2B89C8C300DFD0B2 /* BoardDetailView.swift */; };
 		2DD7EBF92BA593E300005727 /* AuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD7EBF82BA593E300005727 /* AuthAPI.swift */; };
 		2DD7EBFB2BA5954500005727 /* AuthAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD7EBFA2BA5954500005727 /* AuthAPIService.swift */; };
-		2DD7EBFD2BA59D2C00005727 /* SignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD7EBFC2BA59D2C00005727 /* SignUpResponse.swift */; };
 		2DD7EBFF2BA5A3C900005727 /* TokenUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD7EBFE2BA5A3C900005727 /* TokenUtil.swift */; };
 		2DF2679B2BA5B14E002CE28A /* AuthInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF2679A2BA5B14E002CE28A /* AuthInfo.swift */; };
 		2DF2679D2BA5B238002CE28A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF2679C2BA5B238002CE28A /* LoginViewModel.swift */; };
@@ -100,6 +101,8 @@
 		2D50A77F2BB00FAA00FD8B5F /* SetCompanyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCompanyView.swift; sourceTree = "<group>"; };
 		2D50A7832BB2D91800FD8B5F /* ClubDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubDetailViewModel.swift; sourceTree = "<group>"; };
 		2D50A7852BB2DAF000FD8B5F /* ClubInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubInfoResponse.swift; sourceTree = "<group>"; };
+		2D50A7872BCBAE2E00FD8B5F /* StringDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringDataResponse.swift; sourceTree = "<group>"; };
+		2D50A7892BCBBB2400FD8B5F /* MemberInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberInfoResponse.swift; sourceTree = "<group>"; };
 		2D5E37DB2AD3D7BF003EA3FC /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		2D5E37DD2AD3DA30003EA3FC /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileView.swift; path = "gun-s-kids-iOS/Global/ProfileView.swift"; sourceTree = SOURCE_ROOT; };
 		2D5E37E12AD3E966003EA3FC /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EditProfileView.swift; path = "gun-s-kids-iOS/Feature/EditProfileView.swift"; sourceTree = SOURCE_ROOT; };
@@ -129,7 +132,6 @@
 		2DAAD40E2B89C8C300DFD0B2 /* BoardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardDetailView.swift; sourceTree = "<group>"; };
 		2DD7EBF82BA593E300005727 /* AuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAPI.swift; sourceTree = "<group>"; };
 		2DD7EBFA2BA5954500005727 /* AuthAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAPIService.swift; sourceTree = "<group>"; };
-		2DD7EBFC2BA59D2C00005727 /* SignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResponse.swift; sourceTree = "<group>"; };
 		2DD7EBFE2BA5A3C900005727 /* TokenUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenUtil.swift; sourceTree = "<group>"; };
 		2DF2679A2BA5B14E002CE28A /* AuthInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInfo.swift; sourceTree = "<group>"; };
 		2DF2679C2BA5B238002CE28A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -246,10 +248,11 @@
 				2DA93C652B5004C800C3DCA7 /* CompanyListResponse.swift */,
 				2D351C2B2B5CEF91007F8131 /* ClubListResponse.swift */,
 				2D3690022B94257300D0E445 /* ClubPostResponse.swift */,
-				2DD7EBFC2BA59D2C00005727 /* SignUpResponse.swift */,
 				2DF267A02BA869F6002CE28A /* LoginResponse.swift */,
 				2DF267A42BAB1BAA002CE28A /* BaseResponse.swift */,
 				2D50A7852BB2DAF000FD8B5F /* ClubInfoResponse.swift */,
+				2D50A7872BCBAE2E00FD8B5F /* StringDataResponse.swift */,
+				2D50A7892BCBBB2400FD8B5F /* MemberInfoResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -554,15 +557,16 @@
 				2D351C2C2B5CEF91007F8131 /* ClubListResponse.swift in Sources */,
 				2DF2B9042B2D73780037EBE0 /* MainView.swift in Sources */,
 				2D5E37DC2AD3D7BF003EA3FC /* ColorExtension.swift in Sources */,
-				2DD7EBFD2BA59D2C00005727 /* SignUpResponse.swift in Sources */,
 				2D7788EA2B52611800C38902 /* BoardListView.swift in Sources */,
 				2DA93C722B50188000C3DCA7 /* MainAPI.swift in Sources */,
 				2DAAD40B2B7A18D500DFD0B2 /* ChangeLocationView.swift in Sources */,
 				2DF267A32BA87451002CE28A /* AppRootManager.swift in Sources */,
+				2D50A7882BCBAE2E00FD8B5F /* StringDataResponse.swift in Sources */,
 				2DF267A52BAB1BAA002CE28A /* BaseResponse.swift in Sources */,
 				2D5E37F02AF790E9003EA3FC /* Club.swift in Sources */,
 				2DF2B9022B2D62A10037EBE0 /* SetNicknameView.swift in Sources */,
 				2D5E37E92AEE47C4003EA3FC /* ViewExtension.swift in Sources */,
+				2D50A78A2BCBBB2400FD8B5F /* MemberInfoResponse.swift in Sources */,
 				2D0BDEAA2AAD835000A91728 /* ContentView.swift in Sources */,
 				2DAAD40F2B89C8C300DFD0B2 /* BoardDetailView.swift in Sources */,
 				2D0BDEA82AAD835000A91728 /* gun_s_kids_iOSApp.swift in Sources */,

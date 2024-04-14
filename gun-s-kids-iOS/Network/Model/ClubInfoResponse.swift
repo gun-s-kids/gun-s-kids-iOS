@@ -20,7 +20,7 @@ struct ClubInfo: Codable {
     let clubDesc: String
     let clubImg: String
     let createdDate: String
-    let memberList: [MemberInfo]
+    let adminList: [MemberInfo]
 }
 
 struct MemberInfo: Codable {
@@ -31,4 +31,5 @@ struct MemberInfo: Codable {
     let role: String
     let profileImg: String?
     let introduction: String?
+    let roleNo: Int?
 }

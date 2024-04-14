@@ -10,5 +10,5 @@ import Foundation
 struct BaseResponse: Codable {
     let status: String
     let code: Int
-    let data: String
+    let message: String
 }
