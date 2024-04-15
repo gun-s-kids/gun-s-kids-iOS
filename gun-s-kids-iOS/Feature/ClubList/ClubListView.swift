@@ -53,7 +53,7 @@ extension ClubListView {
     }
     
     var registerButton: some View {
-        NavigationLink(destination: MakeClubView(), isActive: $isButtonPressed) {
+        NavigationLink(destination: MakeClubView(viewModel: viewModel), isActive: $isButtonPressed) {
             Button(action: {
                 isButtonPressed = true
             }) {

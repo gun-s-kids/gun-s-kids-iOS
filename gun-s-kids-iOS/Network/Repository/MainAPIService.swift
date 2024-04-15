@@ -201,29 +201,41 @@ class MainAPIService {
         .eraseToAnyPublisher()
     }
     
-    func postClub(companyNo: Int, clubNm: String, clubDesc: String, clubImg: String) -> AnyPublisher<String, Error> {
+    func postClub(companyNo: Int, clubNm: String, clubDesc: String, clubImg: Data) -> AnyPublisher<String, Error> {
         let tokenUtil = TokenUtils()
-        let parameter: Parameters = ["companyNo" : "\(companyNo)",
+        
+        let parameter: [String: Any] = ["companyNo" : "\(companyNo)",
                                      "clubNm" : "\(clubNm)",
                                      "clubDesc" : "\(clubDesc)",
                                      "clubImg" : "\(clubImg)"]
         
         return Future() { promise in
-            AF.request(MainAPI.postClub.url, method: .post, parameters: parameter, encoding: JSONEncoding.default, headers: tokenUtil.getAuthorizationHeader())
-                .publishDecodable(type:BaseResponse.self)
-                .value()
-                .sink { completion in
-                    switch completion {
-                    case .finished:
-                        print("postClub finished")
-                    case .failure(let error):
-                        print("postClub error: \(error)")
-                        promise(.failure(error))
+            AF.upload(
+                multipartFormData: { multipartFormData in
+                    for (key, value) in parameter {
+                        if let stringValue = "\(value)".data(using: .utf8) {
+                            multipartFormData.append(stringValue, withName: key)
+                        }
                     }
-                } receiveValue: { result in
-                    promise(.success(result.message))
+                },
+                to: MainAPI.postClub.url,
+                method: .post,
+                headers: tokenUtil.getAuthorizationHeaderAndFormData()
+            )
+            .publishDecodable(type: BaseResponse.self)
+            .value()
+            .sink { completion in
+                switch completion {
+                case .finished:
+                    print("postClub finished")
+                case .failure(let error):
+                    print("postClub error: \(error)")
+                    promise(.failure(error))
                 }
-                .store(in: &self.cancellable)
+            } receiveValue: { result in
+                promise(.success(result.message))
+            }
+            .store(in: &self.cancellable)
         }
         .eraseToAnyPublisher()
     }

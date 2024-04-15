@@ -89,4 +89,21 @@ class ClubListViewModel: ObservableObject {
                 self.isFetchedData = true
             }.store(in: &subscriptions)
     }
+    
+    func registerClub(companyNo: Int, clubNm: String, clubDesc: String, clubImg: UIImage) {
+        guard let imageData = clubImg.jpegData(compressionQuality: 0.0) else { return }
+        print("clubImg: \(clubImg)")
+
+        MainAPIService.shared.postClub(companyNo: companyNo, clubNm: clubNm, clubDesc: clubDesc, clubImg: imageData)
+            .sink { completion in
+                switch completion {
+                case .failure(let err):
+                    print("[API] registerClub ERROR : \(err)")
+                case .finished:
+                    print("[API] registerClub Finish")
+                }
+            } receiveValue: { (value: String) in
+                print(value)
+            }.store(in: &subscriptions)
+    }
 }

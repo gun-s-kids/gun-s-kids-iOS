@@ -67,4 +67,13 @@ class TokenUtils {
              return nil
          }
      }
+    
+    func getAuthorizationHeaderAndFormData() -> HTTPHeaders? {
+        if let accessToken = self.read(account: "accessToken") {
+            return ["Authorization" : "Bearer \(accessToken)",
+                    "Content-Type": "multipart/form-data"] as HTTPHeaders
+        } else {
+            return nil
+        }
+    }
 }

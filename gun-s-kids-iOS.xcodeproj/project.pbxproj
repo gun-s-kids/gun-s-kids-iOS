@@ -28,6 +28,7 @@
 		2D50A7862BB2DAF000FD8B5F /* ClubInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D50A7852BB2DAF000FD8B5F /* ClubInfoResponse.swift */; };
 		2D50A7882BCBAE2E00FD8B5F /* StringDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D50A7872BCBAE2E00FD8B5F /* StringDataResponse.swift */; };
 		2D50A78A2BCBBB2400FD8B5F /* MemberInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D50A7892BCBBB2400FD8B5F /* MemberInfoResponse.swift */; };
+		2D50A78C2BCD3A9100FD8B5F /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D50A78B2BCD3A9100FD8B5F /* ImagePicker.swift */; };
 		2D5E37DC2AD3D7BF003EA3FC /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E37DB2AD3D7BF003EA3FC /* ColorExtension.swift */; };
 		2D5E37DE2AD3DA30003EA3FC /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E37DD2AD3DA30003EA3FC /* ProfileView.swift */; };
 		2D5E37E22AD3E966003EA3FC /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E37E12AD3E966003EA3FC /* EditProfileView.swift */; };
@@ -103,6 +104,7 @@
 		2D50A7852BB2DAF000FD8B5F /* ClubInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubInfoResponse.swift; sourceTree = "<group>"; };
 		2D50A7872BCBAE2E00FD8B5F /* StringDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringDataResponse.swift; sourceTree = "<group>"; };
 		2D50A7892BCBBB2400FD8B5F /* MemberInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberInfoResponse.swift; sourceTree = "<group>"; };
+		2D50A78B2BCD3A9100FD8B5F /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		2D5E37DB2AD3D7BF003EA3FC /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		2D5E37DD2AD3DA30003EA3FC /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileView.swift; path = "gun-s-kids-iOS/Global/ProfileView.swift"; sourceTree = SOURCE_ROOT; };
 		2D5E37E12AD3E966003EA3FC /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EditProfileView.swift; path = "gun-s-kids-iOS/Feature/EditProfileView.swift"; sourceTree = SOURCE_ROOT; };
@@ -328,6 +330,7 @@
 			isa = PBXGroup;
 			children = (
 				2DA4A8BA2AB565CD006E1342 /* PressableButtonStyle.swift */,
+				2D50A78B2BCD3A9100FD8B5F /* ImagePicker.swift */,
 				2D5E37E82AEE47C4003EA3FC /* ViewExtension.swift */,
 				2D5E37DB2AD3D7BF003EA3FC /* ColorExtension.swift */,
 				2D0BDEA72AAD835000A91728 /* gun_s_kids_iOSApp.swift */,
@@ -576,6 +579,7 @@
 				2DAAD4052B7A117000DFD0B2 /* ResetNicknameView.swift in Sources */,
 				2DF267A12BA869F6002CE28A /* LoginResponse.swift in Sources */,
 				2D5E37EB2AF78EE9003EA3FC /* MyClubView.swift in Sources */,
+				2D50A78C2BCD3A9100FD8B5F /* ImagePicker.swift in Sources */,
 				2DF2B90D2B2D77640037EBE0 /* ReauthMailView.swift in Sources */,
 				2DA93C6D2B5013DA00C3DCA7 /* NetworkResult.swift in Sources */,
 				2D3690072B943C1000D0E445 /* ClubRegisterListView.swift in Sources */,
