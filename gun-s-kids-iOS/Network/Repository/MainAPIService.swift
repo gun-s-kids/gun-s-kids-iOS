@@ -201,13 +201,19 @@ class MainAPIService {
         .eraseToAnyPublisher()
     }
     
-    func postClub(companyNo: Int, clubNm: String, clubDesc: String, clubImg: Data) -> AnyPublisher<String, Error> {
+    func postClub(companyNo: Int, clubNm: String, clubDesc: String, clubImg: UIImage) -> AnyPublisher<String, Error> {
         let tokenUtil = TokenUtils()
         
-        let parameter: [String: Any] = ["companyNo" : "\(companyNo)",
-                                     "clubNm" : "\(clubNm)",
-                                     "clubDesc" : "\(clubDesc)",
-                                     "clubImg" : "\(clubImg)"]
+        let parameter: [String: Any] = ["companyNo" : companyNo,
+                                        "clubNm" : clubNm,
+                                        "clubDesc" : clubDesc]
+        
+        var clubImage = Data()
+        
+        if let imageData = clubImg.jpegData(compressionQuality: 2.0) {
+            clubImage = imageData
+            print("## ClubImage : \(imageData)")
+        }
         
         return Future() { promise in
             AF.upload(
@@ -217,6 +223,7 @@ class MainAPIService {
                             multipartFormData.append(stringValue, withName: key)
                         }
                     }
+                    multipartFormData.append(clubImage, withName: "clubImg", fileName: "\(clubNm).jpg", mimeType: "image/jpg")
                 },
                 to: MainAPI.postClub.url,
                 method: .post,

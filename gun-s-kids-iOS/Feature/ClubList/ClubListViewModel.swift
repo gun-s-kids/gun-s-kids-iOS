@@ -91,10 +91,10 @@ class ClubListViewModel: ObservableObject {
     }
     
     func registerClub(companyNo: Int, clubNm: String, clubDesc: String, clubImg: UIImage) {
-        guard let imageData = clubImg.jpegData(compressionQuality: 0.0) else { return }
         print("clubImg: \(clubImg)")
 
-        MainAPIService.shared.postClub(companyNo: companyNo, clubNm: clubNm, clubDesc: clubDesc, clubImg: imageData)
+        var resizedImage = clubImg.resizeImage(image: clubImg, newWidth: 300)
+        MainAPIService.shared.postClub(companyNo: companyNo, clubNm: clubNm, clubDesc: clubDesc, clubImg: resizedImage)
             .sink { completion in
                 switch completion {
                 case .failure(let err):

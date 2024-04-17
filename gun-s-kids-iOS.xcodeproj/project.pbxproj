@@ -29,6 +29,7 @@
 		2D50A7882BCBAE2E00FD8B5F /* StringDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D50A7872BCBAE2E00FD8B5F /* StringDataResponse.swift */; };
 		2D50A78A2BCBBB2400FD8B5F /* MemberInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D50A7892BCBBB2400FD8B5F /* MemberInfoResponse.swift */; };
 		2D50A78C2BCD3A9100FD8B5F /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D50A78B2BCD3A9100FD8B5F /* ImagePicker.swift */; };
+		2D50A78E2BCFB1E900FD8B5F /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D50A78D2BCFB1E900FD8B5F /* UIImageExtension.swift */; };
 		2D5E37DC2AD3D7BF003EA3FC /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E37DB2AD3D7BF003EA3FC /* ColorExtension.swift */; };
 		2D5E37DE2AD3DA30003EA3FC /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E37DD2AD3DA30003EA3FC /* ProfileView.swift */; };
 		2D5E37E22AD3E966003EA3FC /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E37E12AD3E966003EA3FC /* EditProfileView.swift */; };
@@ -105,6 +106,7 @@
 		2D50A7872BCBAE2E00FD8B5F /* StringDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringDataResponse.swift; sourceTree = "<group>"; };
 		2D50A7892BCBBB2400FD8B5F /* MemberInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberInfoResponse.swift; sourceTree = "<group>"; };
 		2D50A78B2BCD3A9100FD8B5F /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		2D50A78D2BCFB1E900FD8B5F /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		2D5E37DB2AD3D7BF003EA3FC /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		2D5E37DD2AD3DA30003EA3FC /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileView.swift; path = "gun-s-kids-iOS/Global/ProfileView.swift"; sourceTree = SOURCE_ROOT; };
 		2D5E37E12AD3E966003EA3FC /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EditProfileView.swift; path = "gun-s-kids-iOS/Feature/EditProfileView.swift"; sourceTree = SOURCE_ROOT; };
@@ -333,6 +335,7 @@
 				2D50A78B2BCD3A9100FD8B5F /* ImagePicker.swift */,
 				2D5E37E82AEE47C4003EA3FC /* ViewExtension.swift */,
 				2D5E37DB2AD3D7BF003EA3FC /* ColorExtension.swift */,
+				2D50A78D2BCFB1E900FD8B5F /* UIImageExtension.swift */,
 				2D0BDEA72AAD835000A91728 /* gun_s_kids_iOSApp.swift */,
 				2D0BDEAB2AAD835100A91728 /* Assets.xcassets */,
 			);
@@ -561,6 +564,7 @@
 				2DF2B9042B2D73780037EBE0 /* MainView.swift in Sources */,
 				2D5E37DC2AD3D7BF003EA3FC /* ColorExtension.swift in Sources */,
 				2D7788EA2B52611800C38902 /* BoardListView.swift in Sources */,
+				2D50A78E2BCFB1E900FD8B5F /* UIImageExtension.swift in Sources */,
 				2DA93C722B50188000C3DCA7 /* MainAPI.swift in Sources */,
 				2DAAD40B2B7A18D500DFD0B2 /* ChangeLocationView.swift in Sources */,
 				2DF267A32BA87451002CE28A /* AppRootManager.swift in Sources */,
