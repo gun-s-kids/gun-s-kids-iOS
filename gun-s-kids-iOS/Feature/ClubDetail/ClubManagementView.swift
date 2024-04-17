@@ -9,6 +9,8 @@ import SwiftUI
 import URLImage
 
 struct ClubManagementView: View {
+    var member: MemberInfo
+
     var body: some View {
         VStack(spacing: 10) {
             profileImage
@@ -25,7 +27,7 @@ struct ClubManagementView: View {
 
 extension ClubManagementView {
     var profileImage: some View {
-        URLImage(URL(string:"https://placebear.com/g/200/200")!,
+        URLImage(URL(string: member.profileImg ?? "https://placebear.com/g/200/200")!,
                  content: { image in
             image
                 .resizable()
@@ -36,15 +38,15 @@ extension ClubManagementView {
     
     var profileDetail: some View {
         VStack(spacing: 10) {
-            Text("김OO")
+            Text(member.nickname)
                 .font(.system(size: 15))
                 .foregroundColor(.secondaryText)
             
-            Text("현대 IT&E")
+            Text(member.companyNm ?? "")
                 .font(.system(size: 15))
                 .foregroundColor(.secondaryText)
             
-            Text("운영자")
+            Text(member.role)
                 .font(.system(size: 15))
                 .foregroundColor(.secondaryText)
         }
@@ -53,6 +55,6 @@ extension ClubManagementView {
 
 struct ClubManagementView_Previews: PreviewProvider {
     static var previews: some View {
-        ClubManagementView()
+        ClubManagementView(member: MemberInfo(memberNo: 1, memberNm: "", nickname: "두히", companyNm: "현대IT&E", role: "운영자", profileImg: nil, introduction: "", roleNo: 0))
     }
 }

@@ -23,7 +23,8 @@ struct ClubInfo: Codable {
     let adminList: [MemberInfo]
 }
 
-struct MemberInfo: Codable {
+struct MemberInfo: Codable, Identifiable {
+    let id = UUID()
     let memberNo: Int
     let memberNm: String?
     let nickname: String
@@ -32,4 +33,15 @@ struct MemberInfo: Codable {
     let profileImg: String?
     let introduction: String?
     let roleNo: Int?
+    
+    private enum CodingKeys: String, CodingKey {
+        case memberNo
+        case memberNm
+        case nickname
+        case companyNm
+        case role
+        case profileImg
+        case introduction
+        case roleNo
+    }
 }

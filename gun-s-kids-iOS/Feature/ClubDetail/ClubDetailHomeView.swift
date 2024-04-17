@@ -74,17 +74,17 @@ extension ClubDetailHomeView {
             if #available(iOS 16.0, *) {
                 ScrollView(.horizontal) {
                     LazyHStack {
-                        ClubManagementView()
-                        ClubManagementView()
-                        ClubManagementView()
+                        ForEach(clubInfo.adminList) { member in
+                            ClubManagementView(member: member)
+                        }
                     }
                 }.scrollIndicators(.hidden)
             } else {
                 ScrollView(.horizontal) {
                     LazyHStack {
-                        ClubManagementView()
-                        ClubManagementView()
-                        ClubManagementView()
+                        ForEach(clubInfo.adminList) { member in
+                            ClubManagementView(member: member)
+                        }
                     }
                 }
             }
@@ -138,6 +138,6 @@ extension ClubDetailHomeView {
 
 struct ClubDetailHomeView_Previews: PreviewProvider {
     static var previews: some View {
-        ClubDetailHomeView(viewModel: ClubDetailViewModel(), clubInfo: ClubInfo(clubNo: 1, companyNm: "현대IT&E", clubNm: "자바락", clubDesc: "클라이밍 동호회", clubImg: "https://gunskids.s3.ap-northeast-2.amazonaws.com/6a66bab5-a47f-4dc0-8560-eeb5870f8873", createdDate: "2024-03-20T08:28:23.297843", adminList: []))
+        ClubDetailHomeView(viewModel: ClubDetailViewModel(), clubInfo: ClubInfo(clubNo: 1, companyNm: "현대IT&E", clubNm: "자바락", clubDesc: "클라이밍 동호회", clubImg: "https://gunskids.s3.ap-northeast-2.amazonaws.com/6a66bab5-a47f-4dc0-8560-eeb5870f8873", createdDate: "2024-03-20T08:28:23.297843", adminList: [MemberInfo(memberNo: 1, memberNm: "", nickname: "두히", companyNm: "현대IT&E", role: "운영자", profileImg: nil, introduction: "", roleNo: 0)]))
     }
 }
