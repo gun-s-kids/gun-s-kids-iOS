@@ -44,6 +44,14 @@ struct MakeClubView: View {
             }
         }
         .navigationBarBackButtonHidden(true)
+        .onChange(of: viewModel.registerClubSuccess) { value in
+            if value {
+                self.presentationMode.wrappedValue.dismiss()
+            }
+        }
+        .alert(isPresented: $viewModel.registerClubFailure) {
+            Alert(title: Text("등록 실패"), message: Text(viewModel.registerClubFailureMessage), dismissButton: .default(Text("Dismiss")))
+        }
     }
 }
 

@@ -17,6 +17,9 @@ class ClubListViewModel: ObservableObject {
     @Published var clubInfoList = [Club]()
     @Published var clubInfo = ClubInfo(clubNo: 0, companyNm: "", clubNm: "", clubDesc: "", clubImg: "", createdDate: "", adminList: [])
     @Published var isFetchedData: Bool = false
+    @Published var registerClubFailure: Bool = false
+    @Published var registerClubSuccess: Bool = false
+    @Published var registerClubFailureMessage: String = ""
     
     init()
         {
@@ -103,7 +106,18 @@ class ClubListViewModel: ObservableObject {
                     print("[API] registerClub Finish")
                 }
             } receiveValue: { (value: String) in
-                print(value)
+                if value == "BAD_REQUEST" {
+                    self.registerClubFailure = true
+                    self.registerClubFailureMessage = "회사가 존재하지 않습니다."
+                } else if value == "CONFLICT" {
+                    self.registerClubFailure = true
+                    self.registerClubFailureMessage = "이미 사용중인 동호회명입니다."
+                } else if value == "OK" {
+                    self.registerClubSuccess = true
+                } else {
+                    self.registerClubFailure = true
+                    self.registerClubFailureMessage = "알 수 없는 오류가 발생하였습니다."
+                }
             }.store(in: &subscriptions)
     }
 }

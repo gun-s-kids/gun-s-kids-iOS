@@ -240,7 +240,7 @@ class MainAPIService {
                     promise(.failure(error))
                 }
             } receiveValue: { result in
-                promise(.success(result.message))
+                promise(.success(result.status))
             }
             .store(in: &self.cancellable)
         }
