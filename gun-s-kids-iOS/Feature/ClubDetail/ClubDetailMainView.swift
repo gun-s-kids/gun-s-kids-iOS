@@ -45,7 +45,7 @@ struct ClubDetailMainView: View {
                         case 1:
                             BoardListView(clubNo: clubDetail.clubNo)
                         case 2:
-                            ClubMemberView(memberInfo: clubDetail.adminList)
+                            ClubMemberView(memberList: clubDetail.adminList)
                         default:
                             Text(item.title)
                                 .font(.largeTitle)

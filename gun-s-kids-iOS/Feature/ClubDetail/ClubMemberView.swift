@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ClubMemberView: View {
-    var memberInfo: [MemberInfo]
+    var memberList: [MemberInfo]
     var sample: [MemberInfo] = [
         MemberInfo(memberNo: 1, memberNm: "안녕", nickname: "닉네일", companyNm: "현대아이티", role: "운영자", profileImg: nil, introduction: "", roleNo: 0),
         MemberInfo(memberNo: 2, memberNm: "그녕", nickname: "그녕", companyNm: "현대홈쇼핑", role: "멤버", profileImg: nil, introduction: "", roleNo: 1),
@@ -31,7 +31,9 @@ struct ClubMemberView: View {
                     LazyVGrid(columns: items, spacing: 20) {
                         ForEach(sample) { info in
                             if info.roleNo == 0 {
-                                ClubManagementView(member: info)
+                                NavigationLink(destination: ClubMemberDetailView(member: info)) {
+                                    ClubManagementView(member: info)
+                                }
                             }
                         }
                     }
@@ -45,7 +47,9 @@ struct ClubMemberView: View {
                     LazyVGrid(columns: items, spacing: 20) {
                         ForEach(sample) { info in
                             if info.roleNo == 1 {
-                                ClubManagementView(member: info)
+                                NavigationLink(destination: ClubMemberDetailView(member: info)) {
+                                    ClubManagementView(member: info)
+                                }
                             }
                         }
                     }
@@ -57,7 +61,7 @@ struct ClubMemberView: View {
 
 struct ClubMemberView_Previews: PreviewProvider {
     static var previews: some View {
-        ClubMemberView(memberInfo: [
+        ClubMemberView(memberList: [
             MemberInfo(memberNo: 1, memberNm: "안녕", nickname: "닉네일", companyNm: "현대아이티", role: "운영자", profileImg: "", introduction: "", roleNo: 0),
             MemberInfo(memberNo: 2, memberNm: "그녕", nickname: "그녕", companyNm: "현대홈쇼핑", role: "운영자", profileImg: "", introduction: "", roleNo: 0),
             MemberInfo(memberNo: 3, memberNm: "양아", nickname: "양아", companyNm: "한섬", role: "운영자", profileImg: "", introduction: "", roleNo: 0),
