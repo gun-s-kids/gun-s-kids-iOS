@@ -47,6 +47,7 @@ struct MakeClubView: View {
         .onChange(of: viewModel.registerClubSuccess) { value in
             if value {
                 self.presentationMode.wrappedValue.dismiss()
+                viewModel.localCacheClub = [:]
             }
         }
         .alert(isPresented: $viewModel.registerClubFailure) {

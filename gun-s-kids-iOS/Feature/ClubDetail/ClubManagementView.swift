@@ -16,7 +16,7 @@ struct ClubManagementView: View {
             profileImage
             profileDetail
         }
-        .frame(width: 157.5, height: 246)
+        .frame(width: 105, height: 164)
         .overlay(
             RoundedRectangle(cornerRadius: 10)
                 .stroke(Color.primaryShadow, lineWidth: 1)
@@ -31,23 +31,23 @@ extension ClubManagementView {
                  content: { image in
             image
                 .resizable()
-                .frame(width: 120, height: 120)
+                .frame(width: 80, height: 80)
                 .padding(.horizontal, 0)
         })
     }
     
     var profileDetail: some View {
-        VStack(spacing: 10) {
+        VStack(spacing: 7) {
             Text(member.nickname)
-                .font(.system(size: 15))
+                .font(.system(size: 12))
                 .foregroundColor(.secondaryText)
             
             Text(member.companyNm ?? "")
-                .font(.system(size: 15))
+                .font(.system(size: 12))
                 .foregroundColor(.secondaryText)
             
             Text(member.role)
-                .font(.system(size: 15))
+                .font(.system(size: 12))
                 .foregroundColor(.secondaryText)
         }
     }
