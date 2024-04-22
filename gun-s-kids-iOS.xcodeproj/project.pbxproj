@@ -80,6 +80,7 @@
 		7C93057ACC44BDBB32C71DB0 /* Pods_gun_s_kids_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A499A11E81026D74CEEC582 /* Pods_gun_s_kids_iOS.framework */; };
 		9908FABB2B03564F00BEF286 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9908FABA2B03564F00BEF286 /* Company.swift */; };
 		9908FABF2B03583400BEF286 /* CompanySectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9908FABE2B03583400BEF286 /* CompanySectionView.swift */; };
+		991F1F852BD5E975004C599B /* ClubDetailMainView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F1F842BD5E975004C599B /* ClubDetailMainView2.swift */; };
 		99E70AAE2AF86FE800548E45 /* ClubListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E70AAD2AF86FE800548E45 /* ClubListView.swift */; };
 /* End PBXBuildFile section */
 
@@ -156,6 +157,7 @@
 		2DF2B90E2B2D77D00037EBE0 /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
 		9908FABA2B03564F00BEF286 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		9908FABE2B03583400BEF286 /* CompanySectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanySectionView.swift; sourceTree = "<group>"; };
+		991F1F842BD5E975004C599B /* ClubDetailMainView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubDetailMainView2.swift; sourceTree = "<group>"; };
 		99E70AAD2AF86FE800548E45 /* ClubListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubListView.swift; sourceTree = "<group>"; };
 		E496886060BBF58A05059625 /* Pods-gun-s-kids-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gun-s-kids-iOS.debug.xcconfig"; path = "Target Support Files/Pods-gun-s-kids-iOS/Pods-gun-s-kids-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		ECC2B3C2B3F367B5F92A5903 /* Pods-gun-s-kids-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gun-s-kids-iOS.release.xcconfig"; path = "Target Support Files/Pods-gun-s-kids-iOS/Pods-gun-s-kids-iOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				2D44002E2B1C48BF00BE7ADB /* ClubDetailMainView.swift */,
+				991F1F842BD5E975004C599B /* ClubDetailMainView2.swift */,
 				2D368FFC2B91B03500D0E445 /* ClubDetailHomeView.swift */,
 				2D368FFE2B91C1C500D0E445 /* ClubManagementView.swift */,
 				2D3690062B943C1000D0E445 /* ClubRegisterListView.swift */,
@@ -554,6 +557,7 @@
 				2D3690092B943D2700D0E445 /* ClubRegisterRow.swift in Sources */,
 				2D36900B2B943D6800D0E445 /* RegisterInfo.swift in Sources */,
 				2D368FFF2B91C1C500D0E445 /* ClubManagementView.swift in Sources */,
+				991F1F852BD5E975004C599B /* ClubDetailMainView2.swift in Sources */,
 				2DF2679F2BA5B23F002CE28A /* SignUpViewModel.swift in Sources */,
 				2D3690032B94257300D0E445 /* ClubPostResponse.swift in Sources */,
 				2D50A7862BB2DAF000FD8B5F /* ClubInfoResponse.swift in Sources */,

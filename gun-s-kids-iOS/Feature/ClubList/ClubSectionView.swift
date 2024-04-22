@@ -15,7 +15,7 @@ struct ClubSectionView: View {
         ScrollView(.vertical) {
             LazyVStack {
                 ForEach(viewModel.clubInfoList) { club in
-                    NavigationLink(destination: ClubDetailMainView(club: viewModel.clubInfo), isActive: $viewModel.isFetchedData) {
+                    NavigationLink(destination: ClubDetailMainView2(clubDetail: viewModel.clubInfo), isActive: $viewModel.isFetchedData) {
                         ClubRow(clubInfo: club)
                             .onTapGesture {
                                 viewModel.fetchClubInfo(clubNo: club.clubNo)

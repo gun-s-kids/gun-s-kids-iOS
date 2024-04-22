@@ -9,7 +9,7 @@ import Foundation
 
 final class AppRootManager: ObservableObject {
     
-    @Published var currentRoot: Roots = .authentication
+    @Published var currentRoot: Roots = .home
     
     enum Roots {
         case authentication

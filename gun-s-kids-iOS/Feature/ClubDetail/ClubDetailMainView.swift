@@ -41,7 +41,7 @@ struct ClubDetailMainView: View {
                     VStack {
                         switch item.index {
                         case 0:
-                            ClubDetailHomeView(viewModel: viewModel, clubInfo: clubDetail)
+                            ClubDetailHomeView(clubInfo: clubDetail)
                         case 1:
                             BoardListView(clubNo: clubDetail.clubNo)
                         case 2:
