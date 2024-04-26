@@ -41,6 +41,8 @@
 		2D5E37F02AF790E9003EA3FC /* Club.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E37EF2AF790E9003EA3FC /* Club.swift */; };
 		2D7788EA2B52611800C38902 /* BoardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7788E92B52611800C38902 /* BoardListView.swift */; };
 		2D7788EC2B52626800C38902 /* BoardRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7788EB2B52626800C38902 /* BoardRow.swift */; };
+		2D9F28422BDB79A10076794C /* MyBoardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9F28412BDB79A10076794C /* MyBoardListView.swift */; };
+		2D9F28442BDB7E350076794C /* MyBoardListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9F28432BDB7E350076794C /* MyBoardListViewModel.swift */; };
 		2DA4A8B92AB5544D006E1342 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4A8B82AB5544D006E1342 /* LoginView.swift */; };
 		2DA4A8BB2AB565CD006E1342 /* PressableButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4A8BA2AB565CD006E1342 /* PressableButtonStyle.swift */; };
 		2DA4A8BD2AB57589006E1342 /* SetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4A8BC2AB57589006E1342 /* SetPasswordView.swift */; };
@@ -121,6 +123,8 @@
 		2D5E37EF2AF790E9003EA3FC /* Club.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Club.swift; sourceTree = "<group>"; };
 		2D7788E92B52611800C38902 /* BoardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardListView.swift; sourceTree = "<group>"; };
 		2D7788EB2B52626800C38902 /* BoardRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardRow.swift; sourceTree = "<group>"; };
+		2D9F28412BDB79A10076794C /* MyBoardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBoardListView.swift; sourceTree = "<group>"; };
+		2D9F28432BDB7E350076794C /* MyBoardListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBoardListViewModel.swift; sourceTree = "<group>"; };
 		2DA4A8B82AB5544D006E1342 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		2DA4A8BA2AB565CD006E1342 /* PressableButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressableButtonStyle.swift; sourceTree = "<group>"; };
 		2DA4A8BC2AB57589006E1342 /* SetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPasswordView.swift; sourceTree = "<group>"; };
@@ -240,6 +244,8 @@
 				2DAAD3FF2B79F7B200DFD0B2 /* BoardImageRow.swift */,
 				2DAAD40E2B89C8C300DFD0B2 /* BoardDetailView.swift */,
 				2D2C9D9D2B8B089900EAEA2B /* WriteBoardView.swift */,
+				2D9F28412BDB79A10076794C /* MyBoardListView.swift */,
+				2D9F28432BDB7E350076794C /* MyBoardListViewModel.swift */,
 			);
 			path = Board;
 			sourceTree = "<group>";
@@ -567,6 +573,7 @@
 				2D5E37DE2AD3DA30003EA3FC /* ProfileView.swift in Sources */,
 				2DA4A8BF2AB57B84006E1342 /* AuthMailView.swift in Sources */,
 				2DD7EBFF2BA5A3C900005727 /* TokenUtil.swift in Sources */,
+				2D9F28442BDB7E350076794C /* MyBoardListViewModel.swift in Sources */,
 				2D5E37ED2AF78F5B003EA3FC /* ClubRow.swift in Sources */,
 				2DAAD40D2B7A1A3B00DFD0B2 /* IntroduceView.swift in Sources */,
 				2DA4A8BD2AB57589006E1342 /* SetPasswordView.swift in Sources */,
@@ -577,6 +584,7 @@
 				2D5E37DC2AD3D7BF003EA3FC /* ColorExtension.swift in Sources */,
 				2D7788EA2B52611800C38902 /* BoardListView.swift in Sources */,
 				2D50A78E2BCFB1E900FD8B5F /* UIImageExtension.swift in Sources */,
+				2D9F28422BDB79A10076794C /* MyBoardListView.swift in Sources */,
 				2DA93C722B50188000C3DCA7 /* MainAPI.swift in Sources */,
 				2DAAD40B2B7A18D500DFD0B2 /* ChangeLocationView.swift in Sources */,
 				2DF267A32BA87451002CE28A /* AppRootManager.swift in Sources */,

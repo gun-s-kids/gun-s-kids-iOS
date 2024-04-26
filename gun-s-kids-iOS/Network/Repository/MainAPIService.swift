@@ -294,4 +294,27 @@ class MainAPIService {
         }
         .eraseToAnyPublisher()
     }
+    
+    func getMyClubPostList() -> AnyPublisher<[BoardInfo], Error> {
+        let tokenUtil = TokenUtils()
+
+        return Future() { promise in
+            AF.request(MainAPI.getMyClubPostList.url, method: .get, headers: tokenUtil.getAuthorizationHeader())
+                .publishDecodable(type: ClubPostListResponse.self)
+                .value()
+                .sink { completion in
+                    switch completion {
+                    case .finished:
+                        print("getMyClubPostList finished")
+                    case .failure(let error):
+                        print("getMyClubPostList error: \(error)")
+                        promise(.failure(error))
+                    }
+                } receiveValue: { result in
+                    promise(.success(result.data))
+                }
+                .store(in: &self.cancellable)
+        }
+        .eraseToAnyPublisher()
+    }
 }

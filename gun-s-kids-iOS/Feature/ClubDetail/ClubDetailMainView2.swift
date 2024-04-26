@@ -28,7 +28,7 @@ struct ClubDetailMainView2: View {
                         ClubDetailHomeView(clubInfo: clubDetail)
                             .tag(Menu.main)
                         
-                        BoardListView(clubNo: 1)
+                        BoardListView(clubNo: clubDetail.clubNo)
                             .tag(Menu.board)
                         
                         ClubMemberView(memberList: clubDetail.adminList)

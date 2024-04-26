@@ -1,24 +1,22 @@
 //
-//  BoardListView.swift
+//  MyBoardListView.swift
 //  gun-s-kids-iOS
 //
-//  Created by 권준상 on 2024/01/13.
+//  Created by 권준상 on 2024/04/26.
 //
 
 import SwiftUI
 
-struct BoardListView: View {
-    let clubNo: Int
-    @StateObject var viewModel: BoardListViewModel
+struct MyBoardListView: View {
+    @StateObject var viewModel: MyBoardListViewModel
     @State var isButtonPressed: Bool = false
     
-    init(clubNo: Int){
-        self.clubNo = clubNo
-        self._viewModel = StateObject.init(wrappedValue: BoardListViewModel(clubNo: clubNo))
+    init(){
+        self._viewModel = StateObject.init(wrappedValue: MyBoardListViewModel())
     }
 
     var body: some View {
-        GeometryReader { geometry in
+        NavigationView {
             ZStack(alignment: .bottomTrailing) {
                 ScrollView(.vertical) {
                     LazyVStack(alignment: .leading) {
@@ -49,7 +47,7 @@ struct BoardListView: View {
     }
 }
 
-extension BoardListView {
+extension MyBoardListView {
     var addBoardButton: some View {
         Button(action: {
             isButtonPressed = true
@@ -82,8 +80,9 @@ extension BoardListView {
     }
 }
 
-struct BoardListView_Previews: PreviewProvider {
+struct MyBoardListView_Previews: PreviewProvider {
     static var previews: some View {
-        BoardListView(clubNo: 1)
+        MyBoardListView()
     }
 }
+
