@@ -20,50 +20,69 @@ struct ClubDetailMainView2: View {
     
     var body: some View {
         NavigationView {
-            ScrollView {
-                headerTabView
-                TabView(selection: $activeMenu) {
-                    ClubDetailHomeView( clubInfo: clubDetail)
-                        .tag(Menu.main)
-                    
-                    BoardListView(clubNo: 1)
-                        .tag(Menu.board)
-                    
-                    ClubMemberView(memberList: clubDetail.adminList)
-                        .tag(Menu.member)
+            GeometryReader { geometry in
+                VStack {
+                    sinceLabel
+                    headerTabView
+                    TabView(selection: $activeMenu) {
+                        ClubDetailHomeView(clubInfo: clubDetail)
+                            .tag(Menu.main)
+                        
+                        BoardListView(clubNo: 1)
+                            .tag(Menu.board)
+                        
+                        ClubMemberView(memberList: clubDetail.adminList)
+                            .tag(Menu.member)
+                    }
+                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 120)
                 }
-                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 100)
             }
+            .navigationBarTitle(clubDetail.clubNm, displayMode: .inline)
+            .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        backButton
+                    }
+                }
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
 extension ClubDetailMainView2 {
+    var sinceLabel: some View {
+        Text("Since \(clubDetail.createdDate)")
+            .font(.system(size: 10))
+            .foregroundColor(.sinceColor)
+    }
+    
     var boardListView: some View {
         BoardListView(clubNo: 1)
     }
     
     var headerTabView: some View {
-        HStack(alignment: .center, spacing: 80) {
+        HStack(alignment: .center, spacing: 90) {
             Button(action: {
                 activeMenu = .main
             }, label: {
-                Text("홈")
-                    .font(.headline)
+                activeMenu == .main ?
+                Text("홈").font(.headline).foregroundColor(.black)
+                : Text("홈").font(.headline).foregroundColor(.grayColor)
             })
             Button(action: {
                 activeMenu = .board
             }, label: {
-                Text("게시판")
-                    .font(.headline)
+                activeMenu == .board ?
+                Text("게시판").font(.headline).foregroundColor(.black)
+                : Text("게시판").font(.headline).foregroundColor(.grayColor)
             })
             Button(action: {
                 activeMenu = .member
             }, label: {
-                Text("멤버")
-                    .font(.headline)
+                activeMenu == .member ?
+                Text("멤버").font(.headline).foregroundColor(.black)
+                : Text("멤버").font(.headline).foregroundColor(.grayColor)
             })
-        }
+        }.padding([.top], 20)
     }
     
     var backButton: some View {

@@ -18,6 +18,7 @@ extension Color {
     static let mainColor2 = Color(hex: "EBE3D5")
     static let mainColor3 = Color(hex: "B0A695")
     static let mainColor4 = Color(hex: "776B5D")
+    static let sinceColor = Color(hex: "BAC0CA")
     
     init(hex: String) {
         let scanner = Scanner(string: hex)

@@ -15,6 +15,14 @@ struct MainView: View {
         case board
         case setting
     }
+    
+    init() {
+        let appearance: UITabBarAppearance = UITabBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.shadowColor = .white
+        UITabBar.appearance().standardAppearance = appearance
+        UITabBar.appearance().scrollEdgeAppearance = appearance
+    }
 
     var body: some View {
         TabView(selection: $selection) {

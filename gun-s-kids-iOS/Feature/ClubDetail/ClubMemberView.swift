@@ -23,38 +23,36 @@ struct ClubMemberView: View {
     }
 
     var body: some View {
-        NavigationView {
-            ScrollView {
-                VStack(alignment: .leading) {
-                    Text("운영진")
-                        .foregroundColor(.secondary)
-                    LazyVGrid(columns: items, spacing: 20) {
-                        ForEach(sample) { info in
-                            if info.roleNo == 0 {
-                                NavigationLink(destination: ClubMemberDetailView(member: info)) {
-                                    ClubManagementView(member: info)
-                                }
+        ScrollView {
+            VStack(alignment: .leading) {
+                Text("운영진")
+                    .foregroundColor(.secondary)
+                LazyVGrid(columns: items, spacing: 20) {
+                    ForEach(sample) { info in
+                        if info.roleNo == 0 {
+                            NavigationLink(destination: ClubMemberDetailView(member: info)) {
+                                ClubManagementView(member: info)
                             }
                         }
                     }
                 }
-                .padding([.horizontal], 15)
-                .padding([.vertical], 25)
-                
-                VStack(alignment: .leading) {
-                    Text("멤버")
-                        .foregroundColor(.secondary)
-                    LazyVGrid(columns: items, spacing: 20) {
-                        ForEach(sample) { info in
-                            if info.roleNo == 1 {
-                                NavigationLink(destination: ClubMemberDetailView(member: info)) {
-                                    ClubManagementView(member: info)
-                                }
+            }
+            .padding([.horizontal], 15)
+            .padding([.vertical], 25)
+            
+            VStack(alignment: .leading) {
+                Text("멤버")
+                    .foregroundColor(.secondary)
+                LazyVGrid(columns: items, spacing: 20) {
+                    ForEach(sample) { info in
+                        if info.roleNo == 1 {
+                            NavigationLink(destination: ClubMemberDetailView(member: info)) {
+                                ClubManagementView(member: info)
                             }
                         }
                     }
-                }.padding([.horizontal], 15)
-            }
+                }
+            }.padding([.horizontal], 15)
         }
     }
 }
