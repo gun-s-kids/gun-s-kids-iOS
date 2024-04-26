@@ -20,6 +20,8 @@ enum MainAPI{
     case getMemberList
     case getClubMemberCheck
     case getMyClubPostList
+    case clubPost
+    case comment
     
     var url: URL{
         switch self {
@@ -35,6 +37,8 @@ enum MainAPI{
         case .getMemberList: return URL(string: "https://server-gunskids.koyeb.app/api/v1/club/member-list")!
         case .getClubMemberCheck: return URL(string: "https://server-gunskids.koyeb.app/api/v1/club/club-member-check")!
         case .getMyClubPostList: return URL(string: "https://server-gunskids.koyeb.app/api/v1/clubPost/myclub-post-list")!
+        case .clubPost: return URL(string: "https://server-gunskids.koyeb.app/api/v1/clubPost")!
+        case .comment: return URL(string: "https://server-gunskids.koyeb.app/api/v1/comment")!
         }
     }
 }

@@ -317,4 +317,78 @@ class MainAPIService {
         }
         .eraseToAnyPublisher()
     }
+    
+    // List 방식으로 보내야 해서 추후 수정 예정
+    func postClubPost(clubNo: Int, companyNo: Int, postTitle: String, postContent: String, imageList: UIImage) -> AnyPublisher<String, Error> {
+        let tokenUtil = TokenUtils()
+        
+        let parameter: [String: Any] = ["clubNo" : clubNo,
+                                        "companyNo" : companyNo,
+                                        "postTitle" : postTitle,
+                                        "postContent" : postContent]
+        
+        var postImgList = Data()
+        
+        if let imageData = imageList.jpegData(compressionQuality: 2.0) {
+            postImgList = imageData
+            print("## ClubImage : \(imageData)")
+        }
+
+        return Future() { promise in
+            AF.upload(
+                multipartFormData: { multipartFormData in
+                    for (key, value) in parameter {
+                        if let stringValue = "\(value)".data(using: .utf8) {
+                            multipartFormData.append(stringValue, withName: key)
+                        }
+                    }
+                    multipartFormData.append(postImgList, withName: "postImgList", fileName: "\(postTitle).jpg", mimeType: "image/jpg")
+                },
+                to: MainAPI.clubPost.url,
+                method: .post,
+                headers: tokenUtil.getAuthorizationHeaderAndFormData()
+            )
+            .publishDecodable(type: BaseResponse.self)
+            .value()
+            .sink { completion in
+                switch completion {
+                case .finished:
+                    print("postClubPost finished")
+                case .failure(let error):
+                    print("postClubPost error: \(error)")
+                    promise(.failure(error))
+                }
+            } receiveValue: { result in
+                promise(.success(result.status))
+            }
+            .store(in: &self.cancellable)
+        }
+        .eraseToAnyPublisher()
+    }
+    
+    func postComment(postNo: Int, commentContent: String) -> AnyPublisher<String, Error> {
+        let tokenUtil = TokenUtils()
+        let parameter: Parameters = ["postNo" : "\(postNo)",
+                                     "commentContent" : "\(commentContent)"]
+        
+        return Future() { promise in
+            AF.request(MainAPI.comment.url, method: .post, parameters: parameter, encoding: JSONEncoding.default, headers: tokenUtil.getAuthorizationHeader())
+                .publishDecodable(type: BaseResponse.self)
+                .value()
+                .sink { completion in
+                    switch completion {
+                    case .finished:
+                        print("postComment finished")
+                    case .failure(let error):
+                        print("postComment error: \(error)")
+                        promise(.failure(error))
+                    }
+                } receiveValue: { result in
+                    promise(.success(result.message))
+                }
+                .store(in: &self.cancellable)
+        }
+        .eraseToAnyPublisher()
+    }
+    
 }

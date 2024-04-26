@@ -17,32 +17,26 @@ struct MyBoardListView: View {
 
     var body: some View {
         NavigationView {
-            ZStack(alignment: .bottomTrailing) {
-                ScrollView(.vertical) {
-                    LazyVStack(alignment: .leading) {
-                        ForEach(viewModel.boardInfoList) { board in
-                            if board.postImg.count > 0 {
-                                NavigationLink(destination: BoardDetailView(boardInfo: board)) {
-                                    BoardImageRow(boardInfo: board)
-                                }
-                            } else {
-                                NavigationLink(destination: BoardDetailView(boardInfo: board)) {
-                                    BoardRow(boardInfo: board)
-                                }
+            ScrollView(.vertical) {
+                LazyVStack(alignment: .leading) {
+                    ForEach(viewModel.boardInfoList) { board in
+                        if board.postImg.count > 0 {
+                            NavigationLink(destination: BoardDetailView(boardInfo: board)) {
+                                BoardImageRow(boardInfo: board)
+                            }
+                        } else {
+                            NavigationLink(destination: BoardDetailView(boardInfo: board)) {
+                                BoardRow(boardInfo: board)
                             }
                         }
                     }
                 }
-                NavigationLink(destination: WriteBoardView(), isActive: $isButtonPressed) {
-                    addBoardButton
-                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 20))
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    navigationBarButtonStack
                 }
             }
-//            .toolbar {
-//                ToolbarItem(placement: .navigationBarTrailing) {
-//                    navigationBarButtonStack
-//                }
-//            }
         }
     }
 }
