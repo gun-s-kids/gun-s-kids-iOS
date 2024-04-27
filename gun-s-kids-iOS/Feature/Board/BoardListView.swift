@@ -18,7 +18,6 @@ struct BoardListView: View {
     }
 
     var body: some View {
-        GeometryReader { geometry in
             ZStack(alignment: .bottomTrailing) {
                 ScrollView(.vertical) {
                     LazyVStack(alignment: .leading) {
@@ -35,7 +34,7 @@ struct BoardListView: View {
                         }
                     }
                 }
-                NavigationLink(destination: WriteBoardView(), isActive: $isButtonPressed) {
+                NavigationLink(destination: WriteBoardView(viewModel: viewModel), isActive: $isButtonPressed) {
                     addBoardButton
                         .padding(EdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 20))
                 }
@@ -45,7 +44,6 @@ struct BoardListView: View {
 //                    navigationBarButtonStack
 //                }
 //            }
-        }
     }
 }
 

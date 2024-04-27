@@ -19,36 +19,42 @@ struct ClubDetailMainView2: View {
     }
     
     var body: some View {
-        NavigationView {
-            GeometryReader { geometry in
-                VStack {
-                    sinceLabel
-                    headerTabView
-                    TabView(selection: $activeMenu) {
-                        ClubDetailHomeView(clubInfo: clubDetail)
-                            .tag(Menu.main)
-                        
-                        BoardListView(clubNo: clubDetail.clubNo)
-                            .tag(Menu.board)
-                        
-                        ClubMemberView(memberList: clubDetail.adminList)
-                            .tag(Menu.member)
-                    }
-                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 120)
+        GeometryReader { geometry in
+            VStack {
+                titleLabel
+                Spacer(minLength: 8)
+                sinceLabel
+                headerTabView
+                TabView(selection: $activeMenu) {
+                    ClubDetailHomeView(clubInfo: clubDetail)
+                        .tag(Menu.main)
+                    
+                    BoardListView(clubNo: clubDetail.clubNo)
+                        .tag(Menu.board)
+                    
+                    ClubMemberView(memberList: clubDetail.adminList)
+                        .tag(Menu.member)
                 }
+                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 140)
             }
-            .navigationBarTitle(clubDetail.clubNm, displayMode: .inline)
-            .toolbar {
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        backButton
-                    }
-                }
+        }
+        //            .navigationBarTitle(clubDetail.clubNm, displayMode: .inline)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                backButton
+            }
         }
         .navigationBarBackButtonHidden(true)
     }
 }
 
 extension ClubDetailMainView2 {
+    var titleLabel: some View {
+        Text(clubDetail.clubNm)
+            .font(.system(size: 20, weight: .bold))
+            .foregroundColor(.black)
+    }
+    
     var sinceLabel: some View {
         Text("Since \(clubDetail.createdDate)")
             .font(.system(size: 10))

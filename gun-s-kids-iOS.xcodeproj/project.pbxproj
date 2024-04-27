@@ -43,6 +43,7 @@
 		2D7788EC2B52626800C38902 /* BoardRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7788EB2B52626800C38902 /* BoardRow.swift */; };
 		2D9F28422BDB79A10076794C /* MyBoardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9F28412BDB79A10076794C /* MyBoardListView.swift */; };
 		2D9F28442BDB7E350076794C /* MyBoardListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9F28432BDB7E350076794C /* MyBoardListViewModel.swift */; };
+		2D9F28462BDCDCB40076794C /* PostImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9F28452BDCDCB40076794C /* PostImageCell.swift */; };
 		2DA4A8B92AB5544D006E1342 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4A8B82AB5544D006E1342 /* LoginView.swift */; };
 		2DA4A8BB2AB565CD006E1342 /* PressableButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4A8BA2AB565CD006E1342 /* PressableButtonStyle.swift */; };
 		2DA4A8BD2AB57589006E1342 /* SetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4A8BC2AB57589006E1342 /* SetPasswordView.swift */; };
@@ -125,6 +126,7 @@
 		2D7788EB2B52626800C38902 /* BoardRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardRow.swift; sourceTree = "<group>"; };
 		2D9F28412BDB79A10076794C /* MyBoardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBoardListView.swift; sourceTree = "<group>"; };
 		2D9F28432BDB7E350076794C /* MyBoardListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBoardListViewModel.swift; sourceTree = "<group>"; };
+		2D9F28452BDCDCB40076794C /* PostImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImageCell.swift; sourceTree = "<group>"; };
 		2DA4A8B82AB5544D006E1342 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		2DA4A8BA2AB565CD006E1342 /* PressableButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressableButtonStyle.swift; sourceTree = "<group>"; };
 		2DA4A8BC2AB57589006E1342 /* SetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPasswordView.swift; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 				2D50A7852BB2DAF000FD8B5F /* ClubInfoResponse.swift */,
 				2D50A7872BCBAE2E00FD8B5F /* StringDataResponse.swift */,
 				2D50A7892BCBBB2400FD8B5F /* MemberInfoResponse.swift */,
+				2D9F28452BDCDCB40076794C /* PostImageCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -556,6 +559,7 @@
 				2D2C9D9E2B8B089900EAEA2B /* WriteBoardView.swift in Sources */,
 				2DD7EBFB2BA5954500005727 /* AuthAPIService.swift in Sources */,
 				2DAAD4032B7A0BCF00DFD0B2 /* SettingView.swift in Sources */,
+				2D9F28462BDCDCB40076794C /* PostImageCell.swift in Sources */,
 				2D36900D2B94522700D0E445 /* MakeClubView.swift in Sources */,
 				2D5E37E22AD3E966003EA3FC /* EditProfileView.swift in Sources */,
 				2DA93C792B51697600C3DCA7 /* ClubListViewModel.swift in Sources */,

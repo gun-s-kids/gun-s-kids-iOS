@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 import Alamofire
+import SwiftUI
 
 class BoardListViewModel: ObservableObject {
     var subscriptions = Set<AnyCancellable>()
@@ -15,6 +16,7 @@ class BoardListViewModel: ObservableObject {
     
     @Published var boardInfoList = [BoardInfo]()
     @Published var clubNo: Int?
+    @Published var writingPostImages = [PostImageCell]()
 
     init(clubNo: Int)
         {
@@ -39,6 +41,12 @@ class BoardListViewModel: ObservableObject {
                 }.store(in: &subscriptions)
         } else {
             self.boardInfoList = localCacheBoard[clubNo] ?? []
+        }
+    }
+    
+    func loadImages(uiImage: UIImage) {
+        DispatchQueue.main.async {
+            self.writingPostImages.append(PostImageCell(image: Image(uiImage: uiImage)))
         }
     }
 }
