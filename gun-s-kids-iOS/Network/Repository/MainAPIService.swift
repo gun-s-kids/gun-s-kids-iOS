@@ -391,4 +391,28 @@ class MainAPIService {
         .eraseToAnyPublisher()
     }
     
+    func postClubPostLike(postNo: Int) -> AnyPublisher<String, Error> {
+        let tokenUtil = TokenUtils()
+        let parameter: Parameters = ["postNo" : "\(postNo)"]
+        
+        return Future() { promise in
+            AF.request(MainAPI.postClubPostLike.url, method: .post, parameters: parameter, encoding: JSONEncoding.default, headers: tokenUtil.getAuthorizationHeader())
+                .publishDecodable(type: BaseResponse.self)
+                .value()
+                .sink { completion in
+                    switch completion {
+                    case .finished:
+                        print("postClubPostLike finished")
+                    case .failure(let error):
+                        print("postClubPostLike error: \(error)")
+                        promise(.failure(error))
+                    }
+                } receiveValue: { result in
+                    promise(.success(result.message))
+                }
+                .store(in: &self.cancellable)
+        }
+        .eraseToAnyPublisher()
+    }
+    
 }
