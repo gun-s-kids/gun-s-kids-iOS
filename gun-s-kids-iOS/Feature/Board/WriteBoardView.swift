@@ -22,36 +22,10 @@ struct WriteBoardView: View {
                 ScrollView(.vertical) {
                     VStack(alignment: .leading, spacing: 15) {
                         Spacer(minLength: 15)
-                        TextField("", text: $title,
-                                  prompt: Text("제목을 입력해주세요.").foregroundColor(Color.grayColor))
-                            .font(.system(size: 24, weight: .semibold))
-                            .foregroundColor(.black)
-                            .padding(.leading, 3)
-                        
-                        ZStack(alignment: .topLeading) {
-                            if self.content.isEmpty {
-                                TextEditor(text: $placeholderText)
-                                    .frame(height: 300)
-                                    .font(.system(size: 20))
-                                    .foregroundColor(Color.grayColor)
-                                    .disabled(true)
-                            }
-                            TextEditor(text: $content)
-                                .frame(height: 300)
-                                .font(.system(size: 20))
-                                .foregroundColor(.black)
-                                .opacity(self.content.isEmpty ? 0.25 : 1)
-                        }
+                        postTitleTextField
+                        postContentTextEditor
                     }
-                    LazyVStack(alignment: .center) {
-                        ForEach(viewModel.writingPostImages) { imageCell in
-                            imageCell.image
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 180, height: 180)
-                                .clipped()
-                        }
-                    }
+                    postImageView
                 }
                 addImageButton
                     .padding(EdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 20))
@@ -65,6 +39,12 @@ struct WriteBoardView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     enrollButton
                 }
+            }
+        }
+        .onChange(of: viewModel.isPostSuccess) { value in
+            if value {
+                self.viewModel.writingPostImages = []
+                self.presentationMode.wrappedValue.dismiss()
             }
         }
         .navigationBarBackButtonHidden(true)
@@ -85,8 +65,7 @@ extension WriteBoardView {
     
     var enrollButton: some View {
         Button {
-            self.viewModel.writingPostImages = []
-            self.presentationMode.wrappedValue.dismiss()
+            self.viewModel.saveClubPost(clubNo: viewModel.clubNo ?? 1, companyNo: 1, postTitle: title, postContent: content)
         } label: {
             Image(systemName: "plus")
                 .aspectRatio(contentMode: .fit)
@@ -113,6 +92,50 @@ extension WriteBoardView {
             viewModel.loadImages(uiImage: selectedImage)
         }) {
             ImagePicker(image: $selectedImage)
+        }
+    }
+    
+    var postImageView: some View {
+        LazyVStack(alignment: .center) {
+            ForEach(viewModel.writingPostImages) { imageCell in
+                imageCell.image
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 180, height: 180)
+                    .clipped()
+                    .overlay(Button(action: {
+                        viewModel.removeImage(imageCell)
+                    }) {
+                        Image(systemName: "xmark.circle.fill")
+                            .foregroundColor(.white)
+                            .padding(5)
+                    }, alignment: .topTrailing)
+            }
+        }
+    }
+    
+    var postTitleTextField: some View {
+        TextField("", text: $title,
+                  prompt: Text("제목을 입력해주세요.").foregroundColor(Color.grayColor))
+            .font(.system(size: 24, weight: .semibold))
+            .foregroundColor(.black)
+            .padding(.leading, 3)
+    }
+    
+    var postContentTextEditor: some View {
+        ZStack(alignment: .topLeading) {
+            if self.content.isEmpty {
+                TextEditor(text: $placeholderText)
+                    .frame(height: 300)
+                    .font(.system(size: 20))
+                    .foregroundColor(Color.grayColor)
+                    .disabled(true)
+            }
+            TextEditor(text: $content)
+                .frame(height: 300)
+                .font(.system(size: 20))
+                .foregroundColor(.black)
+                .opacity(self.content.isEmpty ? 0.25 : 1)
         }
     }
 }

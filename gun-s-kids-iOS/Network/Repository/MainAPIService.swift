@@ -318,8 +318,7 @@ class MainAPIService {
         .eraseToAnyPublisher()
     }
     
-    // List 방식으로 보내야 해서 추후 수정 예정
-    func postClubPost(clubNo: Int, companyNo: Int, postTitle: String, postContent: String, imageList: UIImage) -> AnyPublisher<String, Error> {
+    func postClubPost(clubNo: Int, companyNo: Int, postTitle: String, postContent: String, imageList: [UIImage]) -> AnyPublisher<String, Error> {
         let tokenUtil = TokenUtils()
         
         let parameter: [String: Any] = ["clubNo" : clubNo,
@@ -327,13 +326,6 @@ class MainAPIService {
                                         "postTitle" : postTitle,
                                         "postContent" : postContent]
         
-        var postImgList = Data()
-        
-        if let imageData = imageList.jpegData(compressionQuality: 2.0) {
-            postImgList = imageData
-            print("## ClubImage : \(imageData)")
-        }
-
         return Future() { promise in
             AF.upload(
                 multipartFormData: { multipartFormData in
@@ -342,7 +334,12 @@ class MainAPIService {
                             multipartFormData.append(stringValue, withName: key)
                         }
                     }
-                    multipartFormData.append(postImgList, withName: "postImgList", fileName: "\(postTitle).jpg", mimeType: "image/jpg")
+                    
+                    for image in imageList {
+                        if let image = image.jpegData(compressionQuality: 2.0) {
+                            multipartFormData.append(image, withName: "postImgList", fileName: "\(Date().timeIntervalSince1970).jpg", mimeType: "image/jpg")
+                        }
+                    }
                 },
                 to: MainAPI.clubPost.url,
                 method: .post,
@@ -359,7 +356,7 @@ class MainAPIService {
                     promise(.failure(error))
                 }
             } receiveValue: { result in
-                promise(.success(result.status))
+                promise(.success(result.message))
             }
             .store(in: &self.cancellable)
         }

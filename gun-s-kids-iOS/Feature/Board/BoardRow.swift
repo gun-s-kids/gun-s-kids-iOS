@@ -32,7 +32,7 @@ extension BoardRow {
                 .clipShape(Circle())
             
             VStack(alignment: .leading, spacing: 3) {
-                Text(boardInfo.createdDate)
+                Text(boardInfo.createdDate.prefix(10))
                     .foregroundColor(.black)
                     .font(.system(size: 11))
                 Text("\(boardInfo.companyNm) • \(boardInfo.nickname)")

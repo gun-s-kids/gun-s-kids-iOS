@@ -56,7 +56,7 @@ extension ClubDetailMainView2 {
     }
     
     var sinceLabel: some View {
-        Text("Since \(clubDetail.createdDate)")
+        Text("Since " + String(clubDetail.createdDate.prefix(10)))
             .font(.system(size: 10))
             .foregroundColor(.sinceColor)
     }

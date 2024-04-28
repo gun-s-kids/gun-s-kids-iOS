@@ -11,4 +11,5 @@ import SwiftUI
 struct PostImageCell: Identifiable, Equatable {
     var id = UUID()
     var image: Image
+    var uiImage: UIImage
 }

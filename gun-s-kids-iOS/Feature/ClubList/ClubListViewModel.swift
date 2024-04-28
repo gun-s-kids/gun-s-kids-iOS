@@ -96,7 +96,7 @@ class ClubListViewModel: ObservableObject {
     func registerClub(companyNo: Int, clubNm: String, clubDesc: String, clubImg: UIImage) {
         print("clubImg: \(clubImg)")
 
-        var resizedImage = clubImg.resizeImage(image: clubImg, newWidth: 300)
+        let resizedImage = clubImg.resizeImage(image: clubImg, newWidth: 300)
         MainAPIService.shared.postClub(companyNo: companyNo, clubNm: clubNm, clubDesc: clubDesc, clubImg: resizedImage)
             .sink { completion in
                 switch completion {
