@@ -16,7 +16,7 @@ class BoardListViewModel: ObservableObject {
     var writingPostUIImages: [UIImage] = []
     
     @Published var boardInfoList = [BoardInfo]()
-    @Published var boardDetailInfo: BoardDetailInfo?
+    @Published var boardDetailInfo: BoardDetailInfo = BoardDetailInfo(postNo: 0, nickname: "", companyNm: "", postTitle: "", postContent: "", createdDate: "", likeCnt: 0, isLike: false, postImg: [], commentList: [])
     @Published var clubNo: Int?
     @Published var writingPostImages = [PostImageCell]()
     @Published var isPostSuccess: Bool = false
@@ -128,7 +128,6 @@ class BoardListViewModel: ObservableObject {
                         createdDate: boardInfo.createdDate,
                         likeCnt: boardInfo.likeCnt,
                         isLike: false,
-                        commentCount: boardInfo.commentCount,
                         postImg: boardInfo.postImg,
                         commentList: [])
     }

@@ -21,23 +21,25 @@ struct MyBoardListView: View {
                 LazyVStack(alignment: .leading) {
                     ForEach(viewModel.boardInfoList) { board in
                         if board.postImg.count > 0 {
-                            NavigationLink(destination: BoardDetailView(boardInfo: viewModel.boardDetailInfo ?? viewModel.setDefaultBoardDetailInfo(board)), isActive: $viewModel.isFetchedData) {
+                            Button(action: {
+                                viewModel.fetchMyClubPostDetail(postNo: board.postNo)
+                            }) {
                                 BoardImageRow(boardInfo: board)
-                                    .onTapGesture {
-                                        print("tab")
-                                    }
                             }
                         } else {
-                            NavigationLink(destination: BoardDetailView(boardInfo: viewModel.boardDetailInfo ?? viewModel.setDefaultBoardDetailInfo(board)), isActive: $viewModel.isFetchedData) {
+                            Button(action: {
+                                viewModel.fetchMyClubPostDetail(postNo: board.postNo)
+                            }) {
                                 BoardRow(boardInfo: board)
-                                    .onTapGesture {
-                                        print("tab")
-                                    }
                             }
                         }
                     }
                 }
             }
+            NavigationLink(destination: BoardDetailView(boardInfo: viewModel.boardDetailInfo), isActive: $viewModel.isFetchedData) {
+                EmptyView()
+            }
+            .hidden()
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     navigationBarButtonStack

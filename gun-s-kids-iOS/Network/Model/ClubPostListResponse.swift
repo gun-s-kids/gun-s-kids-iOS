@@ -62,7 +62,6 @@ struct BoardDetailInfo: Codable, Identifiable {
     let createdDate: String
     let likeCnt: Int
     let isLike: Bool
-    let commentCount: Int
     let postImg: [PostImage]
     let commentList: [PostComment]
     
@@ -75,13 +74,12 @@ struct BoardDetailInfo: Codable, Identifiable {
         case createdDate
         case likeCnt
         case isLike
-        case commentCount
         case postImg
         case commentList
     }
     
     static let sample: [BoardDetailInfo] = [
-        BoardDetailInfo(postNo: 1, nickname: "볼빵빵짱구", companyNm: "한섬", postTitle: "23.09.04 정모 후기!!", postContent: "너무너무재밌었어요옹너무너무재밌었어요옹너무너무너무너무너무넌무너무무너무너뭐뭐무머눠눤", createdDate: "방금 전", likeCnt: 4, isLike: false, commentCount: 3, postImg: [PostImage(postImgNo: 1, postNo: 1, url: "https://placebear.com/g/200/200"), PostImage(postImgNo: 2, postNo: 1, url: "https://placebear.com/g/200/200")], commentList: [PostComment(commentNo: 1, commentContent: "stringsdlfkjsldkfj", nickname: "TEST", createdDate: "2024-04-26T07:16:12.341738")])
+        BoardDetailInfo(postNo: 1, nickname: "볼빵빵짱구", companyNm: "한섬", postTitle: "23.09.04 정모 후기!!", postContent: "너무너무재밌었어요옹너무너무재밌었어요옹너무너무너무너무너무넌무너무무너무너뭐뭐무머눠눤", createdDate: "방금 전", likeCnt: 4, isLike: false, postImg: [PostImage(postImgNo: 1, postNo: 1, url: "https://placebear.com/g/200/200"), PostImage(postImgNo: 2, postNo: 1, url: "https://placebear.com/g/200/200")], commentList: [PostComment(commentNo: 1, commentContent: "stringsdlfkjsldkfj", nickname: "TEST", createdDate: "2024-04-26T07:16:12.341738")])
     ]
 }
 

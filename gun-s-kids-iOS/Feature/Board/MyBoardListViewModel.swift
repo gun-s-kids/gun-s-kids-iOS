@@ -13,7 +13,7 @@ class MyBoardListViewModel: ObservableObject {
     var subscriptions = Set<AnyCancellable>()
     
     @Published var boardInfoList = [BoardInfo]()
-    @Published var boardDetailInfo: BoardDetailInfo?
+    @Published var boardDetailInfo: BoardDetailInfo = BoardDetailInfo(postNo: 0, nickname: "", companyNm: "", postTitle: "", postContent: "", createdDate: "", likeCnt: 0, isLike: false, postImg: [], commentList: [])
     @Published var isFetchedData: Bool = false
 
 
@@ -52,19 +52,5 @@ class MyBoardListViewModel: ObservableObject {
                 self.isFetchedData = true
                 print(value)
             }.store(in: &subscriptions)
-    }
-    
-    func setDefaultBoardDetailInfo(_ boardInfo: BoardInfo) -> BoardDetailInfo {
-        return BoardDetailInfo(postNo: boardInfo.postNo,
-                        nickname: boardInfo.nickname,
-                        companyNm: boardInfo.companyNm,
-                        postTitle: boardInfo.postTitle,
-                        postContent: boardInfo.postContent,
-                        createdDate: boardInfo.createdDate,
-                        likeCnt: boardInfo.likeCnt,
-                        isLike: false,
-                        commentCount: boardInfo.commentCount,
-                        postImg: boardInfo.postImg,
-                        commentList: [])
     }
 }
