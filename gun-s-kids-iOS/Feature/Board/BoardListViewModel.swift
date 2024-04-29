@@ -73,6 +73,21 @@ class BoardListViewModel: ObservableObject {
             }.store(in: &subscriptions)
     }
     
+    func postLike(postNo: Int) {
+        MainAPIService.shared.postClubPostLike(postNo: postNo)
+            .sink { completion in
+                switch completion {
+                case .failure(let err):
+                    print("[API] postLike ERROR : \(err)")
+                case .finished:
+                    print("[API] postLike Finish")
+                }
+            } receiveValue: { (value: String) in
+                print("postLike : \(value)")
+            }.store(in: &subscriptions)
+        
+    }
+    
     func loadImages(uiImage: UIImage) {
         DispatchQueue.main.async {
             let resizedImage = uiImage.resizeImage(image: uiImage, newWidth: 300)

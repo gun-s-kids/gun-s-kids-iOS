@@ -11,22 +11,29 @@ import URLImageStore
 
 struct BoardDetailView: View {
     @Environment(\.presentationMode) var presentationMode
+    @State var comment: String = ""
     let boardInfo: BoardInfo
     
     var body: some View {
         NavigationView {
-            ScrollView(.vertical) {
-                if boardInfo.postImg.count > 0 {
-                    boardPostImagesStack
+            ZStack(alignment: .bottom) {
+                ScrollView(.vertical) {
+                    if boardInfo.postImg.count > 0 {
+                        boardPostImagesStack
+                    }
+                    Spacer(minLength: 15)
+                    boardPostContent
                 }
-                Spacer(minLength: 15)
-                boardPostContent
-                
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    backButton
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        backButton
+                    }
                 }
+//                TextField("", text: $comment,
+//                          prompt: Text("댓글을 입력해주세요.").foregroundColor(Color.grayColor))
+//                    .font(.system(size: 20))
+//                    .foregroundColor(.black)
+//                    .padding(.leading, 20)
             }
         }
          .navigationBarBackButtonHidden(true)
@@ -69,6 +76,33 @@ extension BoardDetailView {
                     .foregroundColor(Color.secondaryText)
                     .padding(.bottom, 10)
                 Spacer()
+            }
+            
+            HStack(alignment: .center, spacing: 20) {
+                Button(action: {
+                    print("좋아요")
+                }) {
+                    HStack {
+                        Image("like")
+                            .resizable()
+                            .frame(width: 25, height: 25)
+                        Text("좋아요")
+                            .font(.system(size: 16))
+                            .foregroundColor(.mainColor2)
+                    }
+                }
+                Button(action: {
+                    print("댓글쓰기")
+                }) {
+                    HStack {
+                        Image("comment")
+                            .resizable()
+                            .frame(width: 25, height: 25)
+                        Text("댓글쓰기")
+                            .font(.system(size: 16))
+                            .foregroundColor(.mainColor2)
+                    }
+                }
             }
         }
         .padding(.horizontal, 20)
