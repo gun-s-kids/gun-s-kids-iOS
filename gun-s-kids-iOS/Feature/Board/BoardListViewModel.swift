@@ -21,12 +21,14 @@ class BoardListViewModel: ObservableObject {
     @Published var writingPostImages = [PostImageCell]()
     @Published var isPostSuccess: Bool = false
     @Published var isFetchedData: Bool = false
+    @Published var isClicked: Bool = false
 
     init(clubNo: Int)
         {
             print(#fileID,#function, #line, "")
             self.fetchClubPostList(clubNo: clubNo)
             self.clubNo = clubNo
+            self.isClicked = boardDetailInfo.isLike
         }
 
     func fetchClubPostList(clubNo: Int) {
@@ -117,18 +119,5 @@ class BoardListViewModel: ObservableObject {
         if let index = writingPostImages.firstIndex(where: { $0.id == image.id }) {
             writingPostImages.remove(at: index)
         }
-    }
-    
-    func setDefaultBoardDetailInfo(_ boardInfo: BoardInfo) -> BoardDetailInfo {
-        return BoardDetailInfo(postNo: boardInfo.postNo,
-                        nickname: boardInfo.nickname,
-                        companyNm: boardInfo.companyNm,
-                        postTitle: boardInfo.postTitle,
-                        postContent: boardInfo.postContent,
-                        createdDate: boardInfo.createdDate,
-                        likeCnt: boardInfo.likeCnt,
-                        isLike: false,
-                        postImg: boardInfo.postImg,
-                        commentList: [])
     }
 }

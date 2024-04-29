@@ -44,6 +44,7 @@
 		2D9F28422BDB79A10076794C /* MyBoardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9F28412BDB79A10076794C /* MyBoardListView.swift */; };
 		2D9F28442BDB7E350076794C /* MyBoardListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9F28432BDB7E350076794C /* MyBoardListViewModel.swift */; };
 		2D9F28462BDCDCB40076794C /* PostImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9F28452BDCDCB40076794C /* PostImageCell.swift */; };
+		2D9F284A2BDFBC460076794C /* MyBoardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9F28492BDFBC460076794C /* MyBoardDetailView.swift */; };
 		2DA4A8B92AB5544D006E1342 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4A8B82AB5544D006E1342 /* LoginView.swift */; };
 		2DA4A8BB2AB565CD006E1342 /* PressableButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4A8BA2AB565CD006E1342 /* PressableButtonStyle.swift */; };
 		2DA4A8BD2AB57589006E1342 /* SetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4A8BC2AB57589006E1342 /* SetPasswordView.swift */; };
@@ -127,6 +128,7 @@
 		2D9F28412BDB79A10076794C /* MyBoardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBoardListView.swift; sourceTree = "<group>"; };
 		2D9F28432BDB7E350076794C /* MyBoardListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBoardListViewModel.swift; sourceTree = "<group>"; };
 		2D9F28452BDCDCB40076794C /* PostImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImageCell.swift; sourceTree = "<group>"; };
+		2D9F28492BDFBC460076794C /* MyBoardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBoardDetailView.swift; sourceTree = "<group>"; };
 		2DA4A8B82AB5544D006E1342 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		2DA4A8BA2AB565CD006E1342 /* PressableButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressableButtonStyle.swift; sourceTree = "<group>"; };
 		2DA4A8BC2AB57589006E1342 /* SetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPasswordView.swift; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 				2D2C9D9D2B8B089900EAEA2B /* WriteBoardView.swift */,
 				2D9F28412BDB79A10076794C /* MyBoardListView.swift */,
 				2D9F28432BDB7E350076794C /* MyBoardListViewModel.swift */,
+				2D9F28492BDFBC460076794C /* MyBoardDetailView.swift */,
 			);
 			path = Board;
 			sourceTree = "<group>";
@@ -611,6 +614,7 @@
 				2DF2B90D2B2D77640037EBE0 /* ReauthMailView.swift in Sources */,
 				2DA93C6D2B5013DA00C3DCA7 /* NetworkResult.swift in Sources */,
 				2D3690072B943C1000D0E445 /* ClubRegisterListView.swift in Sources */,
+				2D9F284A2BDFBC460076794C /* MyBoardDetailView.swift in Sources */,
 				2D50A7842BB2D91800FD8B5F /* ClubDetailViewModel.swift in Sources */,
 				2DF2B90F2B2D77D00037EBE0 /* ResetPasswordView.swift in Sources */,
 				2DF2B90B2B2D76ED0037EBE0 /* CheckMailView.swift in Sources */,

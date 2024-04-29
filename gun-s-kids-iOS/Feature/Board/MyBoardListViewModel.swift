@@ -15,12 +15,13 @@ class MyBoardListViewModel: ObservableObject {
     @Published var boardInfoList = [BoardInfo]()
     @Published var boardDetailInfo: BoardDetailInfo = BoardDetailInfo(postNo: 0, nickname: "", companyNm: "", postTitle: "", postContent: "", createdDate: "", likeCnt: 0, isLike: false, postImg: [], commentList: [])
     @Published var isFetchedData: Bool = false
-
+    @Published var isClicked: Bool = false
 
     init()
         {
             print(#fileID,#function, #line, "")
             self.fetchMyClubPostList()
+            self.isClicked = boardDetailInfo.isLike
         }
 
     func fetchMyClubPostList() {
@@ -51,6 +52,20 @@ class MyBoardListViewModel: ObservableObject {
                 self.boardDetailInfo = value
                 self.isFetchedData = true
                 print(value)
+            }.store(in: &subscriptions)
+    }
+    
+    func postLike(postNo: Int) {
+        MainAPIService.shared.postClubPostLike(postNo: postNo)
+            .sink { completion in
+                switch completion {
+                case .failure(let err):
+                    print("[API] postLike ERROR : \(err)")
+                case .finished:
+                    print("[API] postLike Finish")
+                }
+            } receiveValue: { (value: String) in
+                print("postLike : \(value)")
             }.store(in: &subscriptions)
     }
 }

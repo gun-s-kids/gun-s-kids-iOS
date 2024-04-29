@@ -36,7 +36,7 @@ struct MyBoardListView: View {
                     }
                 }
             }
-            NavigationLink(destination: BoardDetailView(boardInfo: viewModel.boardDetailInfo), isActive: $viewModel.isFetchedData) {
+            NavigationLink(destination: MyBoardDetailView(viewModel: viewModel), isActive: $viewModel.isFetchedData) {
                 EmptyView()
             }
             .hidden()

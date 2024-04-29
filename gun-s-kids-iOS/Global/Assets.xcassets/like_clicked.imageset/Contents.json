@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "comment 2.png",
+      "filename" : "like_clicked 2.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "comment.png",
+      "filename" : "like_clicked.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "comment 1.png",
+      "filename" : "like_clicked 1.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -42,7 +42,7 @@ struct BoardListView: View {
                     addBoardButton
                         .padding(EdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 20))
                 }
-                NavigationLink(destination: BoardDetailView(boardInfo: viewModel.boardDetailInfo), isActive: $viewModel.isFetchedData) {
+                NavigationLink(destination: BoardDetailView(viewModel: viewModel), isActive: $viewModel.isFetchedData) {
                     EmptyView()
                 }
                 .hidden()

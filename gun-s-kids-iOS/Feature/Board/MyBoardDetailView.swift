@@ -1,21 +1,21 @@
 //
-//  BoardDetailView.swift
+//  MyBoardDetailView.swift
 //  gun-s-kids-iOS
 //
-//  Created by 권준상 on 2024/02/24.
+//  Created by 권준상 on 2024/04/29.
 //
 
 import SwiftUI
 import URLImage
 import URLImageStore
 
-struct BoardDetailView: View {
-    @ObservedObject var viewModel: BoardListViewModel
+struct MyBoardDetailView: View {
+    @ObservedObject var viewModel: MyBoardListViewModel
     @Environment(\.presentationMode) var presentationMode
     @State var comment: String = ""
     @State var isClicked: Bool = false
     @State var showingAlert: Bool = false
-        
+       
     var body: some View {
         NavigationView {
             ZStack(alignment: .bottom) {
@@ -45,7 +45,7 @@ struct BoardDetailView: View {
     }
 }
 
-extension BoardDetailView {
+extension MyBoardDetailView {
     var boardPostImagesStack: some View {
         LazyHStack {
             TabView {
@@ -142,8 +142,8 @@ extension BoardDetailView {
     }
 }
 
-struct BoardDetailView_Previews: PreviewProvider {
+struct MyBoardDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        BoardDetailView(viewModel: BoardListViewModel(clubNo: 1))
+        MyBoardDetailView(viewModel: MyBoardListViewModel())
     }
 }
