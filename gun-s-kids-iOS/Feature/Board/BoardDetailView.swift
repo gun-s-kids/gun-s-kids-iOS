@@ -12,7 +12,7 @@ import URLImageStore
 struct BoardDetailView: View {
     @Environment(\.presentationMode) var presentationMode
     @State var comment: String = ""
-    let boardInfo: BoardInfo
+    let boardInfo: BoardDetailInfo
     
     var body: some View {
         NavigationView {
@@ -120,6 +120,6 @@ extension BoardDetailView {
 
 struct BoardDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        BoardDetailView(boardInfo: BoardInfo.sample[0])
+        BoardDetailView(boardInfo: BoardDetailInfo.sample[0])
     }
 }

@@ -21,12 +21,18 @@ struct MyBoardListView: View {
                 LazyVStack(alignment: .leading) {
                     ForEach(viewModel.boardInfoList) { board in
                         if board.postImg.count > 0 {
-                            NavigationLink(destination: BoardDetailView(boardInfo: board)) {
+                            NavigationLink(destination: BoardDetailView(boardInfo: viewModel.boardDetailInfo ?? viewModel.setDefaultBoardDetailInfo(board)), isActive: $viewModel.isFetchedData) {
                                 BoardImageRow(boardInfo: board)
+                                    .onTapGesture {
+                                        print("tab")
+                                    }
                             }
                         } else {
-                            NavigationLink(destination: BoardDetailView(boardInfo: board)) {
+                            NavigationLink(destination: BoardDetailView(boardInfo: viewModel.boardDetailInfo ?? viewModel.setDefaultBoardDetailInfo(board)), isActive: $viewModel.isFetchedData) {
                                 BoardRow(boardInfo: board)
+                                    .onTapGesture {
+                                        print("tab")
+                                    }
                             }
                         }
                     }

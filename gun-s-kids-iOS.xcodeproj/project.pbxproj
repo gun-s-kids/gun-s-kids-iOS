@@ -16,7 +16,7 @@
 		2D368FFD2B91B03500D0E445 /* ClubDetailHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D368FFC2B91B03500D0E445 /* ClubDetailHomeView.swift */; };
 		2D368FFF2B91C1C500D0E445 /* ClubManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D368FFE2B91C1C500D0E445 /* ClubManagementView.swift */; };
 		2D3690012B94212F00D0E445 /* BoardListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3690002B94212F00D0E445 /* BoardListViewModel.swift */; };
-		2D3690032B94257300D0E445 /* ClubPostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3690022B94257300D0E445 /* ClubPostResponse.swift */; };
+		2D3690032B94257300D0E445 /* ClubPostListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3690022B94257300D0E445 /* ClubPostListResponse.swift */; };
 		2D3690072B943C1000D0E445 /* ClubRegisterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3690062B943C1000D0E445 /* ClubRegisterListView.swift */; };
 		2D3690092B943D2700D0E445 /* ClubRegisterRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3690082B943D2700D0E445 /* ClubRegisterRow.swift */; };
 		2D36900B2B943D6800D0E445 /* RegisterInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D36900A2B943D6800D0E445 /* RegisterInfo.swift */; };
@@ -99,7 +99,7 @@
 		2D368FFC2B91B03500D0E445 /* ClubDetailHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubDetailHomeView.swift; sourceTree = "<group>"; };
 		2D368FFE2B91C1C500D0E445 /* ClubManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubManagementView.swift; sourceTree = "<group>"; };
 		2D3690002B94212F00D0E445 /* BoardListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardListViewModel.swift; sourceTree = "<group>"; };
-		2D3690022B94257300D0E445 /* ClubPostResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubPostResponse.swift; sourceTree = "<group>"; };
+		2D3690022B94257300D0E445 /* ClubPostListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubPostListResponse.swift; sourceTree = "<group>"; };
 		2D3690062B943C1000D0E445 /* ClubRegisterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubRegisterListView.swift; sourceTree = "<group>"; };
 		2D3690082B943D2700D0E445 /* ClubRegisterRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubRegisterRow.swift; sourceTree = "<group>"; };
 		2D36900A2B943D6800D0E445 /* RegisterInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInfo.swift; sourceTree = "<group>"; };
@@ -268,7 +268,7 @@
 			children = (
 				2DA93C652B5004C800C3DCA7 /* CompanyListResponse.swift */,
 				2D351C2B2B5CEF91007F8131 /* ClubListResponse.swift */,
-				2D3690022B94257300D0E445 /* ClubPostResponse.swift */,
+				2D3690022B94257300D0E445 /* ClubPostListResponse.swift */,
 				2DF267A02BA869F6002CE28A /* LoginResponse.swift */,
 				2DF267A42BAB1BAA002CE28A /* BaseResponse.swift */,
 				2D50A7852BB2DAF000FD8B5F /* ClubInfoResponse.swift */,
@@ -569,7 +569,7 @@
 				2D368FFF2B91C1C500D0E445 /* ClubManagementView.swift in Sources */,
 				991F1F852BD5E975004C599B /* ClubDetailMainView2.swift in Sources */,
 				2DF2679F2BA5B23F002CE28A /* SignUpViewModel.swift in Sources */,
-				2D3690032B94257300D0E445 /* ClubPostResponse.swift in Sources */,
+				2D3690032B94257300D0E445 /* ClubPostListResponse.swift in Sources */,
 				2D50A7862BB2DAF000FD8B5F /* ClubInfoResponse.swift in Sources */,
 				2D50A7922BD50C5000FD8B5F /* ClubMemberDetailView.swift in Sources */,
 				2DF2679D2BA5B238002CE28A /* LoginViewModel.swift in Sources */,
