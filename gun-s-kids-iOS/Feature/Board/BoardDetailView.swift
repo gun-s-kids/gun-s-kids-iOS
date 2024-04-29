@@ -154,11 +154,13 @@ extension BoardDetailView {
                 .padding(.leading, 10)
                 .submitLabel(.done)
                 .onSubmit {
-                    print(comment)
+                    viewModel.postComment(postNo: viewModel.boardDetailInfo.postNo, commentContent: comment)
+                    comment = ""
                 }
             
             Button {
-                print(comment)
+                viewModel.postComment(postNo: viewModel.boardDetailInfo.postNo, commentContent: comment)
+                comment = ""
             } label: {
                 Image(systemName: "paperplane")
                     .aspectRatio(contentMode: .fit)

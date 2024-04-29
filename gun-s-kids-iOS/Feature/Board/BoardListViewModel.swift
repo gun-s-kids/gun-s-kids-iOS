@@ -105,7 +105,20 @@ class BoardListViewModel: ObservableObject {
             } receiveValue: { (value: String) in
                 print("postLike : \(value)")
             }.store(in: &subscriptions)
-        
+    }
+    
+    func postComment(postNo: Int, commentContent: String) {
+        MainAPIService.shared.postComment(postNo: postNo, commentContent: commentContent)
+            .sink { completion in
+                switch completion {
+                case .failure(let err):
+                    print("[API] postComment ERROR : \(err)")
+                case .finished:
+                    print("[API] postComment Finish")
+                }
+            } receiveValue: { (value: String) in
+                print("postComment : \(value)")
+            }.store(in: &subscriptions)
     }
     
     func loadImages(uiImage: UIImage) {
