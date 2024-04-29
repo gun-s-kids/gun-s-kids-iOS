@@ -15,6 +15,7 @@ struct BoardDetailView: View {
     @State var comment: String = ""
     @State var isClicked: Bool = false
     @State var showingAlert: Bool = false
+    @FocusState var isCommenting: Bool
         
     var body: some View {
         NavigationView {
@@ -31,11 +32,11 @@ struct BoardDetailView: View {
                         backButton
                     }
                 }
-//                TextField("", text: $comment,
-//                          prompt: Text("댓글을 입력해주세요.").foregroundColor(Color.grayColor))
-//                    .font(.system(size: 20))
-//                    .foregroundColor(.black)
-//                    .padding(.leading, 20)
+                .onTapGesture {
+                    hideKeyboard()
+                }
+                textFieldView
+                    .background(.ultraThinMaterial)
             }
         }
          .navigationBarBackButtonHidden(true)
@@ -116,7 +117,7 @@ extension BoardDetailView {
                 }
                 
                 Button(action: {
-                    print("댓글쓰기")
+                    isCommenting.toggle()
                 }) {
                     HStack {
                         Image("comment")
@@ -138,6 +139,31 @@ extension BoardDetailView {
         } label: {
             Image(systemName: "chevron.left")
                 .aspectRatio(contentMode: .fit)
+        }
+    }
+    
+    var textFieldView: some View {
+        HStack(spacing: 10) {
+            TextField("", text: $comment,
+                      prompt: Text("댓글을 입력해주세요.").foregroundColor(Color.grayColor))
+                .focused($isCommenting)
+                .font(.system(size: 20))
+                .foregroundColor(.black)
+                .frame(height: 50)
+                .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
+                .padding(.leading, 10)
+                .submitLabel(.done)
+                .onSubmit {
+                    print(comment)
+                }
+            
+            Button {
+                print(comment)
+            } label: {
+                Image(systemName: "paperplane")
+                    .aspectRatio(contentMode: .fit)
+            }
+            .padding(.trailing, 20)
         }
     }
 }
