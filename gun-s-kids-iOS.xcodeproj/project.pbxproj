@@ -85,6 +85,7 @@
 		9908FABB2B03564F00BEF286 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9908FABA2B03564F00BEF286 /* Company.swift */; };
 		9908FABF2B03583400BEF286 /* CompanySectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9908FABE2B03583400BEF286 /* CompanySectionView.swift */; };
 		991F1F852BD5E975004C599B /* ClubDetailMainView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F1F842BD5E975004C599B /* ClubDetailMainView2.swift */; };
+		99912A432BE075C500296FCA /* BoardCommentRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99912A422BE075C500296FCA /* BoardCommentRow.swift */; };
 		99E70AAE2AF86FE800548E45 /* ClubListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E70AAD2AF86FE800548E45 /* ClubListView.swift */; };
 /* End PBXBuildFile section */
 
@@ -166,6 +167,7 @@
 		9908FABA2B03564F00BEF286 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		9908FABE2B03583400BEF286 /* CompanySectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanySectionView.swift; sourceTree = "<group>"; };
 		991F1F842BD5E975004C599B /* ClubDetailMainView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubDetailMainView2.swift; sourceTree = "<group>"; };
+		99912A422BE075C500296FCA /* BoardCommentRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardCommentRow.swift; sourceTree = "<group>"; };
 		99E70AAD2AF86FE800548E45 /* ClubListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubListView.swift; sourceTree = "<group>"; };
 		E496886060BBF58A05059625 /* Pods-gun-s-kids-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gun-s-kids-iOS.debug.xcconfig"; path = "Target Support Files/Pods-gun-s-kids-iOS/Pods-gun-s-kids-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		ECC2B3C2B3F367B5F92A5903 /* Pods-gun-s-kids-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gun-s-kids-iOS.release.xcconfig"; path = "Target Support Files/Pods-gun-s-kids-iOS/Pods-gun-s-kids-iOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 				2D3690002B94212F00D0E445 /* BoardListViewModel.swift */,
 				2D7788EB2B52626800C38902 /* BoardRow.swift */,
 				2DAAD3FF2B79F7B200DFD0B2 /* BoardImageRow.swift */,
+				99912A422BE075C500296FCA /* BoardCommentRow.swift */,
 				2DAAD40E2B89C8C300DFD0B2 /* BoardDetailView.swift */,
 				2D2C9D9D2B8B089900EAEA2B /* WriteBoardView.swift */,
 				2D9F28412BDB79A10076794C /* MyBoardListView.swift */,
@@ -589,6 +592,7 @@
 				2D351C2C2B5CEF91007F8131 /* ClubListResponse.swift in Sources */,
 				2DF2B9042B2D73780037EBE0 /* MainView.swift in Sources */,
 				2D5E37DC2AD3D7BF003EA3FC /* ColorExtension.swift in Sources */,
+				99912A432BE075C500296FCA /* BoardCommentRow.swift in Sources */,
 				2D7788EA2B52611800C38902 /* BoardListView.swift in Sources */,
 				2D50A78E2BCFB1E900FD8B5F /* UIImageExtension.swift in Sources */,
 				2D9F28422BDB79A10076794C /* MyBoardListView.swift in Sources */,

@@ -26,6 +26,15 @@ struct BoardDetailView: View {
                     }
                     Spacer(minLength: 15)
                     boardPostContent
+                    
+                    LazyVStack(alignment: .leading) {
+                        Text("댓글")
+                            .foregroundColor(.secondary)
+                        Spacer(minLength: 15)
+                        ForEach(viewModel.boardDetailInfo.commentList) { comment in
+                            BoardCommentRow(commentInfo: comment)
+                        }
+                    }.padding([.horizontal], 20)
                 }
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {
@@ -131,6 +140,7 @@ extension BoardDetailView {
             }
         }
         .padding(.horizontal, 20)
+        .padding(.bottom, 30)
     }
     
     var backButton: some View {
